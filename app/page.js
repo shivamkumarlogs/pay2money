@@ -1,16 +1,16 @@
 import React from "react";
 import PromoBanner from "./components/PromoBanner";
 import Navbar from "./components/Navbar";
-import HeroSlider from "./components/HeroSlider";
-import LenderMarquee from "./components/LenderMarquee";
-import HeroEligibility from "./components/Hero";
-import ProductGrid from "./components/ProductGrid";
+// import HeroSlider from "./components/HeroSlider";
+// import LenderMarquee from "./components/LenderMarquee";
+// import HeroEligibility from "./components/Hero";
+// import ProductGrid from "./components/ProductGrid";
 import EmiCalculator from "./components/EmiCalculator";
-import MilestoneCards from "./components/MilestoneCards";
+// import MilestoneCards from "./components/MilestoneCards";
 import HowItWorks from "./components/HowItWorks";
-import StatsBand from "./components/StatsBand";
+// import StatsBand from "./components/StatsBand";
 import CtaBanner from "./components/CtaBanner";
-import Footer from "./components/Footer";
+// import Footer from "./components/Footer";
 
 export default function Home() {
   return (
@@ -51,7 +51,7 @@ export default function Home() {
       </main>
 
       {/* 12. Regulatory Footer with Disclaimer and Links */}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
