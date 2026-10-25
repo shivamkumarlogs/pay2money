@@ -10,7 +10,7 @@ import HowItWorks from "./components/HowItWorks";
 // import StatsBand from "./components/StatsBand";
 import CtaBanner from "./components/CtaBanner";
 import Hero from "./components/Hero";
-// import Footer from "./components/Footer";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
@@ -51,7 +51,7 @@ export default function Home() {
       </main>
 
       {/* 12. Regulatory Footer with Disclaimer and Links */}
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
