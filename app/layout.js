@@ -11,7 +11,7 @@ const poppins = Poppins({
 export const metadata = {
   title: "Pay2Money - Get Loans Online | Best Rates in India",
   description:
-    "Get personal, home, business, car, gold & education loans from 40+ banks and NBFCs. Check eligibility, calculate EMI and apply online for free on Pay2Money.",
+    "Get personal, home, business, car, gold & education loans through trusted partner banks and NBFCs. Calculate EMI and get fast loan disbursals on Pay2Money.",
   keywords:
     "loan, personal loan, home loan, business loan, gold loan, car loan, CIBIL score, loan aggregator India, Pay2Money",
   icons: {

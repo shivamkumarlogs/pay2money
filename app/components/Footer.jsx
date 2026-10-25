@@ -59,7 +59,7 @@ export default function Footer() {
               Regulatory &amp; Lending Disclaimer
             </h5>
             <p className="leading-relaxed text-[11px] text-slate-400">
-              Pay2Money is an online loan facilitation and financial comparison marketplace. Pay2Money is NOT a bank or a Non-Banking Financial Company (NBFC) registered under the Reserve Bank of India Act, 1934. We do not directly lend money to consumers.
+              Pay2Money is an online loan facilitation platform. Pay2Money is NOT a bank or a Non-Banking Financial Company (NBFC) registered under the Reserve Bank of India Act, 1934. We do not directly lend money to consumers.
             </p>
             <p className="leading-relaxed text-[11px] text-slate-400">
               Loan approval, terms, interest rates, and disbursal are exclusively decided and executed by our partner scheduled commercial banks and RBI-regulated NBFCs according to their internal underwriting criteria. Submitting an application on Pay2Money does not constitute an explicit loan guarantee.

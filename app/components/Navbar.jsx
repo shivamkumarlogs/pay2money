@@ -16,7 +16,7 @@ const LOAN_PRODUCTS = [
   },
   {
     name: "Personal Loan",
-    desc: "From 9.99% p.a.",
+    desc: "Minimal digital documentation",
     href: "#products",
     icon: (
       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -36,7 +36,7 @@ const LOAN_PRODUCTS = [
   },
   {
     name: "Home Loan",
-    desc: "From 7.10% p.a.",
+    desc: "Long flexible repayment tenures",
     href: "#products",
     icon: (
       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -56,7 +56,7 @@ const LOAN_PRODUCTS = [
   },
   {
     name: "Car Loan (New & Used)",
-    desc: "Up to 100% on-road funding",
+    desc: "New and used vehicle funding",
     href: "#products",
     icon: (
       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -183,10 +183,10 @@ export default function Navbar() {
                     <div className="flex items-center justify-between pb-3 mb-3 border-b border-slate-100">
                       <div>
                         <h4 className="text-sm font-bold text-[#0E2E5E] uppercase tracking-wider">All Loans & Cards</h4>
-                        <p className="text-xs text-slate-500">Compare rates from 40+ verified Indian lenders</p>
+                        <p className="text-xs text-slate-500">Loans facilitated through verified partner lenders</p>
                       </div>
                       <span className="text-xs px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 font-semibold border border-emerald-200">
-                        100% Free
+                        Zero Brokerage
                       </span>
                     </div>
                     <div className="grid grid-cols-2 gap-2">

@@ -16,7 +16,7 @@ export default function CtaBanner() {
             Ready to get started?
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-slate-200 leading-relaxed">
-            Compare personalized offers from 40+ banks, check your pre-approved eligibility, and get disbursed in hours, 100% free with zero agent commission.
+            Access loans through trusted partner institutions and get fast disbursals with zero agent commission.
           </p>
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
             <a

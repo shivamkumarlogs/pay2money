@@ -22,7 +22,7 @@ export default function Hero() {
 
         {/* Concise Value Proposition */}
         <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed font-normal">
-          Get personal, home, business, and auto loans from India’s top financial institutions. 100% digital, zero hidden fees, and lightning-fast approval.
+          Get personal, home, and business loans through India’s top lending partners. Completely digital, zero hidden fees, and fast sanction.
         </p>
 
         {/* Clean, Polished Action Buttons */}
