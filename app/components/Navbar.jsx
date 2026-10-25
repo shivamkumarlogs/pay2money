@@ -273,12 +273,12 @@ export default function Navbar() {
               About
             </Link>
 
-            <a
-              href="#footer"
+            <Link
+              href="/contact"
               className="px-3.5 py-2 text-sm font-semibold text-slate-800 hover:text-[#2E9D52] rounded-lg hover:bg-slate-50 transition"
             >
               Contact
-            </a>
+            </Link>
           </nav>
 
           {/* Mobile Menu Toggle Button (No Apply Button) */}
@@ -395,13 +395,13 @@ export default function Navbar() {
             About
           </Link>
 
-          <a
-            href="#footer"
+          <Link
+            href="/contact"
             onClick={() => setMobileOpen(false)}
             className="block px-3 py-2.5 rounded-lg text-sm font-semibold text-slate-800 hover:bg-slate-50"
           >
             Contact
-          </a>
+          </Link>
         </div>
       )}
     </header>
