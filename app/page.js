@@ -1,5 +1,4 @@
 import React from "react";
-import PromoBanner from "./components/PromoBanner";
 import Navbar from "./components/Navbar";
 import HeroSlider from "./components/HeroSlider";
 // import LenderMarquee from "./components/LenderMarquee";
@@ -15,10 +14,7 @@ import Footer from "./components/Footer";
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* 1. Top Limited-Time Promotion Banner */}
-      <PromoBanner />
-
-      {/* 2. Sticky Glassmorphic Header Navigation */}
+      {/* Sticky Glassmorphic Header Navigation */}
       <Navbar />
 
       <main className="flex-1">
