@@ -58,7 +58,7 @@ export default function HowItWorks() {
           >
             {/* Top row */}
             <div className="flex items-center justify-between mb-6">
-              <span className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-[#0E2E5E] to-[#2E9D52] text-white font-black text-xl flex items-center justify-center shadow-md">
+              <span className="w-12 h-12 rounded-2xl bg-linear-to-tr from-[#0E2E5E] to-[#2E9D52] text-white font-black text-xl flex items-center justify-center shadow-md">
                 {step.num}
               </span>
               <div className="w-12 h-12 rounded-2xl bg-emerald-50 text-[#2E9D52] flex items-center justify-center group-hover:scale-110 transition-transform">

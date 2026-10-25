@@ -67,9 +67,9 @@ export default function EmiCalculator() {
   return (
     <section
       id="calculator"
-      className="min-h-screen py-16 sm:py-24 px-4 sm:px-6 lg:px-12 bg-gradient-to-b from-[#071831] via-[#0E2E5E] to-[#071831] text-white flex flex-col justify-center"
+      className="min-h-screen py-16 sm:py-24 px-4 sm:px-6 lg:px-12 bg-linear-to-b from-[#071831] via-[#0E2E5E] to-[#071831] text-white flex flex-col justify-center"
     >
-      <div className="w-full max-w-[1360px] mx-auto">
+      <div className="w-full max-w-340 mx-auto">
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
@@ -259,7 +259,7 @@ export default function EmiCalculator() {
 
           {/* Right Result Card Column (5 cols) */}
           <div className="lg:col-span-5 flex flex-col">
-            <div className="bg-gradient-to-br from-[#0E2E5E] via-[#0A2348] to-[#071831] text-white p-7 sm:p-9 lg:p-10 rounded-2xl shadow-xl border border-white/10 relative overflow-hidden h-full flex flex-col justify-center space-y-7 sm:space-y-8">
+            <div className="bg-linear-to-br from-[#0E2E5E] via-[#0A2348] to-[#071831] text-white p-7 sm:p-9 lg:p-10 rounded-2xl shadow-xl border border-white/10 relative overflow-hidden h-full flex flex-col justify-center space-y-7 sm:space-y-8">
               <div className="absolute top-0 right-0 w-48 h-48 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
 
               {/* Monthly Repayment Box */}
@@ -299,7 +299,7 @@ export default function EmiCalculator() {
 
                 <div className="flex justify-between items-center pt-5 border-t border-white/15 text-base sm:text-lg">
                   <span className="text-white font-bold">Total Amount Payable</span>
-                  <span className="font-black text-white text-xl sm:text-2xl text-emerald-300">
+                  <span className="font-black text-emerald-300 text-xl sm:text-2xl">
                     {formatINR(totalPayable)}
                   </span>
                 </div>

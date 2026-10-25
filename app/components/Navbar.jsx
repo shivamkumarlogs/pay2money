@@ -163,7 +163,7 @@ export default function Navbar() {
 
               {/* Mega Menu Popup */}
               {productsOpen && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-[640px] z-50 animate-fadeIn">
+                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-160 z-50 animate-fadeIn">
                   <div className="bg-white rounded-2xl shadow-2xl border border-slate-100 p-6">
                     <div className="flex items-center justify-between pb-3 mb-3 border-b border-slate-100">
                       <div>

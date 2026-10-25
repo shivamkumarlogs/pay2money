@@ -4,9 +4,9 @@ import React from "react";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-slate-50/60 via-white to-slate-50/80 py-16 sm:py-24 px-4 sm:px-6 lg:px-8 border-b border-slate-100">
+    <section className="relative overflow-hidden bg-linear-to-b from-slate-50/60 via-white to-slate-50/80 py-16 sm:py-24 px-4 sm:px-6 lg:px-8 border-b border-slate-100">
       {/* Subtle Background Glow Mesh */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-5xl h-72 bg-gradient-to-b from-emerald-100/30 via-sky-100/20 to-transparent blur-3xl pointer-events-none -z-10" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-5xl h-72 bg-linear-to-b from-emerald-100/30 via-sky-100/20 to-transparent blur-3xl pointer-events-none -z-10" />
 
       <div className="max-w-5xl mx-auto text-center space-y-8">
         
@@ -15,7 +15,7 @@ export default function Hero() {
         {/* High-Impact Headline */}
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#0E2E5E] tracking-tight leading-[1.15] max-w-4xl mx-auto">
           Loans at the{" "}
-          <span className="bg-gradient-to-r from-[#0E2E5E] via-[#1E78C8] to-[#2E9D52] bg-clip-text text-transparent">
+          <span className="bg-linear-to-r from-[#0E2E5E] via-[#1E78C8] to-[#2E9D52] bg-clip-text text-transparent">
             Lowest Rates.
           </span>
         </h1>
@@ -29,7 +29,7 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-2">
           <a
             href="#products"
-            className="w-full sm:w-auto px-8 py-3.5 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-[#0E2E5E] to-[#2E9D52] hover:from-[#0B254D] hover:to-[#268444] shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 text-center flex items-center justify-center gap-2"
+            className="w-full sm:w-auto px-8 py-3.5 rounded-xl font-bold text-sm text-white bg-linear-to-r from-[#0E2E5E] to-[#2E9D52] hover:from-[#0B254D] hover:to-[#268444] shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 text-center flex items-center justify-center gap-2"
           >
             <span>Explore Loan Products</span>
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -114,7 +114,7 @@ export default function HeroSlider() {
           {SLIDES.map((slide, idx) => (
             <div
               key={idx}
-              className={`w-full shrink-0 ${slide.bg} text-white flex items-center min-h-[200px] sm:min-h-[250px] md:min-h-[280px] lg:min-h-[300px] relative overflow-hidden`}
+              className={`w-full shrink-0 ${slide.bg} text-white flex items-center min-h-50 sm:min-h-62.5 md:min-h-70 lg:min-h-75 relative overflow-hidden`}
             >
               {/* Left Side Content Container */}
               <div className="w-[62%] sm:w-[58%] md:w-[54%] z-10 flex flex-col justify-center pl-4 sm:pl-10 lg:pl-14 pr-2 py-4 sm:py-8 space-y-1.5 sm:space-y-3">
