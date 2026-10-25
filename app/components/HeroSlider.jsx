@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const SLIDES = [
   {
@@ -159,9 +160,7 @@ export default function HeroSlider() {
           className="hidden sm:flex absolute left-3 top-1/2 -translate-y-1/2 z-20 text-white/70 hover:text-white drop-shadow-md transition-all opacity-0 group-hover:opacity-100 p-2 cursor-pointer hover:scale-110 active:scale-95"
           aria-label="Previous slide"
         >
-          <svg className="w-6 h-6 lg:w-7 lg:h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
-          </svg>
+          <ChevronLeft className="w-6 h-6 lg:w-7 lg:h-7" strokeWidth={2.5} />
         </button>
 
         <button
@@ -170,9 +169,7 @@ export default function HeroSlider() {
           className="hidden sm:flex absolute right-3 top-1/2 -translate-y-1/2 z-20 text-white/70 hover:text-white drop-shadow-md transition-all opacity-0 group-hover:opacity-100 p-2 cursor-pointer hover:scale-110 active:scale-95"
           aria-label="Next slide"
         >
-          <svg className="w-6 h-6 lg:w-7 lg:h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-          </svg>
+          <ChevronRight className="w-6 h-6 lg:w-7 lg:h-7" strokeWidth={2.5} />
         </button>
 
         {/* Segmented Bottom Pill Indicators */}

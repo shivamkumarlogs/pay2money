@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { BadgePercent, Landmark, ShieldCheck, PhoneOff } from "lucide-react";
 
 export const metadata = {
   title: "About - Pay2Money",
@@ -12,18 +13,22 @@ const PROMISES = [
   {
     title: "Zero consultation fees",
     desc: "You never pay us a single rupee. Our platform, support, and guidance are completely free for borrowers.",
+    icon: <BadgePercent className="w-5 h-5 text-[#2E9D52]" />,
   },
   {
     title: "Direct bank disbursal",
     desc: "Your loan is disbursed straight into your registered bank account by our verified partner institutions.",
+    icon: <Landmark className="w-5 h-5 text-[#2E9D52]" />,
   },
   {
     title: "Bank-level data security",
     desc: "Your personal and financial records are protected with 256-bit encryption and shared only with partner lenders.",
+    icon: <ShieldCheck className="w-5 h-5 text-[#2E9D52]" />,
   },
   {
     title: "No aggressive sales calls",
     desc: "We do not sell your contact details to third-party telemarketers. We only reach out to assist with your active inquiry.",
+    icon: <PhoneOff className="w-5 h-5 text-[#2E9D52]" />,
   },
 ];
 
@@ -109,8 +114,11 @@ export default function AboutPage() {
             {PROMISES.map((item, idx) => (
               <div
                 key={idx}
-                className="bg-white rounded-xl p-7 sm:p-8 border border-slate-200/80  space-y-3"
+                className="bg-white rounded-xl p-7 sm:p-8 border border-slate-200/80 space-y-3 hover:shadow-md transition-shadow"
               >
+                <div className="w-10 h-10 rounded-lg bg-emerald-50 flex items-center justify-center">
+                  {item.icon}
+                </div>
                 <h3 className="text-base sm:text-lg font-bold text-[#0E2E5E]">
                   {item.title}
                 </h3>
