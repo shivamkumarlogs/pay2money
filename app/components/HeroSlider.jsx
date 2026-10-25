@@ -15,7 +15,7 @@ const SLIDES = [
   },
   {
     title: "Free CIBIL Score Check",
-    subtitle: "Know your credit score in 30 seconds — zero impact on your score.",
+    subtitle: "Know your credit score in 30 seconds with zero impact on your score.",
     cta: "Check Free",
     href: "#cibil",
     bg: "bg-[#1E7C3F]",
