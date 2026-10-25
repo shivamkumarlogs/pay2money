@@ -70,11 +70,11 @@ export default function EmiCalculator() {
   return (
     <section
       id="calculator"
-      className="py-16 px-4 sm:px-6 lg:px-8 bg-linear-to-b from-[#071831] via-[#0E2E5E] to-[#071831] text-white flex flex-col justify-center"
+      className="pt-16 pb-16 px-4 sm:px-6 lg:px-8 bg-linear-to-b from-[#071831] via-[#0E2E5E] to-[#071831] text-white flex flex-col justify-center"
     >
       <div className="w-full max-w-7xl mx-auto">
         {/* Section Heading */}
-        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-14">
           <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-white">
             EMI Calculator
           </h2>
@@ -85,11 +85,11 @@ export default function EmiCalculator() {
         </div>
 
         {/* Full-width Calculator Main Card */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 bg-white text-slate-800 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-2xl border border-white/10 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 bg-white text-slate-800 rounded-xl p-6 sm:p-10 lg:p-12 shadow-2xl border border-white/10 items-stretch">
           {/* Left Inputs Column (7 cols) */}
           <div className="lg:col-span-7 flex flex-col justify-between space-y-6 sm:space-y-7">
             {/* Amount Input & Slider */}
-            <div className="bg-slate-50/80 p-4 sm:p-5 rounded-2xl border border-slate-200">
+            <div className="bg-slate-50/80 p-4 sm:p-5 rounded-xl border border-slate-200">
               <div className="flex items-center justify-between gap-3 mb-3">
                 <label className="text-sm sm:text-base font-bold text-[#0E2E5E]">
                   Loan Amount
@@ -140,7 +140,7 @@ export default function EmiCalculator() {
             </div>
 
             {/* Interest Rate Input & Slider */}
-            <div className="bg-slate-50/80 p-4 sm:p-5 rounded-2xl border border-slate-200">
+            <div className="bg-slate-50/80 p-4 sm:p-5 rounded-xl border border-slate-200">
               <div className="flex items-center justify-between gap-3 mb-3">
                 <label className="text-sm sm:text-base font-bold text-[#0E2E5E]">
                   Interest Rate (p.a.)
@@ -191,7 +191,7 @@ export default function EmiCalculator() {
             </div>
 
             {/* Tenure Input & Slider */}
-            <div className="bg-slate-50/80 p-4 sm:p-5 rounded-2xl border border-slate-200">
+            <div className="bg-slate-50/80 p-4 sm:p-5 rounded-xl border border-slate-200">
               <div className="flex items-center justify-between gap-3 mb-3">
                 <label className="text-sm sm:text-base font-bold text-[#0E2E5E]">
                   Loan Tenure
@@ -268,7 +268,7 @@ export default function EmiCalculator() {
 
           {/* Right Result Card Column (5 cols) */}
           <div className="lg:col-span-5 flex flex-col">
-            <div className="bg-linear-to-br from-[#0E2E5E] via-[#0A2348] to-[#071831] text-white p-7 sm:p-9 lg:p-10 rounded-2xl shadow-xl border border-white/10 relative overflow-hidden h-full flex flex-col justify-center space-y-7 sm:space-y-8">
+            <div className="bg-linear-to-br from-[#0E2E5E] via-[#0A2348] to-[#071831] text-white p-7 sm:p-9 lg:p-10 rounded-xl shadow-xl border border-white/10 relative overflow-hidden h-full flex flex-col justify-center space-y-7 sm:space-y-8">
               <div className="absolute top-0 right-0 w-48 h-48 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
 
               {/* Monthly Repayment Box */}

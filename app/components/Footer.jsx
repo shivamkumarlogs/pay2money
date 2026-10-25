@@ -7,7 +7,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer id="footer" className="bg-[#071830] text-slate-300 pt-8 pb-4">
+    <footer id="footer" className="bg-[#071830] text-slate-300 pt-4 pb-4">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Simple Top Row: Brand & Contact */}
@@ -53,7 +53,7 @@ export default function Footer() {
         </div>
 
         {/* Regulatory Disclaimer & Copyright */}
-        <div className="pt-8 text-xs text-slate-400 space-y-4">
+        <div className="pt-4 text-xs text-slate-400 space-y-3">
           <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800/90 space-y-2">
             <h5 className="font-bold text-slate-300 uppercase tracking-wider text-[11px]">
               Regulatory &amp; Lending Disclaimer
