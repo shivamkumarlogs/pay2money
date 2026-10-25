@@ -1,7 +1,7 @@
 import React from "react";
 import PromoBanner from "./components/PromoBanner";
 import Navbar from "./components/Navbar";
-// import HeroSlider from "./components/HeroSlider";
+import HeroSlider from "./components/HeroSlider";
 // import LenderMarquee from "./components/LenderMarquee";
 // import ProductGrid from "./components/ProductGrid";
 import EmiCalculator from "./components/EmiCalculator";
@@ -23,7 +23,7 @@ export default function Home() {
 
       <main className="flex-1">
         {/* 3. Hero 5-Slide Carousel Banner */}
-        {/* <HeroSlider /> */}
+        <HeroSlider />
 
         {/* 4. Infinite Sliding Partner Banks & NBFCs Strip */}
         {/* <LenderMarquee /> */}
