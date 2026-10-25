@@ -3,13 +3,13 @@ import PromoBanner from "./components/PromoBanner";
 import Navbar from "./components/Navbar";
 // import HeroSlider from "./components/HeroSlider";
 // import LenderMarquee from "./components/LenderMarquee";
-// import HeroEligibility from "./components/Hero";
 // import ProductGrid from "./components/ProductGrid";
 import EmiCalculator from "./components/EmiCalculator";
 // import MilestoneCards from "./components/MilestoneCards";
 import HowItWorks from "./components/HowItWorks";
 // import StatsBand from "./components/StatsBand";
 import CtaBanner from "./components/CtaBanner";
+import Hero from "./components/Hero";
 // import Footer from "./components/Footer";
 
 export default function Home() {
@@ -29,7 +29,7 @@ export default function Home() {
         {/* <LenderMarquee /> */}
 
         {/* 5. Main Hero Value Proposition & Trust Metrics */}
-        {/* <HeroEligibility /> */}
+        <Hero />
 
         {/* 6. Comprehensive Product Grid (Loans, Cards, Credit Health) */}
         {/* <ProductGrid /> */}
