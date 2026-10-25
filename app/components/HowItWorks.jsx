@@ -85,7 +85,7 @@ export default function HowItWorks() {
         {STEPS.map((step, idx) => (
           <div
             key={idx}
-            className="relative bg-white rounded-3xl p-8 border border-slate-200/80 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group flex flex-col justify-between"
+            className="relative bg-white rounded-xl p-8 border border-slate-200/80 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group flex flex-col justify-between"
           >
             {/* Top row */}
             <div className="flex items-center justify-between mb-6">

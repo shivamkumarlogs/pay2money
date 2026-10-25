@@ -5,7 +5,7 @@ import React from "react";
 export default function CtaBanner() {
   return (
     <section className="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-      <div className="relative overflow-hidden rounded-3xl bg-linear-to-r from-[#0E2E5E] via-[#163D78] to-[#1F7C3F] text-white p-8 sm:p-12 md:p-16 text-center shadow-2xl border border-white/10">
+      <div className="relative overflow-hidden rounded-xl bg-linear-to-r from-[#0E2E5E] via-[#163D78] to-[#1F7C3F] text-white p-8 sm:p-12 md:p-16 text-center shadow-2xl border border-white/10">
         {/* Glow backdrop circles */}
         <div className="absolute -top-24 -left-24 w-72 h-72 bg-emerald-500/20 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute -bottom-24 -right-24 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl pointer-events-none" />
