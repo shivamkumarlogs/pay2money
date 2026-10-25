@@ -34,7 +34,10 @@ export default function EmiCalculator() {
     const totalPayment = emi * n;
     const interest = Math.max(0, totalPayment - P);
 
-    const pPct = totalPayment > 0 ? Math.min(100, Math.max(0, Math.round((P / totalPayment) * 100))) : 100;
+    const pPct =
+      totalPayment > 0
+        ? Math.min(100, Math.max(0, Math.round((P / totalPayment) * 100)))
+        : 100;
     const iPct = 100 - pPct;
 
     return {
@@ -67,25 +70,24 @@ export default function EmiCalculator() {
   return (
     <section
       id="calculator"
-      className="min-h-screen py-16 sm:py-24 px-4 sm:px-6 lg:px-12 bg-linear-to-b from-[#071831] via-[#0E2E5E] to-[#071831] text-white flex flex-col justify-center"
+      className="py-16 px-4 sm:px-6 lg:px-8 bg-linear-to-b from-[#071831] via-[#0E2E5E] to-[#071831] text-white flex flex-col justify-center"
     >
-      <div className="w-full max-w-340 mx-auto">
+      <div className="w-full max-w-7xl mx-auto">
         {/* Section Heading */}
-        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-white">
             EMI Calculator
           </h2>
           <p className="text-sm sm:text-base text-slate-300 mt-2">
-            Use the sliders or enter values manually to calculate your monthly EMI and repayment schedule.
+            Use the sliders or enter values manually to calculate your monthly
+            EMI and repayment schedule.
           </p>
         </div>
 
         {/* Full-width Calculator Main Card */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 bg-white text-slate-800 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-2xl border border-white/10 items-stretch">
-          
           {/* Left Inputs Column (7 cols) */}
           <div className="lg:col-span-7 flex flex-col justify-between space-y-6 sm:space-y-7">
-            
             {/* Amount Input & Slider */}
             <div className="bg-slate-50/80 p-4 sm:p-5 rounded-2xl border border-slate-200">
               <div className="flex items-center justify-between gap-3 mb-3">
@@ -93,7 +95,9 @@ export default function EmiCalculator() {
                   Loan Amount
                 </label>
                 <div className="w-32 sm:w-36 h-9 sm:h-10 px-2.5 bg-white rounded-xl border border-slate-300 shadow-sm flex items-center justify-end gap-1 focus-within:border-[#2E9D52] focus-within:ring-2 focus-within:ring-emerald-100 transition shrink-0">
-                  <span className="text-xs sm:text-sm font-bold text-slate-400 select-none">₹</span>
+                  <span className="text-xs sm:text-sm font-bold text-slate-400 select-none">
+                    ₹
+                  </span>
                   <input
                     type="number"
                     min={10000}
@@ -101,7 +105,8 @@ export default function EmiCalculator() {
                     step={25000}
                     value={amount === 0 ? "" : amount}
                     onChange={(e) => {
-                      const val = e.target.value === "" ? 0 : Number(e.target.value);
+                      const val =
+                        e.target.value === "" ? 0 : Number(e.target.value);
                       setAmount(val);
                     }}
                     onBlur={() => {
@@ -148,7 +153,8 @@ export default function EmiCalculator() {
                     step={0.1}
                     value={rate === 0 ? "" : rate}
                     onChange={(e) => {
-                      const val = e.target.value === "" ? 0 : Number(e.target.value);
+                      const val =
+                        e.target.value === "" ? 0 : Number(e.target.value);
                       setRate(val);
                     }}
                     onBlur={() => {
@@ -158,7 +164,9 @@ export default function EmiCalculator() {
                     className="w-full text-right font-extrabold text-[#2E9D52] text-sm sm:text-base focus:outline-none bg-transparent [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                     placeholder="10.5"
                   />
-                  <span className="text-xs sm:text-sm font-bold text-slate-400 select-none">%</span>
+                  <span className="text-xs sm:text-sm font-bold text-slate-400 select-none">
+                    %
+                  </span>
                 </div>
               </div>
 
@@ -196,7 +204,8 @@ export default function EmiCalculator() {
                     step={1}
                     value={tenure === 0 ? "" : tenure}
                     onChange={(e) => {
-                      const val = e.target.value === "" ? 0 : Number(e.target.value);
+                      const val =
+                        e.target.value === "" ? 0 : Number(e.target.value);
                       setTenure(val);
                     }}
                     onBlur={() => {
@@ -298,7 +307,9 @@ export default function EmiCalculator() {
                 </div>
 
                 <div className="flex justify-between items-center pt-5 border-t border-white/15 text-base sm:text-lg">
-                  <span className="text-white font-bold">Total Amount Payable</span>
+                  <span className="text-white font-bold">
+                    Total Amount Payable
+                  </span>
                   <span className="font-black text-emerald-300 text-xl sm:text-2xl">
                     {formatINR(totalPayable)}
                   </span>
@@ -311,5 +322,3 @@ export default function EmiCalculator() {
     </section>
   );
 }
-
-

@@ -34,9 +34,9 @@ export default function AboutPage() {
 
       <main className="flex-1">
         {/* 1. Human-Centered Editorial Hero */}
-        <section className="relative overflow-hidden bg-white border-b border-slate-200/80 pt-16 pb-20 sm:pt-24 sm:pb-28 px-4 sm:px-6 lg:px-8">
+        <section className="relative overflow-hidden pt-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center space-y-4">
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-[#0E2E5E] tracking-tight leading-[1.15]">
+            <h1 className="text-2xl sm:text-4xl font-black text-[#0E2E5E] tracking-tight leading-[1.15]">
               We believe getting a loan should be straightforward and honest.
             </h1>
 
@@ -49,7 +49,7 @@ export default function AboutPage() {
         </section>
 
         {/* 2. Authentic Story & Purpose */}
-        <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+        <section className="pt-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-center">
             <div className="md:col-span-6 space-y-5">
               <span className="text-xs font-bold uppercase tracking-widest text-[#2E9D52]">
@@ -95,7 +95,7 @@ export default function AboutPage() {
         </section>
 
         {/* 3. Our Core Commitments */}
-        <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto space-y-10">
+        <section className="pt-16 pb-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto space-y-10">
           <div className="text-center space-y-2 max-w-2xl mx-auto">
             <span className="text-xs font-bold uppercase tracking-widest text-[#2E9D52]">
               Our Commitments
@@ -105,7 +105,7 @@ export default function AboutPage() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
             {PROMISES.map((item, idx) => (
               <div
                 key={idx}

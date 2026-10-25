@@ -97,7 +97,7 @@ export default function HeroSlider() {
   };
 
   return (
-    <section className="py-2 sm:py-3 px-3 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section className="py-2 sm:py-3 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <div
         className="relative overflow-hidden rounded-2xl sm:rounded-3xl select-none group"
         onMouseEnter={() => setIsPaused(true)}

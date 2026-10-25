@@ -11,12 +11,12 @@ export default function CtaBanner() {
         <div className="absolute -bottom-24 -right-24 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl pointer-events-none" />
 
         <div className="relative z-10 max-w-2xl mx-auto space-y-4">
-          
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight">
             Ready to get started?
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-slate-200 leading-relaxed">
-            Access loans through trusted partner institutions and get fast disbursals with zero agent commission.
+            Access loans through trusted partner institutions and get fast
+            disbursals with zero agent commission.
           </p>
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
@@ -25,7 +25,6 @@ export default function CtaBanner() {
             >
               Explore All Loans
             </a>
-      
           </div>
         </div>
       </div>

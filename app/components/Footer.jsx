@@ -7,11 +7,11 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer id="footer" className="bg-[#071830] text-slate-300 pt-14 pb-10 border-t-2 border-[#2E9D52]/40">
+    <footer id="footer" className="bg-[#071830] text-slate-300 pt-8 pb-4">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Simple Top Row: Brand & Contact */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 pb-10 border-b border-slate-800/80">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
           
           {/* Brand */}
           <div className="flex items-center">
