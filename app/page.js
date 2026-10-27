@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "./components/Navbar";
 import HeroSlider from "./components/HeroSlider";
 // import LenderMarquee from "./components/LenderMarquee";
-// import ProductGrid from "./components/ProductGrid";
+import ProductGrid from "./components/ProductGrid";
 import EmiCalculator from "./components/EmiCalculator";
 // import MilestoneCards from "./components/MilestoneCards";
 import HowItWorks from "./components/HowItWorks";
@@ -28,7 +28,7 @@ export default function Home() {
         <Hero />
 
         {/* 6. Comprehensive Product Grid (Loans, Cards, Credit Health) */}
-        {/* <ProductGrid /> */}
+        <ProductGrid />
 
         {/* 7. Interactive Real-Time EMI Calculator */}
         <EmiCalculator />
