@@ -130,11 +130,11 @@ export default function ProductGrid() {
       className="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto"
     >
       {/* Category 1: Loans and Cards Header */}
-      <div className="mb-8">
+      <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
         <h3 className="text-2xl sm:text-3xl font-extrabold text-[#0E2E5E] tracking-tight">
           Loans and Cards
         </h3>
-        <p className="text-xs sm:text-sm text-slate-500 mt-1">
+        <p className="text-xs sm:text-sm text-slate-500 mt-1.5">
           Simple digital applications with minimal paperwork and instant partner sanctions.
         </p>
       </div>
@@ -145,7 +145,7 @@ export default function ProductGrid() {
           <a
             key={idx}
             href={card.href}
-            className="group relative flex flex-col justify-between bg-[#F4F7FC] rounded-2xl p-6 min-h-[210px] sm:min-h-[230px] border border-slate-200/60 shadow-xs overflow-hidden"
+            className="group relative flex flex-col justify-between bg-[#F4F7FC] rounded-2xl p-6 min-h-52.5 sm:min-h-57.5 border border-slate-200/60 shadow-xs overflow-hidden"
           >
             {/* Top Row: 3D Illustration on left, Circular Arrow on right (appears on hover) */}
             <div className="flex items-start justify-between">
@@ -181,12 +181,12 @@ export default function ProductGrid() {
       </div>
 
       {/* Category 2: CIBIL Score & Financial Tools */}
-      <div id="cibil" className="pt-8 border-t border-slate-200/80">
-        <div className="mb-8">
+      <div id="cibil">
+        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
           <h3 className="text-2xl sm:text-3xl font-extrabold text-[#0E2E5E] tracking-tight">
             Check CIBIL Score &amp; Credit Tools
           </h3>
-          <p className="text-xs sm:text-sm text-slate-500 mt-1">
+          <p className="text-xs sm:text-sm text-slate-500 mt-1.5">
             Free credit assessment tools to monitor and build your financial health.
           </p>
         </div>
@@ -196,7 +196,7 @@ export default function ProductGrid() {
             <a
               key={idx}
               href={card.href}
-              className="group relative flex flex-col justify-between bg-[#F4F7FC] rounded-2xl p-6 min-h-[190px] sm:min-h-[210px] border border-slate-200/60 shadow-xs overflow-hidden"
+              className="group relative flex flex-col justify-between bg-[#F4F7FC] rounded-2xl p-6 min-h-47.5 sm:min-h-52.5 border border-slate-200/60 shadow-xs overflow-hidden"
             >
               <div className="flex items-start justify-between">
                 <div className="w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center shrink-0">

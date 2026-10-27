@@ -212,7 +212,7 @@ export default function Navbar() {
                 </button>
 
                 {activeDropdown === "loans" && (
-                  <div className="absolute top-full -left-20 pt-2 w-[680px] z-50 animate-fadeIn">
+                  <div className="absolute top-full -left-20 pt-2 w-170 z-50 animate-fadeIn">
                     <div className="bg-white rounded-2xl shadow-2xl border border-slate-100 p-5">
                       <div className="grid grid-cols-2 gap-2">
                         {LOAN_loans.map((prod) => (
@@ -304,7 +304,7 @@ export default function Navbar() {
           />
 
           {/* 2. Slide-In Right Panel */}
-          <div className="fixed top-0 right-0 bottom-0 w-[310px] max-w-[85vw] bg-white z-50 shadow-2xl flex flex-col overflow-hidden animate-slideInRight touch-auto overscroll-contain">
+          <div className="fixed top-0 right-0 bottom-0 w-77.5 max-w-[85vw] bg-white z-50 shadow-2xl flex flex-col overflow-hidden animate-slideInRight touch-auto overscroll-contain">
             {/* Drawer Top Header */}
             <div className="flex items-center justify-between px-4 h-16 border-b border-slate-100">
               <div className="flex items-center h-10 text-xl font-extrabold tracking-tight leading-none">
