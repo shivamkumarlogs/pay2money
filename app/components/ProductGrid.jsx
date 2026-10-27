@@ -2,6 +2,7 @@
 
 import React from "react";
 import {
+  ArrowUpRight,
   User,
   Zap,
   Briefcase,
@@ -16,109 +17,108 @@ import {
   PhoneCall,
   PiggyBank,
   TrendingUp,
-  ArrowRight,
 } from "lucide-react";
 
 const LOAN_CARDS = [
   {
     title: "Personal Loan",
-    rate: "From 9.99%* p.a.",
-    icon: <User className="w-6 h-6 text-[#2E9D52]" />,
+    desc: "Get up to ₹50 Lakhs in minutes",
+    img: "https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@main/assets/Money%20bag/3D/money_bag_3d.png",
+    fallbackIcon: <User className="w-8 h-8 text-[#2E9D52]" />,
     href: "#calculator",
-    desc: "Unsecured loan for urgent expenses, travel, or medical needs",
   },
   {
     title: "Instant Loan",
-    rate: "From 10.50%* p.a.",
-    icon: <Zap className="w-6 h-6 text-[#2E9D52]" />,
+    desc: "Approval in 10 minutes, direct bank transfer",
+    img: "https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@main/assets/High%20voltage/3D/high_voltage_3d.png",
+    fallbackIcon: <Zap className="w-8 h-8 text-[#2E9D52]" />,
     href: "#calculator",
-    desc: "Disbursal directly to bank account within minutes",
   },
   {
     title: "Business Loan",
-    rate: "From 9.50%* p.a.",
-    icon: <Briefcase className="w-6 h-6 text-[#2E9D52]" />,
+    desc: "Fuel your growth with up to ₹75 Lakhs instantly",
+    img: "https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@main/assets/Briefcase/3D/briefcase_3d.png",
+    fallbackIcon: <Briefcase className="w-8 h-8 text-[#2E9D52]" />,
     href: "#calculator",
-    desc: "Working capital, machinery & expansion loans up to ₹75 Lakh",
   },
   {
     title: "Home Loan",
-    rate: "From 7.10%* p.a.",
-    icon: <Home className="w-6 h-6 text-[#2E9D52]" />,
+    desc: "Lowest interest rates starting at 7.10%* p.a.",
+    img: "https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@main/assets/House/3D/house_3d.png",
+    fallbackIcon: <Home className="w-8 h-8 text-[#2E9D52]" />,
     href: "#calculator",
-    desc: "Purchase, construct or renovate your dream residence",
   },
   {
     title: "Loan Against Property",
-    rate: "From 8.50%* p.a.",
-    icon: <Building2 className="w-6 h-6 text-[#2E9D52]" />,
+    desc: "Unlock higher value - up to ₹10 Crore in 1 day*",
+    img: "https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@main/assets/Office%20building/3D/office_building_3d.png",
+    fallbackIcon: <Building2 className="w-8 h-8 text-[#2E9D52]" />,
     href: "#calculator",
-    desc: "Leverage commercial or residential real estate value",
   },
   {
     title: "Car Loan (New & Used)",
-    rate: "From 8.50%* p.a.",
-    icon: <Car className="w-6 h-6 text-[#2E9D52]" />,
+    desc: "Drive home your dream car with 100% on-road funding",
+    img: "https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@main/assets/Automobile/3D/automobile_3d.png",
+    fallbackIcon: <Car className="w-8 h-8 text-[#2E9D52]" />,
     href: "#calculator",
-    desc: "Drive away your dream vehicle with flexible EMIs",
   },
   {
     title: "Gold Loan",
-    rate: "From 8.75%* p.a.",
-    icon: <Coins className="w-6 h-6 text-[#2E9D52]" />,
+    desc: "30-minute instant cash with safe bank vault storage",
+    img: "https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@main/assets/Coin/3D/coin_3d.png",
+    fallbackIcon: <Coins className="w-8 h-8 text-[#2E9D52]" />,
     href: "#calculator",
-    desc: "Instant cash against gold jewelry with high per-gram rate",
   },
   {
     title: "Education Loan",
-    rate: "From 7.50%* p.a.",
-    icon: <GraduationCap className="w-6 h-6 text-[#2E9D52]" />,
+    desc: "Fund higher education in India or premier universities abroad",
+    img: "https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@main/assets/Graduation%20cap/3D/graduation_cap_3d.png",
+    fallbackIcon: <GraduationCap className="w-8 h-8 text-[#2E9D52]" />,
     href: "#calculator",
-    desc: "Fund graduation or master's degrees in India and overseas",
   },
   {
     title: "Commercial Vehicle Loan",
-    rate: "From 11.00%* p.a.",
-    icon: <Truck className="w-6 h-6 text-[#2E9D52]" />,
+    desc: "Fast funding for trucks, buses, tractors and transport fleets",
+    img: "https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@main/assets/Delivery%20truck/3D/delivery_truck_3d.png",
+    fallbackIcon: <Truck className="w-8 h-8 text-[#2E9D52]" />,
     href: "#calculator",
-    desc: "Loans for trucks, buses, tractors and transport fleets",
   },
   {
     title: "Credit Cards",
-    rate: "Lifetime Free*",
-    icon: <CreditCard className="w-6 h-6 text-[#2E9D52]" />,
+    desc: "Compare lifetime free cards with airport lounge & rewards",
+    img: "https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@main/assets/Credit%20card/3D/credit_card_3d.png",
+    fallbackIcon: <CreditCard className="w-8 h-8 text-[#2E9D52]" />,
     href: "#calculator",
-    desc: "Exclusive airport lounge access, rewards, and cashback",
   },
 ];
 
 const CIBIL_CARDS = [
   {
-    title: "CIBIL Score Check",
-    tagline: "Know your score free",
-    icon: <Gauge className="w-6 h-6 text-[#0E2E5E]" />,
-    desc: "Get an authentic CRIF / CIBIL credit report instantly",
+    title: "Free CIBIL Score Check",
+    desc: "Check your official score in 30 seconds for free",
+    img: "https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@main/assets/Bar%20chart/3D/bar_chart_3d.png",
+    fallbackIcon: <Gauge className="w-8 h-8 text-[#0E2E5E]" />,
     href: "#cibil",
   },
   {
     title: "CIBIL Score Consultation",
-    tagline: "Improve your credit profile",
-    icon: <PhoneCall className="w-6 h-6 text-[#0E2E5E]" />,
-    desc: "1-on-1 advisor support to boost your score above 750+",
+    desc: "1-on-1 advisor support to boost your score to 750+",
+    img: "https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@main/assets/Telephone%20receiver/3D/telephone_receiver_3d.png",
+    fallbackIcon: <PhoneCall className="w-8 h-8 text-[#0E2E5E]" />,
     href: "#footer",
   },
   {
     title: "Fixed Deposit (FD)",
-    tagline: "High interest rates up to 9.1%",
-    icon: <PiggyBank className="w-6 h-6 text-[#0E2E5E]" />,
-    desc: "Book corporate and bank FDs with DICGC insurance cover",
+    desc: "High interest rates up to 9.1% with DICGC cover",
+    img: "https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@main/assets/Bank/3D/bank_3d.png",
+    fallbackIcon: <PiggyBank className="w-8 h-8 text-[#0E2E5E]" />,
     href: "#calculator",
   },
   {
     title: "Credit Score Builder",
-    tagline: "Build credit from scratch",
-    icon: <TrendingUp className="w-6 h-6 text-[#0E2E5E]" />,
-    desc: "Build or rebuild your score if you are new to credit",
+    desc: "Build your credit score from scratch with ease",
+    img: "https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@main/assets/Chart%20increasing/3D/chart_increasing_3d.png",
+    fallbackIcon: <TrendingUp className="w-8 h-8 text-[#0E2E5E]" />,
     href: "#cibil",
   },
 ];
@@ -127,86 +127,102 @@ export default function ProductGrid() {
   return (
     <section
       id="loans"
-      className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto"
+      className="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto"
     >
-      {/* Section Header */}
-      <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
-        <span className="text-xs font-extrabold uppercase tracking-widest text-[#2E9D52]">
-          Our loans
-        </span>
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0E2E5E] tracking-tight mt-2 mb-3">
-          The right loan for every need
-        </h2>
-        <p className="text-sm sm:text-base text-slate-600">
-          Choose what fits your financial plan with minimal documents, quick
-          approval, and one simple application.
+      {/* Category 1: Loans and Cards Header */}
+      <div className="mb-8">
+        <h3 className="text-2xl sm:text-3xl font-extrabold text-[#0E2E5E] tracking-tight">
+          Loans and Cards
+        </h3>
+        <p className="text-xs sm:text-sm text-slate-500 mt-1">
+          Simple digital applications with minimal paperwork and instant partner sanctions.
         </p>
       </div>
 
-      {/* Category 1: Loans & Cards */}
-      <div className="mb-14">
-        <div className="flex items-center gap-3 mb-6">
-          <h3 className="text-xl font-bold text-[#0E2E5E]">Loans and Cards</h3>
-        </div>
-
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-          {LOAN_CARDS.map((card, idx) => (
-            <a
-              key={idx}
-              href={card.href}
-              className="group relative flex flex-col items-center text-center p-5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-emerald-300 transition-all duration-300 hover:-translate-y-1.5 overflow-hidden"
-            >
-              {/* Lucide Icon */}
-              <div className="w-14 h-14 rounded-2xl bg-linear-to-tr from-emerald-50 to-blue-50 flex items-center justify-center my-2 shadow-inner group-hover:scale-110 group-hover:bg-[#2E9D52]/10 transition-transform">
-                {card.icon}
+      {/* Kissht / SetuMoney Inspired Minimal 3D Cards Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 mb-14 sm:mb-16">
+        {LOAN_CARDS.map((card, idx) => (
+          <a
+            key={idx}
+            href={card.href}
+            className="group relative flex flex-col justify-between bg-[#F4F7FC] hover:bg-[#EEF3FC] rounded-2xl p-6 min-h-[210px] sm:min-h-[230px] border border-slate-200/60 hover:border-[#0E2E5E]/20 shadow-xs hover:shadow-lg transition-all duration-300 hover:-translate-y-1 overflow-hidden"
+          >
+            {/* Top Row: 3D Illustration on left, Circular Arrow on right (appears on hover) */}
+            <div className="flex items-start justify-between">
+              <div className="w-16 h-16 sm:w-18 sm:h-18 flex items-center justify-center shrink-0">
+                <img
+                  src={card.img}
+                  alt={card.title}
+                  className="w-full h-full object-contain transform group-hover:scale-108 transition-transform duration-300 drop-shadow-sm select-none"
+                  loading="lazy"
+                  onError={(e) => {
+                    e.currentTarget.style.display = "none";
+                  }}
+                />
               </div>
 
-              {/* Title & Rate */}
-              <h4 className="text-sm font-bold text-[#0E2E5E] group-hover:text-[#2E9D52] transition-colors mt-2">
+              {/* Kissht-Style Top-Right Circular Hover Button */}
+              <div className="w-8 h-8 rounded-full bg-[#0E2E5E] text-white flex items-center justify-center opacity-80 sm:opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-0 sm:translate-y-1 sm:group-hover:translate-y-0 shadow-xs shrink-0">
+                <ArrowUpRight className="w-4 h-4" />
+              </div>
+            </div>
+
+            {/* Bottom Row: Title and Simple Subtitle */}
+            <div className="mt-6">
+              <h4 className="text-base sm:text-lg font-bold text-[#0E2E5E] group-hover:text-[#2E9D52] transition-colors leading-snug">
                 {card.title}
               </h4>
-              <span className="text-xs font-bold text-emerald-600 mt-1">
-                {card.rate}
-              </span>
-              <p className="text-[11px] text-slate-500 mt-2 line-clamp-2 leading-tight">
+              <p className="text-xs sm:text-sm text-slate-500 mt-1 leading-normal">
                 {card.desc}
               </p>
-
-              <span className="mt-3 text-xs font-semibold text-[#0E2E5E] group-hover:text-[#2E9D52] flex items-center gap-1">
-                <span>Apply Online</span>
-                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-              </span>
-            </a>
-          ))}
-        </div>
+            </div>
+          </a>
+        ))}
       </div>
 
-      {/* Category 2: CIBIL & Financial Tools */}
-      <div id="cibil">
-        <div className="flex items-center gap-3 mb-6">
-          <h3 className="text-xl font-bold text-[#0E2E5E]">
+      {/* Category 2: CIBIL Score & Financial Tools */}
+      <div id="cibil" className="pt-8 border-t border-slate-200/80">
+        <div className="mb-8">
+          <h3 className="text-2xl sm:text-3xl font-extrabold text-[#0E2E5E] tracking-tight">
             Check CIBIL Score &amp; Credit Tools
           </h3>
+          <p className="text-xs sm:text-sm text-slate-500 mt-1">
+            Free credit assessment tools to monitor and build your financial health.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
           {CIBIL_CARDS.map((card, idx) => (
             <a
               key={idx}
               href={card.href}
-              className="group p-5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-blue-300 transition-all duration-300 hover:-translate-y-1.5 flex items-start gap-4"
+              className="group relative flex flex-col justify-between bg-[#F4F7FC] hover:bg-[#EEF3FC] rounded-2xl p-6 min-h-[190px] sm:min-h-[210px] border border-slate-200/60 hover:border-[#0E2E5E]/20 shadow-xs hover:shadow-lg transition-all duration-300 hover:-translate-y-1 overflow-hidden"
             >
-              <div className="w-12 h-12 rounded-xl bg-linear-to-tr from-blue-50 to-emerald-50 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
-                {card.icon}
+              <div className="flex items-start justify-between">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center shrink-0">
+                  <img
+                    src={card.img}
+                    alt={card.title}
+                    className="w-full h-full object-contain transform group-hover:scale-108 transition-transform duration-300 drop-shadow-sm select-none"
+                    loading="lazy"
+                    onError={(e) => {
+                      e.currentTarget.style.display = "none";
+                    }}
+                  />
+                </div>
+
+                <div className="w-8 h-8 rounded-full bg-[#0E2E5E] text-white flex items-center justify-center opacity-80 sm:opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-0 sm:translate-y-1 sm:group-hover:translate-y-0 shadow-xs shrink-0">
+                  <ArrowUpRight className="w-4 h-4" />
+                </div>
               </div>
-              <div className="flex-1">
-                <h4 className="text-sm font-bold text-[#0E2E5E] group-hover:text-blue-600 transition-colors">
+
+              <div className="mt-5">
+                <h4 className="text-sm sm:text-base font-bold text-[#0E2E5E] group-hover:text-[#2E9D52] transition-colors leading-snug">
                   {card.title}
                 </h4>
-                <div className="text-xs font-semibold text-emerald-600 mt-0.5">
-                  {card.tagline}
-                </div>
-                <p className="text-xs text-slate-500 mt-1">{card.desc}</p>
+                <p className="text-xs text-slate-500 mt-1 leading-normal">
+                  {card.desc}
+                </p>
               </div>
             </a>
           ))}
