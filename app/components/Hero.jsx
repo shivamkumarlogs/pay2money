@@ -21,13 +21,14 @@ export default function Hero() {
 
         {/* Concise Value Proposition */}
         <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed font-normal">
-          Get personal, home, and business loans through India’s top lending partners. Completely digital, zero hidden fees, and fast sanction.
+          Get personal, home, and business loans through India’s top lending
+          partners. Completely digital, zero hidden fees, and fast sanction.
         </p>
 
         {/* Clean, Polished Action Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-2">
           <a
-            href="#products"
+            href="#loans"
             className="w-full sm:w-auto px-8 py-3.5 rounded-xl font-bold text-sm text-white bg-linear-to-r from-[#0E2E5E] to-[#2E9D52] hover:from-[#0B254D] hover:to-[#268444] shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 text-center flex items-center justify-center gap-2 group"
           >
             <span>Explore All Loan</span>

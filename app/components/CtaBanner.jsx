@@ -20,7 +20,7 @@ export default function CtaBanner() {
           </p>
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="#products"
+              href="#loans"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-sm sm:text-base bg-[#2E9D52] hover:bg-[#23B14E] text-white shadow-xl shadow-emerald-950/40 transform hover:-translate-y-0.5 transition-all"
             >
               Explore All Loans

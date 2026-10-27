@@ -16,70 +16,69 @@ import {
   ChevronDown,
   Calculator,
   Gauge,
-  Menu,
   AlignRight,
   X,
 } from "lucide-react";
 
-const LOAN_PRODUCTS = [
+const LOAN_loans = [
   {
     name: "Instant Loan",
     desc: "Approval in 10 minutes",
-    href: "/#products",
+    href: "/#loans",
     icon: <Zap />,
   },
   {
     name: "Personal Loan",
     desc: "Minimal digital documentation",
-    href: "/#products",
+    href: "/#loans",
     icon: <User />,
   },
   {
     name: "Business Loan",
     desc: "Collateral free working capital",
-    href: "/#products",
+    href: "/#loans",
     icon: <Briefcase />,
   },
   {
     name: "Home Loan",
     desc: "Long flexible repayment tenures",
-    href: "/#products",
+    href: "/#loans",
     icon: <Home />,
   },
   {
     name: "Loan Against Property",
     desc: "Unlock your property value",
-    href: "/#products",
+    href: "/#loans",
     icon: <Building2 />,
   },
   {
     name: "Car Loan (New & Used)",
     desc: "New and used vehicle funding",
-    href: "/#products",
+    href: "/#loans",
     icon: <Car />,
   },
   {
     name: "Commercial Vehicle Loan",
     desc: "Competitive truck & bus loans",
-    href: "/#products",
+    href: "/#loans",
     icon: <Truck />,
   },
   {
     name: "Education Loan",
     desc: "Study in India or Abroad",
-    href: "/#products",
+    href: "/#loans",
     icon: <GraduationCap />,
   },
   {
     name: "Gold Loan",
     desc: "30-min instant disbursal",
-    href: "/#products",
+    href: "/#loans",
     icon: <Coins />,
   },
   {
     name: "Credit Cards",
     desc: "Lifetime free & lounge access",
-    href: "/#products",
+    href: "/#loans",
     icon: <CreditCard />,
   },
 ];
@@ -129,10 +128,10 @@ function NavLinkItem({ item, onClick, isMobile = false }) {
 }
 
 export default function Navbar() {
-  // Desktop: single active dropdown tracker (null | 'products' | 'tools')
+  // Desktop: single active dropdown tracker (null | 'loans' | 'tools')
   const [activeDropdown, setActiveDropdown] = useState(null);
 
-  // Mobile: drawer open boolean and active accordion tracker (null | 'products' | 'tools')
+  // Mobile: drawer open boolean and active accordion tracker (null | 'loans' | 'tools')
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeAccordion, setActiveAccordion] = useState(null);
 
@@ -192,31 +191,31 @@ export default function Navbar() {
                 Home
               </Link>
 
-              {/* Products Dropdown */}
+              {/* loans Dropdown */}
               <div
                 className="relative group"
-                onMouseEnter={() => setActiveDropdown("products")}
+                onMouseEnter={() => setActiveDropdown("loans")}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
                 <button
                   className="flex items-center gap-1.5 px-3.5 py-2 text-sm font-semibold text-slate-800 group-hover:text-[#2E9D52] rounded-lg group-hover:bg-slate-50 transition"
-                  aria-expanded={activeDropdown === "products"}
+                  aria-expanded={activeDropdown === "loans"}
                 >
-                  Products
+                  Loans
                   <ChevronDown
                     className={`w-4 h-4 text-slate-500 transition-transform duration-200 ${
-                      activeDropdown === "products"
+                      activeDropdown === "loans"
                         ? "rotate-180 text-[#2E9D52]"
                         : ""
                     }`}
                   />
                 </button>
 
-                {activeDropdown === "products" && (
+                {activeDropdown === "loans" && (
                   <div className="absolute top-full -left-20 pt-2 w-[680px] z-50 animate-fadeIn">
                     <div className="bg-white rounded-2xl shadow-2xl border border-slate-100 p-5">
                       <div className="grid grid-cols-2 gap-2">
-                        {LOAN_PRODUCTS.map((prod) => (
+                        {LOAN_loans.map((prod) => (
                           <NavLinkItem
                             key={prod.name}
                             item={prod}
@@ -333,24 +332,24 @@ export default function Navbar() {
                 </Link>
               </div>
 
-              {/* Mobile Products Accordion */}
+              {/* Mobile loans Accordion */}
               <div className="border-b border-slate-200 pb-2">
                 <button
-                  onClick={() => toggleAccordion("products")}
+                  onClick={() => toggleAccordion("loans")}
                   className="w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-sm font-semibold text-slate-800 hover:bg-slate-50 transition"
                 >
-                  <span>Products</span>
+                  <span>Loans</span>
                   <ChevronDown
                     className={`w-4 h-4 text-slate-500 transition-transform ${
-                      activeAccordion === "products"
+                      activeAccordion === "loans"
                         ? "rotate-180 text-[#2E9D52]"
                         : ""
                     }`}
                   />
                 </button>
-                {activeAccordion === "products" && (
+                {activeAccordion === "loans" && (
                   <div className="grid grid-cols-1 gap-1.5 pl-2 pt-1.5">
-                    {LOAN_PRODUCTS.map((prod) => (
+                    {LOAN_loans.map((prod) => (
                       <NavLinkItem
                         key={prod.name}
                         item={prod}
