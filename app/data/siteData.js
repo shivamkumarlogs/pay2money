@@ -27,15 +27,20 @@ import {
 // ==========================================
 export const SITE_CONFIG = {
   name: "Pay2Money",
-  tagline: "Loans at the Lowest Rates",
-  phone: "+91 1234567890",
-  phoneHref: "tel:+911234567890",
-  email: "support@pay2money.com",
-  emailHref: "mailto:support@pay2money.com",
-  address: "123 Test District, Test, Test 123456",
+  companyName: "PM Finance Services Pvt Ltd",
+  director: "Deepak Kumar",
+  tagline: "Your Growth, Our Priority",
+  slogan: "Loans Se Zyada Aage",
+  phone: "+91 7239037839",
+  phoneHref: "tel:+917239037839",
+  email: "info@pay2money.com",
+  emailHref: "mailto:info@pay2money.com",
+  address:
+    "Shop No. 3049, First Floor, Block E-II, Faridabad Bypass Road, Molar Band Extension, Opp. Adani CNG Pump, Near Khatu Shyam Bus Travel, New Delhi - 110044",
+  footerAddress: "Molar Band Extension, New Delhi - 110044",
   workingHours: "Monday to Saturday, 9:30 AM to 6:30 PM",
   disclaimer:
-    "Pay2Money is an online loan facilitation platform. Pay2Money is NOT a bank or a Non-Banking Financial Company (NBFC) registered under the Reserve Bank of India Act, 1934. We do not directly lend money to consumers. We connect borrowers with partner banks and NBFCs.",
+    "Pay2Money (PM Finance Services Pvt Ltd) is an online loan facilitation platform. Pay2Money is NOT a bank or a Non-Banking Financial Company (NBFC) registered under the Reserve Bank of India Act, 1934. We do not directly lend money to consumers. We connect borrowers with partner banks and RBI-registered NBFCs.",
 };
 
 // ==========================================

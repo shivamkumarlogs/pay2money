@@ -23,27 +23,27 @@ export default function Footer() {
           </div>
 
           {/* Contact Details from siteData */}
-          <div className="flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-x-8 gap-y-3 text-xs sm:text-sm text-slate-400">
-            <p className="flex items-center gap-2">
-              <MapPin className="w-4 h-4 text-brand-accent shrink-0" />
-              <span>{SITE_CONFIG.address}</span>
+          <div className="flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-x-6 gap-y-2 text-xs text-slate-400">
+            <p className="flex items-center gap-1.5 text-[11px] text-slate-400 max-w-xs sm:max-w-sm">
+              <MapPin className="w-3.5 h-3.5 text-brand-accent shrink-0" />
+              <span>{SITE_CONFIG.footerAddress || SITE_CONFIG.address}</span>
             </p>
 
-            <p className="flex items-center gap-2">
-              <Phone className="w-4 h-4 text-brand-accent shrink-0" />
+            <p className="flex items-center gap-1.5 text-[11px] sm:text-xs text-slate-400">
+              <Phone className="w-3.5 h-3.5 text-brand-accent shrink-0" />
               <a
                 href={SITE_CONFIG.phoneHref}
-                className="hover:text-brand-accent transition"
+                className="hover:text-brand-accent transition-colors"
               >
                 {SITE_CONFIG.phone}
               </a>
             </p>
 
-            <p className="flex items-center gap-2">
-              <Mail className="w-4 h-4 text-brand-accent shrink-0" />
+            <p className="flex items-center gap-1.5 text-[11px] sm:text-xs text-slate-400">
+              <Mail className="w-3.5 h-3.5 text-brand-accent shrink-0" />
               <a
                 href={SITE_CONFIG.emailHref}
-                className="hover:text-brand-accent transition"
+                className="hover:text-brand-accent transition-colors"
               >
                 {SITE_CONFIG.email}
               </a>
@@ -70,8 +70,8 @@ export default function Footer() {
               &copy; {currentYear} {SITE_CONFIG.name}. All rights reserved.
             </p>
             <div className="flex items-center gap-5">
-              <a href="#footer" className="hover:text-white transition">Privacy Policy</a>
-              <a href="#footer" className="hover:text-white transition">Terms of Service</a>
+              <a href="#footer" className="hover:text-brand-accent transition-colors">Privacy Policy</a>
+              <a href="#footer" className="hover:text-brand-accent transition-colors">Terms of Service</a>
             </div>
           </div>
         </div>
@@ -80,4 +80,3 @@ export default function Footer() {
     </footer>
   );
 }
-
