@@ -44,14 +44,14 @@ export default function HowItWorks() {
         {STEPS.map((step, idx) => (
           <div
             key={idx}
-            className="relative bg-white rounded-xl p-8 border border-slate-200/80 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group flex flex-col justify-between"
+            className="relative bg-white rounded-2xl p-8 border border-slate-200/80 shadow-xs group flex flex-col justify-between"
           >
             {/* Top row */}
             <div className="flex items-center justify-between mb-6">
-              <span className="w-12 h-12 rounded-2xl bg-linear-to-tr from-[#0E2E5E] to-[#2E9D52] text-white font-black text-xl flex items-center justify-center shadow-md">
+              <span className="w-12 h-12 rounded-2xl bg-linear-to-tr from-[#0E2E5E] to-[#2E9D52] text-white font-black text-xl flex items-center justify-center shadow-xs">
                 {step.num}
               </span>
-              <div className="w-12 h-12 rounded-2xl bg-emerald-50 text-[#2E9D52] flex items-center justify-center group-hover:scale-110 transition-transform">
+              <div className="w-12 h-12 rounded-2xl bg-emerald-50 text-[#2E9D52] flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                 {step.icon}
               </div>
             </div>
