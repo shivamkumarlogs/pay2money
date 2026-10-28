@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { Phone, Mail, MapPin, CheckCircle2 } from "lucide-react";
+import { SITE_CONFIG } from "../data/siteData";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -65,13 +66,13 @@ export default function ContactPage() {
                 </p>
                 <div className="pt-0.5">
                   <a
-                    href="tel:+911234567890"
+                    href={SITE_CONFIG.phoneHref}
                     className="text-sm font-semibold text-[#0E2E5E] hover:text-[#2E9D52] transition block"
                   >
-                    +91 1234567890
+                    {SITE_CONFIG.phone}
                   </a>
                   <span className="text-xs text-slate-500">
-                    Monday to Saturday, 9:30 AM to 6:30 PM IST
+                    {SITE_CONFIG.workingHours}
                   </span>
                 </div>
               </div>
@@ -89,10 +90,10 @@ export default function ContactPage() {
                 </p>
                 <div className="pt-0.5">
                   <a
-                    href="mailto:support@pay2money.com"
+                    href={SITE_CONFIG.emailHref}
                     className="text-sm font-semibold text-[#0E2E5E] hover:text-[#2E9D52] transition block"
                   >
-                    support@pay2money.com
+                    {SITE_CONFIG.email}
                   </a>
                   <span className="text-xs text-slate-500">
                     We respond within 24 business hours
@@ -109,7 +110,7 @@ export default function ContactPage() {
                   Registered Address
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                  123 Test District, Test, Test 123456
+                  {SITE_CONFIG.address}
                 </p>
               </div>
             </div>

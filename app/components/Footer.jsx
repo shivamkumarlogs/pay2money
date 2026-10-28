@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { MapPin, Phone, Mail } from "lucide-react";
+import { SITE_CONFIG } from "../data/siteData";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -21,30 +22,30 @@ export default function Footer() {
             </Link>
           </div>
 
-          {/* Dummy Contact Details */}
+          {/* Contact Details from siteData */}
           <div className="flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-x-8 gap-y-3 text-xs sm:text-sm text-slate-400">
             <p className="flex items-center gap-2">
               <MapPin className="w-4 h-4 text-emerald-400 shrink-0" />
-              <span>123 Test District, Test, Test 123456</span>
+              <span>{SITE_CONFIG.address}</span>
             </p>
 
             <p className="flex items-center gap-2">
               <Phone className="w-4 h-4 text-emerald-400 shrink-0" />
               <a
-                href="tel:+918726825434"
+                href={SITE_CONFIG.phoneHref}
                 className="hover:text-emerald-400 transition"
               >
-                +91 1234567890
+                {SITE_CONFIG.phone}
               </a>
             </p>
 
             <p className="flex items-center gap-2">
               <Mail className="w-4 h-4 text-emerald-400 shrink-0" />
               <a
-                href="mailto:support@pay2money.com"
+                href={SITE_CONFIG.emailHref}
                 className="hover:text-emerald-400 transition"
               >
-                support@pay2money.com
+                {SITE_CONFIG.email}
               </a>
             </p>
           </div>
@@ -57,7 +58,7 @@ export default function Footer() {
               Regulatory &amp; Lending Disclaimer
             </h5>
             <p className="leading-relaxed text-[11px] text-slate-400">
-              Pay2Money is an online loan facilitation platform. Pay2Money is NOT a bank or a Non-Banking Financial Company (NBFC) registered under the Reserve Bank of India Act, 1934. We do not directly lend money to consumers.
+              {SITE_CONFIG.disclaimer}
             </p>
             <p className="leading-relaxed text-[11px] text-slate-400">
               Loan approval, terms, interest rates, and disbursal are exclusively decided and executed by our partner scheduled commercial banks and RBI-regulated NBFCs according to their internal underwriting criteria. Submitting an application on Pay2Money does not constitute an explicit loan guarantee.
@@ -66,7 +67,7 @@ export default function Footer() {
 
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-slate-400 text-[11px] pt-1">
             <p>
-              &copy; {currentYear} Pay2Money. All rights reserved.
+              &copy; {currentYear} {SITE_CONFIG.name}. All rights reserved.
             </p>
             <div className="flex items-center gap-5">
               <a href="#footer" className="hover:text-white transition">Privacy Policy</a>

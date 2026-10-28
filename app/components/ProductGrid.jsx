@@ -1,127 +1,8 @@
 "use client";
 
 import React from "react";
-import {
-  ArrowUpRight,
-  User,
-  Zap,
-  Briefcase,
-  Home,
-  Building2,
-  Car,
-  Coins,
-  GraduationCap,
-  Truck,
-  CreditCard,
-  Gauge,
-  PhoneCall,
-  PiggyBank,
-  TrendingUp,
-} from "lucide-react";
-
-const LOAN_CARDS = [
-  {
-    title: "Personal Loan",
-    desc: "Get up to ₹50 Lakhs in minutes",
-    img: "https://cdn.jsdelivr.net/gh/iamcal/emoji-data@master/img-apple-160/1f4b0.png",
-    fallbackIcon: <User className="w-8 h-8 text-[#2E9D52]" />,
-    href: "#calculator",
-  },
-  {
-    title: "Instant Loan",
-    desc: "Approval in 10 minutes, direct bank transfer",
-    img: "https://cdn.jsdelivr.net/gh/iamcal/emoji-data@master/img-apple-160/26a1.png",
-    fallbackIcon: <Zap className="w-8 h-8 text-[#2E9D52]" />,
-    href: "#calculator",
-  },
-  {
-    title: "Business Loan",
-    desc: "Fuel your growth with up to ₹75 Lakhs instantly",
-    img: "https://cdn.jsdelivr.net/gh/iamcal/emoji-data@master/img-apple-160/1f4bc.png",
-    fallbackIcon: <Briefcase className="w-8 h-8 text-[#2E9D52]" />,
-    href: "#calculator",
-  },
-  {
-    title: "Home Loan",
-    desc: "Lowest interest rates starting at 7.10%* p.a.",
-    img: "https://cdn.jsdelivr.net/gh/iamcal/emoji-data@master/img-apple-160/1f3e0.png",
-    fallbackIcon: <Home className="w-8 h-8 text-[#2E9D52]" />,
-    href: "#calculator",
-  },
-  {
-    title: "Loan Against Property",
-    desc: "Unlock higher value - up to ₹10 Crore in 1 day*",
-    img: "https://cdn.jsdelivr.net/gh/iamcal/emoji-data@master/img-apple-160/1f3e2.png",
-    fallbackIcon: <Building2 className="w-8 h-8 text-[#2E9D52]" />,
-    href: "#calculator",
-  },
-  {
-    title: "Car Loan (New & Used)",
-    desc: "Drive home your dream car with 100% on-road funding",
-    img: "https://cdn.jsdelivr.net/gh/iamcal/emoji-data@master/img-apple-160/1f697.png",
-    fallbackIcon: <Car className="w-8 h-8 text-[#2E9D52]" />,
-    href: "#calculator",
-  },
-  {
-    title: "Gold Loan",
-    desc: "30-minute instant cash with safe bank vault storage",
-    img: "https://cdn.jsdelivr.net/gh/iamcal/emoji-data@master/img-apple-160/1fa99.png",
-    fallbackIcon: <Coins className="w-8 h-8 text-[#2E9D52]" />,
-    href: "#calculator",
-  },
-  {
-    title: "Education Loan",
-    desc: "Fund higher education in India or premier universities abroad",
-    img: "https://cdn.jsdelivr.net/gh/iamcal/emoji-data@master/img-apple-160/1f393.png",
-    fallbackIcon: <GraduationCap className="w-8 h-8 text-[#2E9D52]" />,
-    href: "#calculator",
-  },
-  {
-    title: "Commercial Vehicle Loan",
-    desc: "Fast funding for trucks, buses, tractors and transport fleets",
-    img: "https://cdn.jsdelivr.net/gh/iamcal/emoji-data@master/img-apple-160/1f69a.png",
-    fallbackIcon: <Truck className="w-8 h-8 text-[#2E9D52]" />,
-    href: "#calculator",
-  },
-  {
-    title: "Credit Cards",
-    desc: "Compare lifetime free cards with airport lounge & rewards",
-    img: "https://cdn.jsdelivr.net/gh/iamcal/emoji-data@master/img-apple-160/1f4b3.png",
-    fallbackIcon: <CreditCard className="w-8 h-8 text-[#2E9D52]" />,
-    href: "#calculator",
-  },
-];
-
-const CIBIL_CARDS = [
-  {
-    title: "Free CIBIL Score Check",
-    desc: "Check your official score in 30 seconds for free",
-    img: "https://cdn.jsdelivr.net/gh/iamcal/emoji-data@master/img-apple-160/1f4ca.png",
-    fallbackIcon: <Gauge className="w-8 h-8 text-[#0E2E5E]" />,
-    href: "#cibil",
-  },
-  {
-    title: "CIBIL Score Consultation",
-    desc: "1-on-1 advisor support to boost your score to 750+",
-    img: "https://3dicons.sgp1.cdn.digitaloceanspaces.com/v1/dynamic/color/headphone-dynamic-color.png",
-    fallbackIcon: <PhoneCall className="w-8 h-8 text-[#0E2E5E]" />,
-    href: "#footer",
-  },
-  {
-    title: "Fixed Deposit (FD)",
-    desc: "High interest rates up to 9.1% with DICGC cover",
-    img: "https://3dicons.sgp1.cdn.digitaloceanspaces.com/v1/dynamic/color/locker-dynamic-color.png",
-    fallbackIcon: <PiggyBank className="w-8 h-8 text-[#0E2E5E]" />,
-    href: "#calculator",
-  },
-  {
-    title: "Credit Score Builder",
-    desc: "Build your credit score from scratch with ease",
-    img: "https://cdn.jsdelivr.net/gh/iamcal/emoji-data@master/img-apple-160/1f4c8.png",
-    fallbackIcon: <TrendingUp className="w-8 h-8 text-[#0E2E5E]" />,
-    href: "#cibil",
-  },
-];
+import { ArrowUpRight } from "lucide-react";
+import { LOAN_PRODUCTS as LOAN_CARDS, CIBIL_PRODUCTS as CIBIL_CARDS } from "../data/siteData";
 
 export default function ProductGrid() {
   return (
@@ -144,7 +25,7 @@ export default function ProductGrid() {
         {LOAN_CARDS.map((card, idx) => (
           <a
             key={idx}
-            href={card.href}
+            href={card.gridHref || card.href}
             className="group relative flex flex-col justify-between bg-[#F4F7FC] rounded-2xl p-6 min-h-52.5 sm:min-h-57.5 border border-slate-200/60 shadow-xs overflow-hidden"
           >
             {/* Top Row: 3D Illustration on left, Circular Arrow on right (appears on hover) */}
@@ -195,7 +76,7 @@ export default function ProductGrid() {
           {CIBIL_CARDS.map((card, idx) => (
             <a
               key={idx}
-              href={card.href}
+              href={card.gridHref || card.href}
               className="group relative flex flex-col justify-between bg-[#F4F7FC] rounded-2xl p-6 min-h-47.5 sm:min-h-52.5 border border-slate-200/60 shadow-xs overflow-hidden"
             >
               <div className="flex items-start justify-between">

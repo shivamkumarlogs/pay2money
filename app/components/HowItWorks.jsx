@@ -1,28 +1,7 @@
 "use client";
 
 import React from "react";
-import { User, ClipboardCheck, ShieldCheck } from "lucide-react";
-
-const STEPS = [
-  {
-    num: "1",
-    title: "Submit Details",
-    desc: "Choose your desired loan type and submit basic details digitally in just 2 minutes.",
-    icon: <User className="w-6 h-6" strokeWidth={2} />,
-  },
-  {
-    num: "2",
-    title: "Partner Matching",
-    desc: "We connect your request directly with verified partner banks and NBFCs for quick sanction.",
-    icon: <ClipboardCheck className="w-6 h-6" strokeWidth={2} />,
-  },
-  {
-    num: "3",
-    title: "Fast Disbursal",
-    desc: "Complete simple digital verification and receive funds directly into your bank account.",
-    icon: <ShieldCheck className="w-6 h-6" strokeWidth={2} />,
-  },
-];
+import { HOW_IT_WORKS_STEPS as STEPS } from "../data/siteData";
 
 export default function HowItWorks() {
   return (

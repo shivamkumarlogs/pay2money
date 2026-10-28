@@ -2,59 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-
-const SLIDES = [
-  {
-    title: "Quick Personal Loans",
-    subtitle: "Get funds sent directly to your bank account with zero paperwork.",
-    cta: "Apply Now",
-    href: "#calculator",
-    bg: "bg-[#0E2E5E]",
-    btnText: "text-[#0E2E5E]",
-    image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=1000&auto=format&fit=crop",
-    imgAlt: "Customer with smartphone",
-  },
-  {
-    title: "Free CIBIL Score Check",
-    subtitle: "Know your credit score in 30 seconds with zero impact on your score.",
-    cta: "Check Free",
-    href: "#cibil",
-    bg: "bg-[#1E7C3F]",
-    btnText: "text-[#1E7C3F]",
-    image: "https://images.unsplash.com/photo-1556742044-3c52d6e88c62?q=80&w=1000&auto=format&fit=crop",
-    imgAlt: "Credit score check with card and laptop",
-  },
-  {
-    title: "Affordable Home Loans",
-    subtitle: "Easy home financing with low monthly payments and flexible tenure.",
-    cta: "Explore Home Loans",
-    href: "#calculator",
-    bg: "bg-[#0E3854]",
-    btnText: "text-[#0E3854]",
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1000&auto=format&fit=crop",
-    imgAlt: "Keys to new home",
-  },
-  {
-    title: "Fast Business Loans",
-    subtitle: "Get capital for daily expenses and equipment without giving any collateral.",
-    cta: "Grow Your Business",
-    href: "#calculator",
-    bg: "bg-[#1C2340]",
-    btnText: "text-[#1C2340]",
-    image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1000&auto=format&fit=crop",
-    imgAlt: "Business team at work",
-  },
-  {
-    title: "Instant Gold Loans",
-    subtitle: "Safe bank vault storage with same-day cash given straight into your account.",
-    cta: "Get Gold Loan",
-    href: "#calculator",
-    bg: "bg-[#1B3A2B]",
-    btnText: "text-[#1B3A2B]",
-    image: "https://images.unsplash.com/photo-1610375461246-83df859d849d?q=80&w=1000&auto=format&fit=crop",
-    imgAlt: "Safe gold loan vault",
-  },
-];
+import { HERO_SLIDES as SLIDES } from "../data/siteData";
 
 export default function HeroSlider() {
   const [current, setCurrent] = useState(0);
