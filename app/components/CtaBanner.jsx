@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Button from "./Button";
 
 export default function CtaBanner() {
   return (
@@ -15,12 +16,14 @@ export default function CtaBanner() {
             disbursals with zero agent commission.
           </p>
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
+            <Button
               href="#loans"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-sm sm:text-base bg-brand-accent hover:bg-brand-accent-hover text-brand-dark transition-all transform hover:-translate-y-0.5"
+              variant="accent"
+              size="lg"
+              className="w-full sm:w-auto"
             >
               Explore All Loans
-            </a>
+            </Button>
           </div>
         </div>
       </div>

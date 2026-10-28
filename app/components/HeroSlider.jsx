@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { HERO_SLIDES as SLIDES } from "../data/siteData";
+import Button from "./Button";
 
 export default function HeroSlider() {
   const [current, setCurrent] = useState(0);
@@ -80,12 +81,14 @@ export default function HeroSlider() {
                 </p>
 
                 <div className="pt-1 sm:pt-2">
-                  <a
+                  <Button
                     href={slide.href}
-                    className={`inline-flex items-center justify-center px-4 sm:px-7 py-1.5 sm:py-2.5 rounded-full text-[11px] sm:text-sm font-bold bg-white ${slide.btnText} hover:bg-slate-50 shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0`}
+                    variant="white"
+                    size="sm"
+                    className="!rounded-full px-5 sm:px-7 py-1.5 sm:py-2.5 text-[11px] sm:text-sm"
                   >
                     {slide.cta}
-                  </a>
+                  </Button>
                 </div>
               </div>
 

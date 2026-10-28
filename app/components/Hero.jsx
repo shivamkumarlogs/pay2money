@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 import { CheckCircle2 } from "lucide-react";
+import Button from "./Button";
 
 export default function Hero() {
   return (
@@ -24,19 +24,23 @@ export default function Hero() {
 
         {/* Clean, Polished Action Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-2">
-          <a
+          <Button
             href="#loans"
-            className="w-full sm:w-auto px-8 py-3.5 rounded-xl font-bold text-sm text-white bg-brand-primary hover:bg-brand-primary-hover shadow-sm hover:shadow transition-all transform hover:-translate-y-0.5 text-center flex items-center justify-center gap-2 group"
+            variant="primary"
+            size="lg"
+            className="w-full sm:w-auto"
           >
-            <span>Explore All Loans</span>
-          </a>
+            Explore All Loans
+          </Button>
 
-          <Link
+          <Button
             href="/emi-calculator"
-            className="w-full sm:w-auto px-8 py-3.5 rounded-xl font-bold text-sm text-brand-primary bg-white border border-slate-300 hover:border-brand-primary shadow-xs hover:shadow transition-all text-center flex items-center justify-center gap-2"
+            variant="outline"
+            size="lg"
+            className="w-full sm:w-auto"
           >
-            <span>Calculate Monthly EMI</span>
-          </Link>
+            Calculate Monthly EMI
+          </Button>
         </div>
 
         {/* Micro-Trust Highlights */}

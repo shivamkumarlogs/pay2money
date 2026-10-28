@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import Button from "../components/Button";
 import { Phone, Mail, MapPin, CheckCircle2 } from "lucide-react";
 import { SITE_CONFIG } from "../data/siteData";
 
@@ -140,8 +141,10 @@ export default function ContactPage() {
                       Your message has been received. Our team will review your
                       inquiry and contact you shortly.
                     </p>
-                    <button
+                    <Button
                       type="button"
+                      variant="outline"
+                      size="sm"
                       onClick={() => {
                         setSubmitted(false);
                         setFormData({
@@ -152,10 +155,10 @@ export default function ContactPage() {
                           message: "",
                         });
                       }}
-                      className="inline-block mt-2 px-5 py-2.5 text-xs font-bold text-brand-primary bg-white border border-slate-200 rounded-xl hover:border-brand-accent hover:text-brand-accent transition cursor-pointer"
+                      className="mt-2"
                     >
                       Send another message
-                    </button>
+                    </Button>
                   </div>
                 ) : (
                   <form
@@ -278,13 +281,15 @@ export default function ContactPage() {
 
                     <div className="space-y-3 pt-2">
                       {/* Submit Button */}
-                      <button
+                      <Button
                         type="submit"
-                        disabled={loading}
-                        className="w-full py-3.5 rounded-xl font-bold text-sm text-white bg-brand-primary hover:bg-brand-primary-hover shadow-sm hover:shadow transition-all disabled:opacity-60 cursor-pointer"
+                        variant="primary"
+                        size="lg"
+                        fullWidth
+                        loading={loading}
                       >
-                        {loading ? "Submitting..." : "Send Message"}
-                      </button>
+                        Send Message
+                      </Button>
 
                       <p className="text-[11px] text-slate-400 text-center leading-relaxed font-normal">
                         Your information is secure and only used to respond to
