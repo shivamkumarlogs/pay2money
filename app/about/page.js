@@ -16,13 +16,14 @@ export default function AboutPage() {
 
       <main className="flex-1">
         {/* 1. Human-Centered Editorial Hero */}
-        <section className="relative overflow-hidden pt-16 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center space-y-4">
-            <h1 className="text-2xl sm:text-4xl font-black text-brand-primary tracking-tight leading-[1.15]">
-              We believe getting a loan should be straightforward and honest.
+        <section className="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+          <div className="max-w-4xl mx-auto text-center space-y-6">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-brand-primary tracking-tight leading-[1.15]">
+              We believe getting a loan should be{" "}
+              <span className="text-brand-accent">straightforward and honest.</span>
             </h1>
 
-            <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed font-normal">
               No endless paperwork. No aggressive telemarketers. No surprise
               broker fees. Just a clean, digital bridge to trusted lenders
               across India.
@@ -31,39 +32,39 @@ export default function AboutPage() {
         </section>
 
         {/* 2. Authentic Story & Purpose */}
-        <section className="pt-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-center">
-            <div className="md:col-span-6 space-y-5">
-              <span className="text-xs font-bold uppercase tracking-widest text-brand-accent">
+        <section className="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            <div className="lg:col-span-6 space-y-5">
+              <span className="inline-block text-xs font-bold uppercase tracking-widest text-brand-accent">
                 Why We Started
               </span>
 
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-brand-primary tracking-tight leading-snug">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-brand-primary tracking-tight leading-snug">
                 Borrowing money is a major life moment. It shouldn&apos;t feel
                 stressful.
               </h2>
 
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
                 Whether you are buying your first home, covering unexpected
                 medical bills, or funding your small business, the lending
                 process in India has traditionally felt opaque and frustrating.
               </p>
 
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
                 We founded Pay2Money to bring complete transparency to the
                 table. We partner with scheduled commercial banks and
                 RBI-registered NBFCs to provide a simple, digital pathway to
                 formal credit.
               </p>
 
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
                 We handle the coordination and guide you through documentation
                 so you can access partner financing without confusion or
                 middleman markups.
               </p>
             </div>
 
-            <div className="md:col-span-6">
+            <div className="lg:col-span-6">
               <div className="relative rounded-3xl overflow-hidden shadow-xl border border-slate-200 aspect-4/3 bg-slate-100">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
@@ -77,29 +78,29 @@ export default function AboutPage() {
         </section>
 
         {/* 3. Our Core Commitments */}
-        <section className="pt-16 pb-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto space-y-10">
-          <div className="text-center space-y-2 max-w-2xl mx-auto">
-            <span className="text-xs font-bold uppercase tracking-widest text-brand-accent">
+        <section className="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-12">
+          <div className="text-center space-y-3 max-w-2xl mx-auto">
+            <span className="inline-block text-xs font-bold uppercase tracking-widest text-brand-accent">
               Our Commitments
             </span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-brand-primary tracking-tight">
-              Built on trust and real human assistance
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-brand-primary tracking-tight">
+              Built on trust and <span className="text-brand-accent">real human assistance</span>
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {PROMISES.map((item, idx) => (
               <div
                 key={idx}
-                className="bg-white rounded-xl p-7 sm:p-8 border border-slate-200/80 space-y-3 hover:shadow-md transition-shadow"
+                className="bg-white rounded-2xl p-7 border border-slate-200/80 space-y-3.5 hover:shadow-md transition-shadow"
               >
-                <div className="w-10 h-10 rounded-lg bg-brand-accent-light text-brand-accent flex items-center justify-center">
+                <div className="w-10 h-10 rounded-xl bg-brand-accent-light text-brand-accent flex items-center justify-center shrink-0">
                   {item.icon}
                 </div>
                 <h3 className="text-base sm:text-lg font-bold text-brand-primary">
                   {item.title}
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
                   {item.desc}
                 </p>
               </div>

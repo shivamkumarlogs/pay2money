@@ -35,12 +35,12 @@ export default function ContactPage() {
 
       <main className="flex-1">
         {/* 1. Header Section */}
-        <section className="pt-16 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center space-y-4">
-            <h1 className="text-2xl sm:text-4xl font-black text-brand-primary tracking-tight leading-[1.15]">
-              We are here to assist you.
+        <section className="pt-14 sm:pt-20 pb-6 sm:pb-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+          <div className="max-w-4xl mx-auto text-center space-y-6">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-brand-primary tracking-tight leading-[1.15]">
+              We are here to <span className="text-brand-accent">assist you.</span>
             </h1>
-            <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed font-normal">
               Have questions about partner loan facilitation, documentation, or
               an active inquiry? Get in touch with our team.
             </p>
@@ -48,68 +48,68 @@ export default function ContactPage() {
         </section>
 
         {/* 2. Main Contact Grid */}
-        <section className="pt-16 pb-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+        <section className="pb-16 sm:pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto pt-4 sm:pt-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
             {/* Left Column: Direct Support Channels */}
-            <div className="lg:col-span-5 flex flex-col justify-between gap-4 sm:gap-5">
+            <div className="lg:col-span-5 flex flex-col justify-between gap-5">
               {/* Phone Card */}
-              <div className="bg-white rounded-xl p-6 sm:p-7 border border-slate-200/80 flex flex-col justify-center flex-1 space-y-2.5">
-                <div className="w-10 h-10 rounded-lg bg-brand-accent-light text-brand-accent flex items-center justify-center shrink-0">
+              <div className="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/80 flex flex-col justify-center flex-1 space-y-3 hover:shadow-md transition-shadow">
+                <div className="w-10 h-10 rounded-xl bg-brand-accent-light text-brand-accent flex items-center justify-center shrink-0">
                   <Phone className="w-5 h-5" />
                 </div>
                 <h3 className="text-base font-bold text-brand-primary">
                   Phone Support
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
                   Speak directly with our loan coordination team during business
                   hours.
                 </p>
-                <div className="pt-0.5">
+                <div className="pt-1">
                   <a
                     href={SITE_CONFIG.phoneHref}
-                    className="text-sm font-semibold text-brand-primary hover:text-brand-accent transition block"
+                    className="text-sm font-bold text-brand-primary hover:text-brand-accent transition block"
                   >
                     {SITE_CONFIG.phone}
                   </a>
-                  <span className="text-xs text-slate-500">
+                  <span className="text-xs text-slate-500 font-normal">
                     {SITE_CONFIG.workingHours}
                   </span>
                 </div>
               </div>
 
               {/* Email Card */}
-              <div className="bg-white rounded-xl p-6 sm:p-7 border border-slate-200/80 flex flex-col justify-center flex-1 space-y-2.5">
-                <div className="w-10 h-10 rounded-lg bg-brand-accent-light text-brand-accent flex items-center justify-center shrink-0">
+              <div className="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/80 flex flex-col justify-center flex-1 space-y-3 hover:shadow-md transition-shadow">
+                <div className="w-10 h-10 rounded-xl bg-brand-accent-light text-brand-accent flex items-center justify-center shrink-0">
                   <Mail className="w-5 h-5" />
                 </div>
                 <h3 className="text-base font-bold text-brand-primary">
                   Email Support
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
                   Send your inquiries or documentation questions anytime.
                 </p>
-                <div className="pt-0.5">
+                <div className="pt-1">
                   <a
                     href={SITE_CONFIG.emailHref}
-                    className="text-sm font-semibold text-brand-primary hover:text-brand-accent transition block"
+                    className="text-sm font-bold text-brand-primary hover:text-brand-accent transition block"
                   >
                     {SITE_CONFIG.email}
                   </a>
-                  <span className="text-xs text-slate-500">
+                  <span className="text-xs text-slate-500 font-normal">
                     We respond within 24 business hours
                   </span>
                 </div>
               </div>
 
               {/* Office Address Card */}
-              <div className="bg-white rounded-xl p-6 sm:p-7 border border-slate-200/80 flex flex-col justify-center flex-1 space-y-2.5">
-                <div className="w-10 h-10 rounded-lg bg-brand-accent-light text-brand-accent flex items-center justify-center shrink-0">
+              <div className="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/80 flex flex-col justify-center flex-1 space-y-3 hover:shadow-md transition-shadow">
+                <div className="w-10 h-10 rounded-xl bg-brand-accent-light text-brand-accent flex items-center justify-center shrink-0">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <h3 className="text-base font-bold text-brand-primary">
                   Registered Address
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
                   {SITE_CONFIG.address}
                 </p>
               </div>
@@ -117,26 +117,26 @@ export default function ContactPage() {
 
             {/* Right Column: Contact Inquiry Form */}
             <div className="lg:col-span-7 flex flex-col">
-              <div className="bg-white rounded-xl p-7 sm:p-9 border border-slate-200/80 flex flex-col justify-between h-full space-y-6">
+              <div className="bg-white rounded-2xl p-7 sm:p-10 border border-slate-200/80 flex flex-col justify-between h-full space-y-6 shadow-xs">
                 <div>
-                  <h2 className="text-xl sm:text-2xl font-extrabold text-brand-primary tracking-tight">
+                  <h2 className="text-xl sm:text-2xl font-black text-brand-primary tracking-tight">
                     Send us a message
                   </h2>
-                  <p className="text-xs sm:text-sm text-slate-500 mt-1">
+                  <p className="text-xs sm:text-sm text-slate-500 mt-1 font-normal">
                     Fill in your details and our team will get in touch to
                     assist you.
                   </p>
                 </div>
 
                 {submitted ? (
-                  <div className="p-8 rounded-xl bg-brand-accent-light border border-brand-accent/20 text-center space-y-4 my-auto">
+                  <div className="p-8 rounded-2xl bg-brand-accent-light border border-brand-accent/20 text-center space-y-4 my-auto">
                     <div className="w-12 h-12 mx-auto rounded-full bg-brand-accent/15 text-brand-accent flex items-center justify-center">
                       <CheckCircle2 className="w-7 h-7 text-brand-accent" />
                     </div>
                     <h3 className="text-base sm:text-lg font-bold text-brand-primary">
                       Thank you for reaching out
                     </h3>
-                    <p className="text-xs sm:text-sm text-slate-600 max-w-md mx-auto">
+                    <p className="text-xs sm:text-sm text-slate-600 max-w-md mx-auto font-normal">
                       Your message has been received. Our team will review your
                       inquiry and contact you shortly.
                     </p>
@@ -152,7 +152,7 @@ export default function ContactPage() {
                           message: "",
                         });
                       }}
-                      className="inline-block mt-2 px-5 py-2 text-xs font-semibold text-brand-primary bg-white border border-slate-200 rounded-lg hover:border-brand-accent hover:text-brand-accent transition"
+                      className="inline-block mt-2 px-5 py-2.5 text-xs font-bold text-brand-primary bg-white border border-slate-200 rounded-xl hover:border-brand-accent hover:text-brand-accent transition cursor-pointer"
                     >
                       Send another message
                     </button>
@@ -176,7 +176,7 @@ export default function ContactPage() {
                             setFormData({ ...formData, name: e.target.value })
                           }
                           placeholder="Your full name"
-                          className="w-full px-3.5 py-2.5 text-sm rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-accent/20 focus:border-brand-accent bg-slate-50/50"
+                          className="w-full px-4 py-3 text-sm rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-accent/20 focus:border-brand-accent bg-slate-50/50"
                         />
                       </div>
 
@@ -194,7 +194,7 @@ export default function ContactPage() {
                             setFormData({ ...formData, phone: e.target.value })
                           }
                           placeholder="10-digit mobile number"
-                          className="w-full px-3.5 py-2.5 text-sm rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-accent/20 focus:border-brand-accent bg-slate-50/50"
+                          className="w-full px-4 py-3 text-sm rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-accent/20 focus:border-brand-accent bg-slate-50/50"
                         />
                       </div>
 
@@ -211,7 +211,7 @@ export default function ContactPage() {
                             setFormData({ ...formData, email: e.target.value })
                           }
                           placeholder="name@example.com"
-                          className="w-full px-3.5 py-2.5 text-sm rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-accent/20 focus:border-brand-accent bg-slate-50/50"
+                          className="w-full px-4 py-3 text-sm rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-accent/20 focus:border-brand-accent bg-slate-50/50"
                         />
                       </div>
 
@@ -228,7 +228,7 @@ export default function ContactPage() {
                               subject: e.target.value,
                             })
                           }
-                          className="w-full px-3.5 py-2.5 text-sm rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-accent/20 focus:border-brand-accent bg-slate-50/50 text-slate-700"
+                          className="w-full px-4 py-3 text-sm rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-accent/20 focus:border-brand-accent bg-slate-50/50 text-slate-700 cursor-pointer"
                         >
                           <option value="General Inquiry">
                             General Inquiry
@@ -271,7 +271,7 @@ export default function ContactPage() {
                             })
                           }
                           placeholder="Please describe how we can assist you..."
-                          className="w-full px-3.5 py-2.5 text-sm rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-accent/20 focus:border-brand-accent bg-slate-50/50 resize-none"
+                          className="w-full px-4 py-3 text-sm rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-accent/20 focus:border-brand-accent bg-slate-50/50 resize-none"
                         />
                       </div>
                     </div>
@@ -286,7 +286,7 @@ export default function ContactPage() {
                         {loading ? "Submitting..." : "Send Message"}
                       </button>
 
-                      <p className="text-[11px] text-slate-400 text-center leading-relaxed">
+                      <p className="text-[11px] text-slate-400 text-center leading-relaxed font-normal">
                         Your information is secure and only used to respond to
                         your inquiry. We never send unsolicited calls or
                         marketing spam.
