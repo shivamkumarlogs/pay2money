@@ -12,7 +12,7 @@ export default function ProductGrid() {
     >
       {/* Category 1: Loans and Cards Header */}
       <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
-        <h3 className="text-2xl sm:text-3xl font-extrabold text-[#0E2E5E] tracking-tight">
+        <h3 className="text-2xl sm:text-3xl font-extrabold text-brand-primary tracking-tight">
           Loans and Cards
         </h3>
         <p className="text-xs sm:text-sm text-slate-500 mt-1.5">
@@ -26,7 +26,7 @@ export default function ProductGrid() {
           <a
             key={idx}
             href={card.gridHref || card.href}
-            className="group relative flex flex-col justify-between bg-[#F4F7FC] rounded-2xl p-6 min-h-52.5 sm:min-h-57.5 border border-slate-200/60 shadow-xs overflow-hidden"
+            className="group relative flex flex-col justify-between bg-white rounded-2xl p-6 min-h-52.5 sm:min-h-57.5 border border-slate-200/80 hover:border-brand-accent-border shadow-xs hover:shadow-md transition-all overflow-hidden"
           >
             {/* Top Row: 3D Illustration on left, Circular Arrow on right (appears on hover) */}
             <div className="flex items-start justify-between">
@@ -43,14 +43,14 @@ export default function ProductGrid() {
               </div>
 
               {/* Kissht-Style Top-Right Circular Hover Button */}
-              <div className="w-8 h-8 rounded-full bg-[#0E2E5E] text-white flex items-center justify-center opacity-80 sm:opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-0 sm:translate-y-1 sm:group-hover:translate-y-0 shadow-xs shrink-0">
+              <div className="w-8 h-8 rounded-full bg-brand-primary text-white group-hover:bg-brand-accent flex items-center justify-center opacity-80 sm:opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-0 sm:translate-y-1 sm:group-hover:translate-y-0 shadow-xs shrink-0">
                 <ArrowUpRight className="w-4 h-4" />
               </div>
             </div>
 
             {/* Bottom Row: Title and Simple Subtitle */}
             <div className="mt-6">
-              <h4 className="text-base sm:text-lg font-bold text-[#0E2E5E] leading-snug">
+              <h4 className="text-base sm:text-lg font-bold text-brand-primary leading-snug">
                 {card.title}
               </h4>
               <p className="text-xs sm:text-sm text-slate-500 mt-1 leading-normal">
@@ -64,7 +64,7 @@ export default function ProductGrid() {
       {/* Category 2: CIBIL Score & Financial Tools */}
       <div id="cibil">
         <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
-          <h3 className="text-2xl sm:text-3xl font-extrabold text-[#0E2E5E] tracking-tight">
+          <h3 className="text-2xl sm:text-3xl font-extrabold text-brand-primary tracking-tight">
             Check CIBIL Score &amp; Credit Tools
           </h3>
           <p className="text-xs sm:text-sm text-slate-500 mt-1.5">
@@ -77,7 +77,7 @@ export default function ProductGrid() {
             <a
               key={idx}
               href={card.gridHref || card.href}
-              className="group relative flex flex-col justify-between bg-[#F4F7FC] rounded-2xl p-6 min-h-47.5 sm:min-h-52.5 border border-slate-200/60 shadow-xs overflow-hidden"
+              className="group relative flex flex-col justify-between bg-white rounded-2xl p-6 min-h-47.5 sm:min-h-52.5 border border-slate-200/80 hover:border-brand-accent-border shadow-xs hover:shadow-md transition-all overflow-hidden"
             >
               <div className="flex items-start justify-between">
                 <div className="w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center shrink-0">
@@ -92,13 +92,13 @@ export default function ProductGrid() {
                   />
                 </div>
 
-                <div className="w-8 h-8 rounded-full bg-[#0E2E5E] text-white flex items-center justify-center opacity-80 sm:opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-0 sm:translate-y-1 sm:group-hover:translate-y-0 shadow-xs shrink-0">
+                <div className="w-8 h-8 rounded-full bg-brand-primary text-white group-hover:bg-brand-accent flex items-center justify-center opacity-80 sm:opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-0 sm:translate-y-1 sm:group-hover:translate-y-0 shadow-xs shrink-0">
                   <ArrowUpRight className="w-4 h-4" />
                 </div>
               </div>
 
               <div className="mt-5">
-                <h4 className="text-sm sm:text-base font-bold text-[#0E2E5E] leading-snug">
+                <h4 className="text-sm sm:text-base font-bold text-brand-primary leading-snug">
                   {card.title}
                 </h4>
                 <p className="text-xs text-slate-500 mt-1 leading-normal">

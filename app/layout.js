@@ -1,10 +1,14 @@
-import { Poppins } from "next/font/google";
+import { Manrope } from "next/font/google";
 import "./globals.css";
 
-const poppins = Poppins({
+// ============================================================================
+// GLOBAL FONT CONFIGURATION (Single Source of Truth - Kissht Style: Manrope)
+// Change the primary font family right here in 1 place!
+// ============================================================================
+const primaryFont = Manrope({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
-  variable: "--font-poppins",
+  variable: "--font-primary",
   display: "swap",
 });
 
@@ -31,13 +35,13 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={poppins.variable}>
+    <html lang="en" className={primaryFont.variable}>
       <head>
-        <meta name="theme-color" content="#0E2E5E" />
+        <meta name="theme-color" content="#081528" />
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/icon.svg" />
       </head>
-      <body className="antialiased min-h-screen text-[#0A1B33] bg-[#FAFCFE]">
+      <body className="antialiased min-h-screen text-brand-text bg-brand-surface">
         {children}
       </body>
     </html>

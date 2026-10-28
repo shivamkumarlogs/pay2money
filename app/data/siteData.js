@@ -52,7 +52,7 @@ export const LOAN_PRODUCTS = [
     gridHref: "#calculator",
     img: "https://cdn.jsdelivr.net/gh/iamcal/emoji-data@master/img-apple-160/1f4b0.png",
     icon: <User />,
-    fallbackIcon: <User className="w-8 h-8 text-[#2E9D52]" />,
+    fallbackIcon: <User className="w-8 h-8 text-brand-accent" />,
   },
   {
     id: "instant-loan",
@@ -64,7 +64,7 @@ export const LOAN_PRODUCTS = [
     gridHref: "#calculator",
     img: "https://cdn.jsdelivr.net/gh/iamcal/emoji-data@master/img-apple-160/26a1.png",
     icon: <Zap />,
-    fallbackIcon: <Zap className="w-8 h-8 text-[#2E9D52]" />,
+    fallbackIcon: <Zap className="w-8 h-8 text-brand-accent" />,
   },
   {
     id: "business-loan",
@@ -76,7 +76,7 @@ export const LOAN_PRODUCTS = [
     gridHref: "#calculator",
     img: "https://cdn.jsdelivr.net/gh/iamcal/emoji-data@master/img-apple-160/1f4bc.png",
     icon: <Briefcase />,
-    fallbackIcon: <Briefcase className="w-8 h-8 text-[#2E9D52]" />,
+    fallbackIcon: <Briefcase className="w-8 h-8 text-brand-accent" />,
   },
   {
     id: "home-loan",
@@ -88,7 +88,7 @@ export const LOAN_PRODUCTS = [
     gridHref: "#calculator",
     img: "https://cdn.jsdelivr.net/gh/iamcal/emoji-data@master/img-apple-160/1f3e0.png",
     icon: <Home />,
-    fallbackIcon: <Home className="w-8 h-8 text-[#2E9D52]" />,
+    fallbackIcon: <Home className="w-8 h-8 text-brand-accent" />,
   },
   {
     id: "loan-against-property",
@@ -100,7 +100,7 @@ export const LOAN_PRODUCTS = [
     gridHref: "#calculator",
     img: "https://cdn.jsdelivr.net/gh/iamcal/emoji-data@master/img-apple-160/1f3e2.png",
     icon: <Building2 />,
-    fallbackIcon: <Building2 className="w-8 h-8 text-[#2E9D52]" />,
+    fallbackIcon: <Building2 className="w-8 h-8 text-brand-accent" />,
   },
   {
     id: "car-loan",
@@ -112,7 +112,7 @@ export const LOAN_PRODUCTS = [
     gridHref: "#calculator",
     img: "https://cdn.jsdelivr.net/gh/iamcal/emoji-data@master/img-apple-160/1f697.png",
     icon: <Car />,
-    fallbackIcon: <Car className="w-8 h-8 text-[#2E9D52]" />,
+    fallbackIcon: <Car className="w-8 h-8 text-brand-accent" />,
   },
   {
     id: "gold-loan",
@@ -124,7 +124,7 @@ export const LOAN_PRODUCTS = [
     gridHref: "#calculator",
     img: "https://cdn.jsdelivr.net/gh/iamcal/emoji-data@master/img-apple-160/1fa99.png",
     icon: <Coins />,
-    fallbackIcon: <Coins className="w-8 h-8 text-[#2E9D52]" />,
+    fallbackIcon: <Coins className="w-8 h-8 text-brand-accent" />,
   },
   {
     id: "education-loan",
@@ -136,7 +136,7 @@ export const LOAN_PRODUCTS = [
     gridHref: "#calculator",
     img: "https://cdn.jsdelivr.net/gh/iamcal/emoji-data@master/img-apple-160/1f393.png",
     icon: <GraduationCap />,
-    fallbackIcon: <GraduationCap className="w-8 h-8 text-[#2E9D52]" />,
+    fallbackIcon: <GraduationCap className="w-8 h-8 text-brand-accent" />,
   },
   {
     id: "commercial-vehicle-loan",
@@ -148,7 +148,7 @@ export const LOAN_PRODUCTS = [
     gridHref: "#calculator",
     img: "https://cdn.jsdelivr.net/gh/iamcal/emoji-data@master/img-apple-160/1f69a.png",
     icon: <Truck />,
-    fallbackIcon: <Truck className="w-8 h-8 text-[#2E9D52]" />,
+    fallbackIcon: <Truck className="w-8 h-8 text-brand-accent" />,
   },
   {
     id: "credit-cards",
@@ -160,7 +160,7 @@ export const LOAN_PRODUCTS = [
     gridHref: "#calculator",
     img: "https://cdn.jsdelivr.net/gh/iamcal/emoji-data@master/img-apple-160/1f4b3.png",
     icon: <CreditCard />,
-    fallbackIcon: <CreditCard className="w-8 h-8 text-[#2E9D52]" />,
+    fallbackIcon: <CreditCard className="w-8 h-8 text-brand-accent" />,
   },
 ];
 
@@ -176,7 +176,7 @@ export const CIBIL_PRODUCTS = [
     href: "#cibil",
     img: "https://cdn.jsdelivr.net/gh/iamcal/emoji-data@master/img-apple-160/1f4ca.png",
     icon: <Gauge />,
-    fallbackIcon: <Gauge className="w-8 h-8 text-[#0E2E5E]" />,
+    fallbackIcon: <Gauge className="w-8 h-8 text-brand-primary" />,
   },
   {
     id: "cibil-consultation",
@@ -186,7 +186,7 @@ export const CIBIL_PRODUCTS = [
     href: "#footer",
     img: "https://cdn.jsdelivr.net/gh/iamcal/emoji-data@master/img-apple-160/1f4de.png",
     icon: <PhoneCall />,
-    fallbackIcon: <PhoneCall className="w-8 h-8 text-[#0E2E5E]" />,
+    fallbackIcon: <PhoneCall className="w-8 h-8 text-brand-primary" />,
   },
   {
     id: "fixed-deposit",
@@ -196,7 +196,7 @@ export const CIBIL_PRODUCTS = [
     href: "#calculator",
     img: "https://cdn.jsdelivr.net/gh/iamcal/emoji-data@master/img-apple-160/1f3e6.png",
     icon: <PiggyBank />,
-    fallbackIcon: <PiggyBank className="w-8 h-8 text-[#0E2E5E]" />,
+    fallbackIcon: <PiggyBank className="w-8 h-8 text-brand-primary" />,
   },
   {
     id: "credit-score-builder",
@@ -206,7 +206,7 @@ export const CIBIL_PRODUCTS = [
     href: "#cibil",
     img: "https://cdn.jsdelivr.net/gh/iamcal/emoji-data@master/img-apple-160/1f4c8.png",
     icon: <TrendingUp />,
-    fallbackIcon: <TrendingUp className="w-8 h-8 text-[#0E2E5E]" />,
+    fallbackIcon: <TrendingUp className="w-8 h-8 text-brand-primary" />,
   },
 ];
 
@@ -237,8 +237,8 @@ export const HERO_SLIDES = [
     subtitle: "Get funds sent directly to your bank account with zero paperwork.",
     cta: "Apply Now",
     href: "#calculator",
-    bg: "bg-[#0E2E5E]",
-    btnText: "text-[#0E2E5E]",
+    bg: "bg-brand-primary",
+    btnText: "text-brand-primary",
     image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=1000&auto=format&fit=crop",
     imgAlt: "Customer with smartphone",
   },
@@ -247,8 +247,8 @@ export const HERO_SLIDES = [
     subtitle: "Know your credit score in 30 seconds with zero impact on your score.",
     cta: "Check Free",
     href: "#cibil",
-    bg: "bg-[#1E7C3F]",
-    btnText: "text-[#1E7C3F]",
+    bg: "bg-[#0E223D]",
+    btnText: "text-brand-primary",
     image: "https://images.unsplash.com/photo-1556742044-3c52d6e88c62?q=80&w=1000&auto=format&fit=crop",
     imgAlt: "Credit score check with card and laptop",
   },
@@ -257,8 +257,8 @@ export const HERO_SLIDES = [
     subtitle: "Easy home financing with low monthly payments and flexible tenure.",
     cta: "Explore Home Loans",
     href: "#calculator",
-    bg: "bg-[#0E3854]",
-    btnText: "text-[#0E3854]",
+    bg: "bg-[#142A4A]",
+    btnText: "text-brand-primary",
     image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1000&auto=format&fit=crop",
     imgAlt: "Keys to new home",
   },
@@ -267,8 +267,8 @@ export const HERO_SLIDES = [
     subtitle: "Get capital for daily expenses and equipment without giving any collateral.",
     cta: "Grow Your Business",
     href: "#calculator",
-    bg: "bg-[#1C2340]",
-    btnText: "text-[#1C2340]",
+    bg: "bg-[#0A1A30]",
+    btnText: "text-brand-primary",
     image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1000&auto=format&fit=crop",
     imgAlt: "Business team at work",
   },
@@ -277,8 +277,8 @@ export const HERO_SLIDES = [
     subtitle: "Safe bank vault storage with same-day cash given straight into your account.",
     cta: "Get Gold Loan",
     href: "#calculator",
-    bg: "bg-[#1B3A2B]",
-    btnText: "text-[#1B3A2B]",
+    bg: "bg-[#183256]",
+    btnText: "text-brand-primary",
     image: "https://images.unsplash.com/photo-1610375461246-83df859d849d?q=80&w=1000&auto=format&fit=crop",
     imgAlt: "Safe gold loan vault",
   },
@@ -315,22 +315,22 @@ export const ABOUT_PROMISES = [
   {
     title: "Zero consultation fees",
     desc: "You never pay us a single rupee. Our platform, support, and guidance are completely free for borrowers.",
-    icon: <BadgePercent className="w-5 h-5 text-[#2E9D52]" />,
+    icon: <BadgePercent className="w-5 h-5 text-brand-accent" />,
   },
   {
     title: "Direct bank disbursal",
     desc: "Your loan is disbursed straight into your registered bank account by our verified partner institutions.",
-    icon: <Landmark className="w-5 h-5 text-[#2E9D52]" />,
+    icon: <Landmark className="w-5 h-5 text-brand-accent" />,
   },
   {
     title: "Bank-level data security",
     desc: "Your personal and financial records are protected with 256-bit encryption and shared only with partner lenders.",
-    icon: <ShieldCheck className="w-5 h-5 text-[#2E9D52]" />,
+    icon: <ShieldCheck className="w-5 h-5 text-brand-accent" />,
   },
   {
     title: "No aggressive sales calls",
     desc: "We do not sell your contact details to third-party telemarketers. We only reach out to assist with your active inquiry.",
-    icon: <PhoneOff className="w-5 h-5 text-[#2E9D52]" />,
+    icon: <PhoneOff className="w-5 h-5 text-brand-accent" />,
   },
 ];
 

@@ -6,15 +6,12 @@ import { CheckCircle2 } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-linear-to-b from-slate-50/60 via-white to-slate-50/80 py-16 sm:py-24 px-4 sm:px-6 lg:px-8 border-b border-slate-100">
-      {/* Subtle Background Glow Mesh */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-5xl h-72 bg-linear-to-b from-emerald-100/30 via-sky-100/20 to-transparent blur-3xl pointer-events-none -z-10" />
-
+    <section className="bg-white py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto text-center space-y-8">
         {/* High-Impact Headline */}
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#0E2E5E] tracking-tight leading-[1.15] max-w-4xl mx-auto">
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-brand-primary tracking-tight leading-[1.15] max-w-4xl mx-auto">
           Loans at the{" "}
-          <span className="bg-linear-to-r from-[#0E2E5E] via-[#1E78C8] to-[#2E9D52] bg-clip-text text-transparent">
+          <span className="text-brand-accent">
             Lowest Rates.
           </span>
         </h1>
@@ -29,14 +26,14 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-2">
           <a
             href="#loans"
-            className="w-full sm:w-auto px-8 py-3.5 rounded-xl font-bold text-sm text-white bg-linear-to-r from-[#0E2E5E] to-[#2E9D52] hover:from-[#0B254D] hover:to-[#268444] shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 text-center flex items-center justify-center gap-2 group"
+            className="w-full sm:w-auto px-8 py-3.5 rounded-xl font-bold text-sm text-white bg-brand-primary hover:bg-brand-primary-hover shadow-sm hover:shadow transition-all transform hover:-translate-y-0.5 text-center flex items-center justify-center gap-2 group"
           >
             <span>Explore All Loans</span>
           </a>
 
           <Link
             href="/emi-calculator"
-            className="w-full sm:w-auto px-8 py-3.5 rounded-xl font-bold text-sm text-[#0E2E5E] bg-white border border-slate-300 hover:border-[#2E9D52] hover:text-[#2E9D52] shadow-sm hover:shadow transition-all text-center flex items-center justify-center gap-2"
+            className="w-full sm:w-auto px-8 py-3.5 rounded-xl font-bold text-sm text-brand-primary bg-white border border-slate-300 hover:border-brand-primary shadow-xs hover:shadow transition-all text-center flex items-center justify-center gap-2"
           >
             <span>Calculate Monthly EMI</span>
           </Link>
@@ -45,11 +42,11 @@ export default function Hero() {
         {/* Micro-Trust Highlights */}
         <div className="flex flex-wrap items-center justify-center gap-y-2 gap-x-6 text-xs sm:text-sm font-semibold text-slate-500 pt-3">
           <span className="flex items-center gap-1.5">
-            <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
+            <CheckCircle2 className="w-4 h-4 text-brand-accent shrink-0" />
             Zero Impact on CIBIL to Check
           </span>
           <span className="flex items-center gap-1.5">
-            <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
+            <CheckCircle2 className="w-4 h-4 text-brand-accent shrink-0" />
             Instant Digital Sanction
           </span>
         </div>

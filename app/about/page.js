@@ -11,14 +11,14 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="flex flex-col min-h-screen bg-[#F8FAFC]">
+    <div className="flex flex-col min-h-screen bg-brand-surface">
       <Navbar />
 
       <main className="flex-1">
         {/* 1. Human-Centered Editorial Hero */}
         <section className="relative overflow-hidden pt-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center space-y-4">
-            <h1 className="text-2xl sm:text-4xl font-black text-[#0E2E5E] tracking-tight leading-[1.15]">
+            <h1 className="text-2xl sm:text-4xl font-black text-brand-primary tracking-tight leading-[1.15]">
               We believe getting a loan should be straightforward and honest.
             </h1>
 
@@ -34,11 +34,11 @@ export default function AboutPage() {
         <section className="pt-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-center">
             <div className="md:col-span-6 space-y-5">
-              <span className="text-xs font-bold uppercase tracking-widest text-[#2E9D52]">
+              <span className="text-xs font-bold uppercase tracking-widest text-brand-accent">
                 Why We Started
               </span>
 
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0E2E5E] tracking-tight leading-snug">
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-brand-primary tracking-tight leading-snug">
                 Borrowing money is a major life moment. It shouldn&apos;t feel
                 stressful.
               </h2>
@@ -79,10 +79,10 @@ export default function AboutPage() {
         {/* 3. Our Core Commitments */}
         <section className="pt-16 pb-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto space-y-10">
           <div className="text-center space-y-2 max-w-2xl mx-auto">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#2E9D52]">
+            <span className="text-xs font-bold uppercase tracking-widest text-brand-accent">
               Our Commitments
             </span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0E2E5E] tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-brand-primary tracking-tight">
               Built on trust and real human assistance
             </h2>
           </div>
@@ -93,10 +93,10 @@ export default function AboutPage() {
                 key={idx}
                 className="bg-white rounded-xl p-7 sm:p-8 border border-slate-200/80 space-y-3 hover:shadow-md transition-shadow"
               >
-                <div className="w-10 h-10 rounded-lg bg-emerald-50 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-lg bg-brand-accent-light text-brand-accent flex items-center justify-center">
                   {item.icon}
                 </div>
-                <h3 className="text-base sm:text-lg font-bold text-[#0E2E5E]">
+                <h3 className="text-base sm:text-lg font-bold text-brand-primary">
                   {item.title}
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">

@@ -13,17 +13,17 @@ function NavLinkItem({ item, onClick, isMobile = false }) {
       onClick={onClick}
       className={`flex items-center gap-3 p-2.5 rounded-xl transition group ${
         isMobile
-          ? "bg-slate-50/70 hover:bg-emerald-50/60"
+          ? "bg-slate-50/70 hover:bg-brand-accent-light"
           : "hover:bg-slate-50 border border-transparent"
       }`}
     >
-      <div className="w-8 h-8 lg:w-9 lg:h-9 rounded-lg bg-emerald-50 text-[#2E9D52] flex items-center justify-center shrink-0 group-hover:bg-[#2E9D52] group-hover:text-white transition">
+      <div className="w-8 h-8 lg:w-9 lg:h-9 rounded-lg bg-brand-accent-light text-brand-accent flex items-center justify-center shrink-0 group-hover:bg-brand-accent group-hover:text-white transition">
         {React.cloneElement(item.icon, {
           className: "w-4 h-4 lg:w-5 lg:h-5 transition",
         })}
       </div>
       <div className="min-w-0 flex-1">
-        <div className="text-xs lg:text-sm font-semibold text-slate-800 group-hover:text-[#0E2E5E] transition-colors truncate">
+        <div className="text-xs lg:text-sm font-semibold text-slate-800 group-hover:text-brand-primary transition-colors truncate">
           {item.name}
         </div>
         <div className="text-[11px] lg:text-xs text-slate-500 truncate">
@@ -84,8 +84,8 @@ export default function Navbar() {
               className="flex items-center h-10 group"
             >
               <div className="flex items-center text-2xl font-extrabold tracking-tight leading-none">
-                <span className="text-[#0E2E5E]">Pay2</span>
-                <span className="text-[#2E9D52]">Money</span>
+                <span className="text-brand-primary">Pay2</span>
+                <span className="text-brand-accent">Money</span>
               </div>
             </Link>
 
@@ -93,7 +93,7 @@ export default function Navbar() {
             <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
               <Link
                 href="/"
-                className="px-3.5 py-2 text-sm font-semibold text-slate-800 hover:text-[#2E9D52] rounded-lg hover:bg-slate-50 transition"
+                className="px-3.5 py-2 text-sm font-semibold text-slate-800 hover:text-brand-accent rounded-lg hover:bg-slate-50 transition"
               >
                 Home
               </Link>
@@ -105,14 +105,14 @@ export default function Navbar() {
                 onMouseLeave={() => setActiveDropdown(null)}
               >
                 <button
-                  className="flex items-center gap-1.5 px-3.5 py-2 text-sm font-semibold text-slate-800 group-hover:text-[#2E9D52] rounded-lg group-hover:bg-slate-50 transition"
+                  className="flex items-center gap-1.5 px-3.5 py-2 text-sm font-semibold text-slate-800 group-hover:text-brand-accent rounded-lg group-hover:bg-slate-50 transition"
                   aria-expanded={activeDropdown === "loans"}
                 >
                   Loans
                   <ChevronDown
                     className={`w-4 h-4 text-slate-500 transition-transform duration-200 ${
                       activeDropdown === "loans"
-                        ? "rotate-180 text-[#2E9D52]"
+                        ? "rotate-180 text-brand-accent"
                         : ""
                     }`}
                   />
@@ -142,14 +142,14 @@ export default function Navbar() {
                 onMouseLeave={() => setActiveDropdown(null)}
               >
                 <button
-                  className="flex items-center gap-1.5 px-3.5 py-2 text-sm font-semibold text-slate-800 group-hover:text-[#2E9D52] rounded-lg group-hover:bg-slate-50 transition"
+                  className="flex items-center gap-1.5 px-3.5 py-2 text-sm font-semibold text-slate-800 group-hover:text-brand-accent rounded-lg group-hover:bg-slate-50 transition"
                   aria-expanded={activeDropdown === "tools"}
                 >
                   Tools
                   <ChevronDown
                     className={`w-4 h-4 text-slate-500 transition-transform duration-200 ${
                       activeDropdown === "tools"
-                        ? "rotate-180 text-[#2E9D52]"
+                        ? "rotate-180 text-brand-accent"
                         : ""
                     }`}
                   />
@@ -172,14 +172,14 @@ export default function Navbar() {
 
               <Link
                 href="/about"
-                className="px-3.5 py-2 text-sm font-semibold text-slate-800 hover:text-[#2E9D52] rounded-lg hover:bg-slate-50 transition"
+                className="px-3.5 py-2 text-sm font-semibold text-slate-800 hover:text-brand-accent rounded-lg hover:bg-slate-50 transition"
               >
                 About
               </Link>
 
               <Link
                 href="/contact"
-                className="px-3.5 py-2 text-sm font-semibold text-slate-800 hover:text-[#2E9D52] rounded-lg hover:bg-slate-50 transition"
+                className="px-3.5 py-2 text-sm font-semibold text-slate-800 hover:text-brand-accent rounded-lg hover:bg-slate-50 transition"
               >
                 Contact
               </Link>
@@ -189,7 +189,7 @@ export default function Navbar() {
             <div className="flex items-center lg:hidden">
               <button
                 onClick={() => setMobileOpen(true)}
-                className="w-10 h-10 -mr-2 flex items-center justify-center text-slate-800 hover:text-[#0E2E5E] rounded-lg focus:outline-none transition active:scale-95"
+                className="w-10 h-10 -mr-2 flex items-center justify-center text-slate-800 hover:text-brand-primary rounded-lg focus:outline-none transition active:scale-95"
                 aria-label="Open mobile menu"
               >
                 <AlignRight className="w-6 h-6 stroke-[2.2]" />
@@ -215,8 +215,8 @@ export default function Navbar() {
             {/* Drawer Top Header */}
             <div className="flex items-center justify-between px-4 h-16 border-b border-slate-100">
               <div className="flex items-center h-10 text-xl font-extrabold tracking-tight leading-none">
-                <span className="text-[#0E2E5E]">Pay2</span>
-                <span className="text-[#2E9D52]">Money</span>
+                <span className="text-brand-primary">Pay2</span>
+                <span className="text-brand-accent">Money</span>
               </div>
               <button
                 onClick={closeMobileMenu}
@@ -249,7 +249,7 @@ export default function Navbar() {
                   <ChevronDown
                     className={`w-4 h-4 text-slate-500 transition-transform ${
                       activeAccordion === "loans"
-                        ? "rotate-180 text-[#2E9D52]"
+                        ? "rotate-180 text-brand-accent"
                         : ""
                     }`}
                   />
@@ -278,7 +278,7 @@ export default function Navbar() {
                   <ChevronDown
                     className={`w-4 h-4 text-slate-500 transition-transform ${
                       activeAccordion === "tools"
-                        ? "rotate-180 text-[#2E9D52]"
+                        ? "rotate-180 text-brand-accent"
                         : ""
                     }`}
                   />

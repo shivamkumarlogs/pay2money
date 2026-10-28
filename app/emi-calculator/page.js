@@ -13,7 +13,7 @@ export const metadata = {
 
 export default function EmiCalculatorPage() {
   return (
-    <div className="flex flex-col min-h-screen bg-[#F8FAFC]">
+    <div className="flex flex-col min-h-screen bg-brand-surface">
       <Navbar />
 
       <main className="flex-1">

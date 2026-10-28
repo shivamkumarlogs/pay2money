@@ -57,16 +57,20 @@ export default function HeroSlider() {
       >
         {/* Horizontal Sliding Track */}
         <div
-          className="flex transition-transform duration-700 ease-in-out w-full"
-          style={{ transform: `translateX(-${current * 100}%)` }}
+          className="flex transition-transform duration-700 ease-in-out"
+          style={{
+            width: `${SLIDES.length * 100}%`,
+            transform: `translateX(-${current * (100 / SLIDES.length)}%)`,
+          }}
         >
           {SLIDES.map((slide, idx) => (
             <div
               key={idx}
-              className={`w-full shrink-0 ${slide.bg} text-white flex items-center min-h-50 sm:min-h-62.5 md:min-h-70 lg:min-h-75 relative overflow-hidden`}
+              style={{ width: `${100 / SLIDES.length}%` }}
+              className={`shrink-0 ${slide.bg} text-white flex items-center min-h-50 sm:min-h-62.5 md:min-h-70 lg:min-h-75 relative overflow-hidden`}
             >
               {/* Left Side Content Container */}
-              <div className="w-[62%] sm:w-[58%] md:w-[54%] z-10 flex flex-col justify-center pl-4 sm:pl-10 lg:pl-14 pr-2 py-4 sm:py-8 space-y-1.5 sm:space-y-3">
+              <div className="w-[62%] sm:w-[58%] md:w-[54%] z-10 flex flex-col justify-center pl-6 sm:pl-10 lg:pl-14 pr-2 py-4 sm:py-8 space-y-1.5 sm:space-y-3">
                 <h2 className="text-base sm:text-2xl md:text-3xl lg:text-4xl font-extrabold sm:font-black tracking-tight leading-snug sm:leading-tight text-white drop-shadow-sm">
                   {slide.title}
                 </h2>

@@ -1,27 +1,63 @@
 @import "tailwindcss";
 
+@theme {
+  /* ==========================================================================
+     GLOBAL THEME DESIGN SYSTEM (Single Source of Truth)
+     To switch the entire website theme in the future, change values here!
+     ========================================================================== */
+  --font-primary: var(--font-primary, "Manrope", system-ui, -apple-system, sans-serif);
+
+  /* Theme 3: Deep Oxford Midnight & Luxury Champagne Gold */
+  --color-brand-primary: #081528;
+  --color-brand-primary-hover: #040C18;
+  --color-brand-primary-light: #0F2442;
+  --color-brand-accent: #C5943B;
+  --color-brand-accent-hover: #AF802E;
+  --color-brand-accent-light: #FBF6EC;
+  --color-brand-accent-border: #E8D2A8;
+  --color-brand-dark: #040A14;
+  --color-brand-surface: #FFFFFF;
+  --color-brand-card: #FFFFFF;
+  --color-brand-border: #E2E8F0;
+  --color-brand-text: #081528;
+  --color-brand-muted: #64748B;
+}
+
 :root {
-  --navy: #0E2E5E;
-  --navy-deep: #0A2348;
-  --navy-soft: #1B4B8A;
-  --navy-dark: #071830;
-  --green: #2E9D52;
-  --green-deep: #1F7C3F;
-  --green-soft: #43B86A;
-  --green-vivid: #22B14C;
-  --emerald: #10B981;
-  --ink: #0A1B33;
-  --muted: #5B6B82;
-  --line: #E4EAF2;
-  --bg: #FAFCFE;
-  --card: #FFFFFF;
-  --grad: linear-gradient(125deg, #0E2E5E 0%, #1E78C8 52%, #22B14C 115%);
-  --grad-green: linear-gradient(120deg, #23B14E 0%, #10B981 100%);
-  --grad-navy: linear-gradient(125deg, #0E2E5E 0%, #1B4B8A 100%);
-  --shadow: 0 18px 50px -20px rgba(14, 46, 94, 0.28);
-  --shadow-sm: 0 6px 22px -12px rgba(14, 46, 94, 0.2);
-  --glow-green: 0 12px 30px -10px rgba(34, 177, 76, 0.55);
-  --glow-navy: 0 14px 34px -12px rgba(14, 46, 94, 0.45);
+  /* Central Design Variables - Read by raw CSS & legacy elements */
+  --brand-primary: #081528;
+  --brand-primary-hover: #040C18;
+  --brand-primary-light: #0F2442;
+  --brand-accent: #C5943B;
+  --brand-accent-hover: #AF802E;
+  --brand-accent-light: #FBF6EC;
+  --brand-accent-border: #E8D2A8;
+  --brand-dark: #040A14;
+  --brand-surface: #FFFFFF;
+  --brand-card: #FFFFFF;
+  --brand-border: #E2E8F0;
+  --brand-text: #081528;
+  --brand-muted: #64748B;
+
+  /* Aliased Legacy Variables for Complete Backward Compatibility */
+  --navy: var(--brand-primary);
+  --navy-deep: var(--brand-primary-hover);
+  --navy-soft: var(--brand-primary-light);
+  --navy-dark: var(--brand-dark);
+  --green: var(--brand-accent);
+  --green-deep: var(--brand-accent-hover);
+  --green-soft: #E5BE7E;
+  --green-vivid: var(--brand-accent);
+  --emerald: var(--brand-accent);
+  --ink: var(--brand-text);
+  --muted: var(--brand-muted);
+  --line: var(--brand-border);
+  --bg: var(--brand-surface);
+  --card: var(--brand-card);
+  --shadow: 0 18px 50px -20px rgba(8, 21, 40, 0.28);
+  --shadow-sm: 0 6px 22px -12px rgba(8, 21, 40, 0.2);
+  --glow-green: 0 12px 30px -10px rgba(212, 163, 89, 0.45);
+  --glow-navy: 0 14px 34px -12px rgba(8, 21, 40, 0.45);
 }
 
 * {
@@ -43,12 +79,9 @@ html {
 
 body {
   overflow-x: clip;
-  font-family: var(--font-poppins), system-ui, -apple-system, sans-serif;
+  font-family: var(--font-primary, var(--font-poppins), system-ui, -apple-system, sans-serif);
   color: var(--ink);
-  background: 
-    radial-gradient(900px 480px at 100% -5%, rgba(34, 177, 76, 0.07), transparent 60%),
-    radial-gradient(760px 460px at -8% 4%, rgba(30, 120, 200, 0.07), transparent 55%),
-    var(--bg);
+  background-color: var(--brand-surface);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   scrollbar-width: none;
@@ -67,7 +100,7 @@ body {
 
 /* Slider Custom Styles */
 input[type="range"] {
-  accent-color: #2E9D52;
+  accent-color: var(--brand-accent);
 }
 
 input[type="range"]::-webkit-slider-thumb {
@@ -76,10 +109,10 @@ input[type="range"]::-webkit-slider-thumb {
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  background: #2E9D52;
+  background: var(--brand-accent);
   cursor: pointer;
   border: 4px solid #ffffff;
-  box-shadow: 0 2px 10px rgba(46, 157, 82, 0.45);
+  box-shadow: 0 2px 10px rgba(212, 163, 89, 0.45);
   transition: transform 0.15s ease;
 }
 
@@ -88,7 +121,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
 }
 
 
-/* Nav Link Animated Green Underline */
+/* Nav Link Animated Underline */
 .nav-link-animated {
   position: relative;
   display: inline-flex;
@@ -96,7 +129,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
   gap: 5px;
   font-size: 14.5px;
   font-weight: 600;
-  color: #0A1B33;
+  color: var(--ink);
   padding: 8px 12px;
   border-radius: 8px;
   transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
@@ -113,7 +146,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
   right: 12px;
   bottom: 2px;
   height: 2.5px;
-  background: linear-gradient(120deg, #0E2E5E 0%, #1E78C8 45%, #22B14C 100%);
+  background: var(--brand-accent);
   border-radius: 9999px;
   transform: scaleX(0);
   transform-origin: left;
@@ -122,7 +155,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
 
 .nav-link-animated:hover,
 .nav-link-animated.active {
-  color: #1F7C3F;
+  color: var(--brand-accent-hover);
 }
 
 .nav-link-animated:hover::after,
