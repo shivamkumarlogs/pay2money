@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { ArrowRight, Calculator, CheckCircle2 } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -31,7 +31,7 @@ export default function Hero() {
             href="#loans"
             className="w-full sm:w-auto px-8 py-3.5 rounded-xl font-bold text-sm text-white bg-linear-to-r from-[#0E2E5E] to-[#2E9D52] hover:from-[#0B254D] hover:to-[#268444] shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 text-center flex items-center justify-center gap-2 group"
           >
-            <span>Explore All Loan</span>
+            <span>Explore All Loans</span>
           </a>
 
           <Link

@@ -85,7 +85,7 @@ export default function EmiCalculator() {
         </div>
 
         {/* Full-width Calculator Main Card */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 bg-white text-slate-800 rounded-xl p-6 sm:p-10 lg:p-12 shadow-2xl border border-white/10 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 bg-white text-slate-800 rounded-2xl p-6 sm:p-10 lg:p-12 shadow-2xl border border-white/10 items-stretch">
           {/* Left Inputs Column (7 cols) */}
           <div className="lg:col-span-7 flex flex-col justify-between space-y-6 sm:space-y-7">
             {/* Amount Input & Slider */}
@@ -268,7 +268,7 @@ export default function EmiCalculator() {
 
           {/* Right Result Card Column (5 cols) */}
           <div className="lg:col-span-5 flex flex-col">
-            <div className="bg-linear-to-br from-[#0E2E5E] via-[#0A2348] to-[#071831] text-white p-7 sm:p-9 lg:p-10 rounded-xl shadow-xl border border-white/10 relative overflow-hidden h-full flex flex-col justify-center space-y-7 sm:space-y-8">
+            <div className="bg-linear-to-br from-[#0E2E5E] via-[#0A2348] to-[#071831] text-white p-7 sm:p-9 lg:p-10 rounded-2xl shadow-xl border border-white/10 relative overflow-hidden h-full flex flex-col justify-center space-y-7 sm:space-y-8">
               <div className="absolute top-0 right-0 w-48 h-48 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
 
               {/* Monthly Repayment Box */}
@@ -298,7 +298,7 @@ export default function EmiCalculator() {
 
                 <div className="flex justify-between items-center text-sm sm:text-base">
                   <span className="text-slate-300 flex items-center gap-2.5">
-                    <span className="w-3 h-3 rounded-full bg-emerald-400 shrink-0" />
+                    <span className="w-3 h-3 rounded-full bg-[#2E9D52] shrink-0" />
                     Total Interest
                   </span>
                   <span className="font-extrabold text-emerald-300 text-base sm:text-lg">
