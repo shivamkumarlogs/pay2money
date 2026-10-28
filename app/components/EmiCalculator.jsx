@@ -70,22 +70,24 @@ export default function EmiCalculator() {
   return (
     <section
       id="calculator"
-      className="pt-16 pb-16 px-4 sm:px-6 lg:px-8 bg-linear-to-b from-[#071831] via-[#0E2E5E] to-[#071831] text-white flex flex-col justify-center"
+      className="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto"
     >
-      <div className="w-full max-w-7xl mx-auto">
-        {/* Section Heading */}
-        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-14">
-          <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-white">
-            EMI Calculator
-          </h2>
-          <p className="text-sm sm:text-base text-slate-300 mt-2">
-            Use the sliders or enter values manually to calculate your monthly
-            EMI and repayment schedule.
-          </p>
-        </div>
+      {/* Section Heading */}
+      <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
+        <span className="text-xs font-extrabold uppercase tracking-widest text-[#2E9D52]">
+          EMI Calculator
+        </span>
+        <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0E2E5E] tracking-tight mt-2 mb-3">
+          Calculate Your Monthly Loan EMI
+        </h2>
+        <p className="text-sm sm:text-base text-slate-600">
+          Use the sliders or enter values manually to calculate your monthly EMI
+          and repayment schedule.
+        </p>
+      </div>
 
-        {/* Full-width Calculator Main Card */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 bg-white text-slate-800 rounded-2xl p-6 sm:p-10 lg:p-12 shadow-2xl border border-white/10 items-stretch">
+      {/* Main Calculator Card */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 bg-white text-slate-800 rounded-2xl p-6 sm:p-8 lg:p-10 shadow-xs border border-slate-200/80 items-stretch">
           {/* Left Inputs Column (7 cols) */}
           <div className="lg:col-span-7 flex flex-col justify-between space-y-6 sm:space-y-7">
             {/* Amount Input & Slider */}
@@ -318,7 +320,6 @@ export default function EmiCalculator() {
             </div>
           </div>
         </div>
-      </div>
     </section>
   );
 }
