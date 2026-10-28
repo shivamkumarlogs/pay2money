@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { ChevronDown, AlignRight, X } from "lucide-react";
 import { LOAN_PRODUCTS as LOAN_loans, NAV_TOOLS as TOOLS } from "../data/siteData";
 
@@ -35,6 +36,14 @@ function NavLinkItem({ item, onClick, isMobile = false }) {
 }
 
 export default function Navbar() {
+  const pathname = usePathname();
+
+  // Route active states
+  const isAbout = pathname === "/about";
+  const isContact = pathname === "/contact";
+  const isTools = pathname === "/emi-calculator";
+  const isLoans = pathname.startsWith("/loans");
+
   // Desktop: single active dropdown tracker (null | 'loans' | 'tools')
   const [activeDropdown, setActiveDropdown] = useState(null);
 
@@ -90,14 +99,7 @@ export default function Navbar() {
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
-              <Link
-                href="/"
-                className="px-3.5 py-2 text-sm font-semibold text-slate-800 hover:text-brand-accent rounded-lg hover:bg-slate-50 transition"
-              >
-                Home
-              </Link>
-
+            <nav className="hidden lg:flex items-center gap-7 xl:gap-8">
               {/* loans Dropdown */}
               <div
                 className="relative group"
@@ -105,15 +107,21 @@ export default function Navbar() {
                 onMouseLeave={() => setActiveDropdown(null)}
               >
                 <button
-                  className="flex items-center gap-1.5 px-3.5 py-2 text-sm font-semibold text-slate-800 group-hover:text-brand-accent rounded-lg group-hover:bg-slate-50 transition"
+                  className={`flex items-center gap-1.5 text-sm font-semibold transition-colors cursor-pointer ${
+                    isLoans
+                      ? "text-brand-accent font-bold"
+                      : "text-slate-800 group-hover:text-brand-accent"
+                  }`}
                   aria-expanded={activeDropdown === "loans"}
                 >
                   Loans
                   <ChevronDown
-                    className={`w-4 h-4 text-slate-500 transition-transform duration-200 ${
+                    className={`w-4 h-4 transition-transform duration-200 ${
                       activeDropdown === "loans"
                         ? "rotate-180 text-brand-accent"
-                        : ""
+                        : isLoans
+                        ? "text-brand-accent"
+                        : "text-slate-500 group-hover:text-brand-accent"
                     }`}
                   />
                 </button>
@@ -142,15 +150,21 @@ export default function Navbar() {
                 onMouseLeave={() => setActiveDropdown(null)}
               >
                 <button
-                  className="flex items-center gap-1.5 px-3.5 py-2 text-sm font-semibold text-slate-800 group-hover:text-brand-accent rounded-lg group-hover:bg-slate-50 transition"
+                  className={`flex items-center gap-1.5 text-sm font-semibold transition-colors cursor-pointer ${
+                    isTools
+                      ? "text-brand-accent font-bold"
+                      : "text-slate-800 group-hover:text-brand-accent"
+                  }`}
                   aria-expanded={activeDropdown === "tools"}
                 >
                   Tools
                   <ChevronDown
-                    className={`w-4 h-4 text-slate-500 transition-transform duration-200 ${
+                    className={`w-4 h-4 transition-transform duration-200 ${
                       activeDropdown === "tools"
                         ? "rotate-180 text-brand-accent"
-                        : ""
+                        : isTools
+                        ? "text-brand-accent"
+                        : "text-slate-500 group-hover:text-brand-accent"
                     }`}
                   />
                 </button>
@@ -172,14 +186,22 @@ export default function Navbar() {
 
               <Link
                 href="/about"
-                className="px-3.5 py-2 text-sm font-semibold text-slate-800 hover:text-brand-accent rounded-lg hover:bg-slate-50 transition"
+                className={`text-sm font-semibold transition-colors ${
+                  isAbout
+                    ? "text-brand-accent font-bold"
+                    : "text-slate-800 hover:text-brand-accent"
+                }`}
               >
                 About
               </Link>
 
               <Link
                 href="/contact"
-                className="px-3.5 py-2 text-sm font-semibold text-slate-800 hover:text-brand-accent rounded-lg hover:bg-slate-50 transition"
+                className={`text-sm font-semibold transition-colors ${
+                  isContact
+                    ? "text-brand-accent font-bold"
+                    : "text-slate-800 hover:text-brand-accent"
+                }`}
               >
                 Contact
               </Link>
@@ -227,30 +249,26 @@ export default function Navbar() {
               </button>
             </div>
 
-            {/* Scrollable Navigation Links with dashed dividers */}
+            {/* Scrollable Navigation Links with clean dividers */}
             <div className="flex-1 overflow-y-auto px-4 py-3 space-y-2 overscroll-contain">
-              <div className="border-b border-slate-200 pb-2">
-                <Link
-                  href="/"
-                  onClick={closeMobileMenu}
-                  className="block px-3 py-2.5 rounded-xl text-sm font-semibold text-slate-800 hover:bg-slate-50 transition"
-                >
-                  Home
-                </Link>
-              </div>
-
               {/* Mobile loans Accordion */}
               <div className="border-b border-slate-200 pb-2">
                 <button
                   onClick={() => toggleAccordion("loans")}
-                  className="w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-sm font-semibold text-slate-800 hover:bg-slate-50 transition"
+                  className={`w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-sm font-semibold transition cursor-pointer ${
+                    isLoans
+                      ? "text-brand-accent font-bold"
+                      : "text-slate-800 hover:text-brand-accent"
+                  }`}
                 >
                   <span>Loans</span>
                   <ChevronDown
-                    className={`w-4 h-4 text-slate-500 transition-transform ${
+                    className={`w-4 h-4 transition-transform ${
                       activeAccordion === "loans"
                         ? "rotate-180 text-brand-accent"
-                        : ""
+                        : isLoans
+                        ? "text-brand-accent"
+                        : "text-slate-500"
                     }`}
                   />
                 </button>
@@ -272,14 +290,20 @@ export default function Navbar() {
               <div className="border-b border-slate-200 pb-2">
                 <button
                   onClick={() => toggleAccordion("tools")}
-                  className="w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-sm font-semibold text-slate-800 hover:bg-slate-50 transition"
+                  className={`w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-sm font-semibold transition cursor-pointer ${
+                    isTools
+                      ? "text-brand-accent font-bold"
+                      : "text-slate-800 hover:text-brand-accent"
+                  }`}
                 >
                   <span>Tools</span>
                   <ChevronDown
-                    className={`w-4 h-4 text-slate-500 transition-transform ${
+                    className={`w-4 h-4 transition-transform ${
                       activeAccordion === "tools"
                         ? "rotate-180 text-brand-accent"
-                        : ""
+                        : isTools
+                        ? "text-brand-accent"
+                        : "text-slate-500"
                     }`}
                   />
                 </button>
@@ -301,7 +325,11 @@ export default function Navbar() {
                 <Link
                   href="/about"
                   onClick={closeMobileMenu}
-                  className="block px-3 py-2.5 rounded-xl text-sm font-semibold text-slate-800 hover:bg-slate-50 transition"
+                  className={`block px-3 py-2.5 rounded-xl text-sm font-semibold transition ${
+                    isAbout
+                      ? "text-brand-accent font-bold"
+                      : "text-slate-800 hover:text-brand-accent"
+                  }`}
                 >
                   About
                 </Link>
@@ -311,7 +339,11 @@ export default function Navbar() {
                 <Link
                   href="/contact"
                   onClick={closeMobileMenu}
-                  className="block px-3 py-2.5 rounded-xl text-sm font-semibold text-slate-800 hover:bg-slate-50 transition"
+                  className={`block px-3 py-2.5 rounded-xl text-sm font-semibold transition ${
+                    isContact
+                      ? "text-brand-accent font-bold"
+                      : "text-slate-800 hover:text-brand-accent"
+                  }`}
                 >
                   Contact
                 </Link>
