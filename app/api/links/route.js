@@ -52,7 +52,9 @@ function parseCsv(csvText) {
 
 export async function GET() {
   const sheetId =
-    process.env.NEXT_PUBLIC_GOOGLE_SHEET_ID || GOOGLE_SHEET_CONFIG.sheetId;
+    process.env.GOOGLE_SHEET_ID ||
+    process.env.NEXT_PUBLIC_GOOGLE_SHEET_ID ||
+    GOOGLE_SHEET_CONFIG.sheetId;
 
   // If no Google Sheet ID is configured yet, immediately return local defaults
   if (!sheetId) {

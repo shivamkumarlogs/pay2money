@@ -19,9 +19,9 @@ export function normalizeKey(str) {
 }
 
 // Google Sheet Configuration
-// Set your public Google Sheet ID below or via NEXT_PUBLIC_GOOGLE_SHEET_ID in .env.local
+// Set your Google Sheet ID below, or via GOOGLE_SHEET_ID in .env.local / Vercel
 export const GOOGLE_SHEET_CONFIG = {
-  sheetId: process.env.NEXT_PUBLIC_GOOGLE_SHEET_ID || "",
+  sheetId: process.env.GOOGLE_SHEET_ID || process.env.NEXT_PUBLIC_GOOGLE_SHEET_ID || "",
   sheetName: "Sheet1",
   revalidateSeconds: 60, // Cache for 60 seconds to ensure high speed & no rate limits
 };
