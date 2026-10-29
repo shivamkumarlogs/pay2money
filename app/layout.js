@@ -1,5 +1,6 @@
 import { Manrope } from "next/font/google";
 import "./globals.css";
+import { LinksProvider } from "./context/LinksContext";
 
 // ============================================================================
 // GLOBAL FONT CONFIGURATION (Single Source of Truth - Kissht Style: Manrope)
@@ -42,7 +43,7 @@ export default function RootLayout({ children }) {
         <link rel="apple-touch-icon" href="/icon.svg" />
       </head>
       <body className="antialiased min-h-screen text-brand-text bg-brand-surface">
-        {children}
+        <LinksProvider>{children}</LinksProvider>
       </body>
     </html>
   );

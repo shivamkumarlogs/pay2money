@@ -226,9 +226,10 @@ export const NAV_TOOLS = [
     icon: <Calculator />,
   },
   {
+    id: "free-cibil-check",
     name: "CIBIL Check",
     desc: "Check credit score instantly",
-    href: "/#cibil",
+    href: "#cibil",
     icon: <Gauge />,
   },
 ];
@@ -238,6 +239,7 @@ export const NAV_TOOLS = [
 // ==========================================
 export const HERO_SLIDES = [
   {
+    id: "personal-loan",
     title: "Quick Personal Loans",
     subtitle: "Get funds sent directly to your bank account with zero paperwork.",
     cta: "Apply Now",
@@ -258,6 +260,7 @@ export const HERO_SLIDES = [
     imgAlt: "Credit score check with card and laptop",
   },
   {
+    id: "home-loan",
     title: "Affordable Home Loans",
     subtitle: "Easy home financing with low monthly payments and flexible tenure.",
     cta: "Explore Home Loans",
@@ -268,6 +271,7 @@ export const HERO_SLIDES = [
     imgAlt: "Keys to new home",
   },
   {
+    id: "business-loan",
     title: "Fast Business Loans",
     subtitle: "Get capital for daily expenses and equipment without giving any collateral.",
     cta: "Grow Your Business",
@@ -278,6 +282,7 @@ export const HERO_SLIDES = [
     imgAlt: "Business team at work",
   },
   {
+    id: "gold-loan",
     title: "Instant Gold Loans",
     subtitle: "Safe bank vault storage with same-day cash given straight into your account.",
     cta: "Get Gold Loan",

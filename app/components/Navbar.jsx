@@ -5,19 +5,15 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ChevronDown, AlignRight, X } from "lucide-react";
 import { LOAN_PRODUCTS as LOAN_loans, NAV_TOOLS as TOOLS } from "../data/siteData";
+import { useProductLinks } from "../context/LinksContext";
 
 // Reusable Navigation Link Item (Shared across Desktop & Mobile)
 function NavLinkItem({ item, onClick, isMobile = false }) {
-  return (
-    <Link
-      href={item.href}
-      onClick={onClick}
-      className={`flex items-center gap-3 p-2.5 rounded-xl transition group ${
-        isMobile
-          ? "bg-slate-50/70 hover:bg-brand-accent-light"
-          : "hover:bg-slate-50 border border-transparent"
-      }`}
-    >
+  const { getLink } = useProductLinks();
+  const linkInfo = getLink(item.id || item.name, item.href);
+
+  const innerContent = (
+    <>
       <div className="w-8 h-8 lg:w-9 lg:h-9 rounded-lg bg-brand-accent-light text-brand-accent flex items-center justify-center shrink-0 group-hover:bg-brand-accent group-hover:text-white transition">
         {React.cloneElement(item.icon, {
           className: "w-4 h-4 lg:w-5 lg:h-5 transition",
@@ -31,6 +27,32 @@ function NavLinkItem({ item, onClick, isMobile = false }) {
           {item.desc}
         </div>
       </div>
+    </>
+  );
+
+  const containerClasses = `flex items-center gap-3 p-2.5 rounded-xl transition group ${
+    isMobile
+      ? "bg-slate-50/70 hover:bg-brand-accent-light"
+      : "hover:bg-slate-50 border border-transparent"
+  }`;
+
+  if (linkInfo.isExternal) {
+    return (
+      <a
+        href={linkInfo.href}
+        target={linkInfo.target}
+        rel={linkInfo.rel}
+        onClick={onClick}
+        className={containerClasses}
+      >
+        {innerContent}
+      </a>
+    );
+  }
+
+  return (
+    <Link href={linkInfo.href} onClick={onClick} className={containerClasses}>
+      {innerContent}
     </Link>
   );
 }

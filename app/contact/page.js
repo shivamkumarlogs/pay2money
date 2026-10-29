@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Button from "../components/Button";
@@ -18,6 +18,34 @@ export default function ContactPage() {
 
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+
+  // Auto-detect service parameter from URL (fallback when affiliate link expires)
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      const service = params.get("service");
+      if (service) {
+        const serviceMap = {
+          "personal-loan": "Personal Loan Inquiry",
+          "instant-loan": "Personal Loan Inquiry",
+          "home-loan": "Home Loan Inquiry",
+          "business-loan": "Business Loan Inquiry",
+          "gold-loan": "Gold Loan Inquiry",
+          "loan-against-property": "Home Loan Inquiry",
+          "car-loan": "General Inquiry",
+          "credit-cards": "General Inquiry",
+          "free-cibil-check": "General Inquiry",
+        };
+        const mappedSubject = serviceMap[service] || "General Inquiry";
+        const cleanName = service.replace(/-/g, " ");
+        setFormData((prev) => ({
+          ...prev,
+          subject: mappedSubject,
+          message: `Hi, I would like to apply for ${cleanName}. Please connect with me to guide through the process.`,
+        }));
+      }
+    }
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
