@@ -300,19 +300,19 @@ export const HERO_SLIDES = [
 export const HOW_IT_WORKS_STEPS = [
   {
     num: "1",
-    title: "Submit Details",
-    desc: "Choose your desired loan type and submit basic details digitally in just 2 minutes.",
+    title: "Instant Pre-Approval",
+    desc: "Pre-sanctioned offers unlocked digitally in just 2 minutes.",
     icon: <User className="w-6 h-6" strokeWidth={2} />,
   },
   {
     num: "2",
-    title: "Partner Matching",
+    title: "Verified Partner Match",
     desc: "We connect your request directly with verified partner banks and NBFCs for quick sanction.",
     icon: <ClipboardCheck className="w-6 h-6" strokeWidth={2} />,
   },
   {
     num: "3",
-    title: "Fast Disbursal",
+    title: "Direct Bank Disbursal",
     desc: "Complete simple digital verification and receive funds directly into your bank account.",
     icon: <ShieldCheck className="w-6 h-6" strokeWidth={2} />,
   },

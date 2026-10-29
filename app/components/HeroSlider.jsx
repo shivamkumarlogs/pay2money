@@ -96,7 +96,7 @@ export default function HeroSlider() {
                       rel={linkInfo.rel}
                       variant="white"
                       size="sm"
-                      className="!rounded-full px-5 sm:px-7 py-1.5 sm:py-2.5 text-[11px] sm:text-sm"
+                      className="rounded-full! px-5 sm:px-7 py-1.5 sm:py-2.5 text-[11px] sm:text-sm"
                     >
                       {slide.cta}
                     </Button>
