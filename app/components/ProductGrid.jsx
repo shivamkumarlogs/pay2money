@@ -49,7 +49,7 @@ export default function ProductGrid() {
                 </div>
 
                 {/* Kissht-Style Top-Right Circular Hover Button */}
-                <div className="w-8 h-8 rounded-full bg-brand-primary text-white group-hover:bg-brand-accent flex items-center justify-center opacity-80 sm:opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-0 sm:translate-y-1 sm:group-hover:translate-y-0 shadow-xs shrink-0">
+                <div className="w-8 h-8 rounded-full bg-brand-accent text-white flex items-center justify-center opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-all duration-300 transform translate-y-0 sm:translate-y-1 sm:group-hover:translate-y-0 shadow-xs shrink-0">
                   <ArrowUpRight className="w-4 h-4" />
                 </div>
               </div>
@@ -101,7 +101,7 @@ export default function ProductGrid() {
                     />
                   </div>
 
-                  <div className="w-8 h-8 rounded-full bg-brand-primary text-white group-hover:bg-brand-accent flex items-center justify-center opacity-80 sm:opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-0 sm:translate-y-1 sm:group-hover:translate-y-0 shadow-xs shrink-0">
+                  <div className="w-8 h-8 rounded-full bg-brand-accent text-white flex items-center justify-center opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-all duration-300 transform translate-y-0 sm:translate-y-1 sm:group-hover:translate-y-0 shadow-xs shrink-0">
                     <ArrowUpRight className="w-4 h-4" />
                   </div>
                 </div>
