@@ -91,32 +91,29 @@ export default function EmiCalculator() {
           {/* Left Inputs Column (7 cols) */}
           <div className="lg:col-span-7 flex flex-col justify-between space-y-6 sm:space-y-7">
             {/* Amount Input & Slider */}
-            <div className="bg-slate-50/80 p-4 sm:p-5 rounded-xl border border-slate-200">
+            <div>
               <div className="flex items-center justify-between gap-3 mb-3">
                 <label className="text-sm sm:text-base font-bold text-brand-primary">
                   Loan Amount
                 </label>
-                <div className="w-32 sm:w-36 h-9 sm:h-10 px-2.5 bg-white rounded-xl border border-slate-300 shadow-sm flex items-center justify-end gap-1 focus-within:border-brand-accent focus-within:ring-2 focus-within:ring-brand-accent/20 transition shrink-0">
-                  <span className="text-xs sm:text-sm font-bold text-slate-400 select-none">
+                <div className="h-10 sm:h-11 px-3 bg-white rounded-xl border border-slate-300 shadow-sm flex items-center gap-1.5 focus-within:border-brand-accent focus-within:ring-2 focus-within:ring-brand-accent/20 transition shrink-0">
+                  <span className="text-sm font-semibold text-slate-500 select-none">
                     ₹
                   </span>
                   <input
-                    type="number"
-                    min={10000}
-                    max={100000000}
-                    step={25000}
-                    value={amount === 0 ? "" : amount}
+                    type="text"
+                    inputMode="numeric"
+                    value={amount === 0 ? "" : formatINR(amount)}
                     onChange={(e) => {
-                      const val =
-                        e.target.value === "" ? 0 : Number(e.target.value);
-                      setAmount(val);
+                      const raw = e.target.value.replace(/[^0-9]/g, "");
+                      setAmount(raw === "" ? 0 : Number(raw));
                     }}
                     onBlur={() => {
                       if (!amount || amount < 10000) setAmount(50000);
                       else if (amount > 100000000) setAmount(100000000);
                     }}
-                    className="w-full text-right font-extrabold text-brand-accent text-sm sm:text-base focus:outline-none bg-transparent [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
-                    placeholder="500000"
+                    className="w-24 sm:w-28 font-bold text-slate-800 text-sm sm:text-base focus:outline-none bg-transparent"
+                    placeholder="10,00,000"
                   />
                 </div>
               </div>
@@ -142,12 +139,12 @@ export default function EmiCalculator() {
             </div>
 
             {/* Interest Rate Input & Slider */}
-            <div className="bg-slate-50/80 p-4 sm:p-5 rounded-xl border border-slate-200">
+            <div>
               <div className="flex items-center justify-between gap-3 mb-3">
                 <label className="text-sm sm:text-base font-bold text-brand-primary">
                   Interest Rate (p.a.)
                 </label>
-                <div className="w-24 sm:w-28 h-9 sm:h-10 px-2.5 bg-white rounded-xl border border-slate-300 shadow-sm flex items-center justify-end gap-1 focus-within:border-brand-accent focus-within:ring-2 focus-within:ring-brand-accent/20 transition shrink-0">
+                <div className="h-10 sm:h-11 px-3 bg-white rounded-xl border border-slate-300 shadow-sm flex items-center gap-1 focus-within:border-brand-accent focus-within:ring-2 focus-within:ring-brand-accent/20 transition shrink-0">
                   <input
                     type="number"
                     min={1}
@@ -163,10 +160,10 @@ export default function EmiCalculator() {
                       if (!rate || rate < 1) setRate(6.5);
                       else if (rate > 30) setRate(30);
                     }}
-                    className="w-full text-right font-extrabold text-brand-accent text-sm sm:text-base focus:outline-none bg-transparent [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                    className="w-14 sm:w-16 font-bold text-slate-800 text-sm sm:text-base focus:outline-none bg-transparent [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                     placeholder="10.5"
                   />
-                  <span className="text-xs sm:text-sm font-bold text-slate-400 select-none">
+                  <span className="text-sm font-semibold text-slate-500 select-none">
                     %
                   </span>
                 </div>
@@ -193,12 +190,12 @@ export default function EmiCalculator() {
             </div>
 
             {/* Tenure Input & Slider */}
-            <div className="bg-slate-50/80 p-4 sm:p-5 rounded-xl border border-slate-200">
+            <div>
               <div className="flex items-center justify-between gap-3 mb-3">
                 <label className="text-sm sm:text-base font-bold text-brand-primary">
                   Loan Tenure
                 </label>
-                <div className="w-24 sm:w-28 h-9 sm:h-10 px-2.5 bg-white rounded-xl border border-slate-300 shadow-sm flex items-center justify-end gap-1 focus-within:border-brand-accent focus-within:ring-2 focus-within:ring-brand-accent/20 transition shrink-0">
+                <div className="h-10 sm:h-11 px-3 bg-white rounded-xl border border-slate-300 shadow-sm flex items-center gap-1.5 focus-within:border-brand-accent focus-within:ring-2 focus-within:ring-brand-accent/20 transition shrink-0">
                   <input
                     type="number"
                     min={1}
@@ -214,10 +211,10 @@ export default function EmiCalculator() {
                       if (!tenure || tenure < 1) setTenure(1);
                       else if (tenure > 30) setTenure(30);
                     }}
-                    className="w-full text-right font-extrabold text-brand-accent text-sm sm:text-base focus:outline-none bg-transparent [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                    className="w-10 sm:w-12 font-bold text-slate-800 text-sm sm:text-base focus:outline-none bg-transparent [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                     placeholder="5"
                   />
-                  <span className="text-xs sm:text-sm font-bold text-slate-400 select-none">
+                  <span className="text-xs sm:text-sm font-semibold text-slate-500 select-none">
                     {tenure === 1 ? "Yr" : "Yrs"}
                   </span>
                 </div>
