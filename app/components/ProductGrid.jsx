@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { LOAN_PRODUCTS as LOAN_CARDS, CIBIL_PRODUCTS as CIBIL_CARDS } from "../data/siteData";
 
@@ -30,15 +31,13 @@ export default function ProductGrid() {
           >
             {/* Top Row: 3D Illustration on left, Circular Arrow on right (appears on hover) */}
             <div className="flex items-start justify-between">
-              <div className="w-16 h-16 sm:w-18 sm:h-18 flex items-center justify-center shrink-0">
-                <img
+              <div className="w-16 h-16 sm:w-18 sm:h-18 flex items-center justify-center shrink-0 relative">
+                <Image
                   src={card.img}
                   alt={card.title}
+                  width={72}
+                  height={72}
                   className="w-full h-full object-contain transform group-hover:scale-108 transition-transform duration-300 drop-shadow-sm select-none"
-                  loading="lazy"
-                  onError={(e) => {
-                    e.currentTarget.style.display = "none";
-                  }}
                 />
               </div>
 
@@ -80,15 +79,13 @@ export default function ProductGrid() {
               className="group relative flex flex-col justify-between bg-white rounded-2xl p-6 min-h-47.5 sm:min-h-52.5 border border-slate-200/80 hover:border-brand-accent-border shadow-xs hover:shadow-md transition-all overflow-hidden"
             >
               <div className="flex items-start justify-between">
-                <div className="w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center shrink-0">
-                  <img
+                <div className="w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center shrink-0 relative">
+                  <Image
                     src={card.img}
                     alt={card.title}
+                    width={64}
+                    height={64}
                     className="w-full h-full object-contain transform group-hover:scale-108 transition-transform duration-300 drop-shadow-sm select-none"
-                    loading="lazy"
-                    onError={(e) => {
-                      e.currentTarget.style.display = "none";
-                    }}
                   />
                 </div>
 

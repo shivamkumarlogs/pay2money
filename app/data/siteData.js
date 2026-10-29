@@ -244,7 +244,7 @@ export const HERO_SLIDES = [
     href: "#calculator",
     bg: "bg-brand-primary",
     btnText: "text-brand-primary",
-    image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=1000&auto=format&fit=crop",
+    image: "/images/hero/personal-loan.jpg",
     imgAlt: "Customer with smartphone",
   },
   {
@@ -254,7 +254,7 @@ export const HERO_SLIDES = [
     href: "#cibil",
     bg: "bg-[#0E223D]",
     btnText: "text-brand-primary",
-    image: "https://images.unsplash.com/photo-1556742044-3c52d6e88c62?q=80&w=1000&auto=format&fit=crop",
+    image: "/images/hero/cibil-check.jpg",
     imgAlt: "Credit score check with card and laptop",
   },
   {
@@ -264,7 +264,7 @@ export const HERO_SLIDES = [
     href: "#calculator",
     bg: "bg-[#142A4A]",
     btnText: "text-brand-primary",
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1000&auto=format&fit=crop",
+    image: "/images/hero/home-loan.jpg",
     imgAlt: "Keys to new home",
   },
   {
@@ -274,7 +274,7 @@ export const HERO_SLIDES = [
     href: "#calculator",
     bg: "bg-[#0A1A30]",
     btnText: "text-brand-primary",
-    image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1000&auto=format&fit=crop",
+    image: "/images/hero/business-loan.jpg",
     imgAlt: "Business team at work",
   },
   {
@@ -284,7 +284,7 @@ export const HERO_SLIDES = [
     href: "#calculator",
     bg: "bg-[#183256]",
     btnText: "text-brand-primary",
-    image: "https://images.unsplash.com/photo-1610375461246-83df859d849d?q=80&w=1000&auto=format&fit=crop",
+    image: "/images/hero/gold-loan.jpg",
     imgAlt: "Safe gold loan vault",
   },
 ];

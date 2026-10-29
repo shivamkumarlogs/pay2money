@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { HERO_SLIDES as SLIDES } from "../data/siteData";
 import Button from "./Button";
@@ -96,12 +97,13 @@ export default function HeroSlider() {
               <div
                 className="absolute right-0 top-0 bottom-0 w-[42%] sm:w-[46%] md:w-[48%] h-full overflow-hidden [clip-path:polygon(18%_0,100%_0,100%_100%,0_100%)] sm:[clip-path:polygon(14%_0,100%_0,100%_100%,0_100%)]"
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src={slide.image}
                   alt={slide.imgAlt}
-                  className="w-full h-full object-cover object-center"
-                  loading={idx === 0 ? "eager" : "lazy"}
+                  fill
+                  sizes="(max-width: 640px) 45vw, (max-width: 768px) 48vw, 600px"
+                  className="object-cover object-center"
+                  {...(idx === 0 ? { priority: true } : { loading: "eager" })}
                 />
               </div>
             </div>

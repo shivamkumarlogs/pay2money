@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { ABOUT_PROMISES as PROMISES } from "../data/siteData";
@@ -66,11 +67,12 @@ export default function AboutPage() {
 
             <div className="lg:col-span-6">
               <div className="relative rounded-3xl overflow-hidden shadow-xl border border-slate-200 aspect-4/3 bg-slate-100">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1000&auto=format&fit=crop"
+                <Image
+                  src="/images/about/team.jpg"
                   alt="Pay2Money team meeting"
-                  className="w-full h-full object-cover object-center"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover object-center"
                 />
               </div>
             </div>
