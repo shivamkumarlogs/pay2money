@@ -14,23 +14,18 @@ function NavLinkItem({ item, onClick, isMobile = false }) {
 
   const innerContent = (
     <>
-      <div className="w-8 h-8 lg:w-9 lg:h-9 rounded-lg bg-brand-accent-light text-brand-accent flex items-center justify-center shrink-0 group-hover:bg-brand-accent group-hover:text-white transition">
+      <div className="w-7 h-7 lg:w-8 lg:h-8 rounded-lg bg-brand-accent-light text-brand-accent flex items-center justify-center shrink-0 group-hover:bg-brand-accent group-hover:text-white transition">
         {React.cloneElement(item.icon, {
-          className: "w-4 h-4 lg:w-5 lg:h-5 transition",
+          className: "w-3.5 h-3.5 lg:w-4 lg:h-4 transition",
         })}
       </div>
-      <div className="min-w-0 flex-1">
-        <div className="text-xs lg:text-sm font-semibold text-slate-800 group-hover:text-brand-primary transition-colors truncate">
-          {item.name}
-        </div>
-        <div className="text-[11px] lg:text-xs text-slate-500 truncate">
-          {item.desc}
-        </div>
-      </div>
+      <span className="text-xs lg:text-sm font-semibold text-slate-800 group-hover:text-brand-primary transition-colors truncate">
+        {item.name}
+      </span>
     </>
   );
 
-  const containerClasses = `flex items-center gap-3 p-2.5 rounded-xl transition group ${
+  const containerClasses = `flex items-center gap-2.5 p-2 rounded-xl transition group ${
     isMobile
       ? "bg-slate-50/70 hover:bg-brand-accent-light"
       : "hover:bg-slate-50 border border-transparent"
@@ -149,9 +144,9 @@ export default function Navbar() {
                 </button>
 
                 {activeDropdown === "loans" && (
-                  <div className="absolute top-full -left-20 pt-2 w-170 z-50 animate-fadeIn">
-                    <div className="bg-white rounded-2xl shadow-2xl border border-slate-100 p-5">
-                      <div className="grid grid-cols-2 gap-2">
+                  <div className="absolute top-full -left-16 pt-2 w-135 z-50 animate-fadeIn">
+                    <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-3.5">
+                      <div className="grid grid-cols-2 gap-1.5">
                         {LOAN_loans.map((prod) => (
                           <NavLinkItem
                             key={prod.name}
@@ -192,8 +187,8 @@ export default function Navbar() {
                 </button>
 
                 {activeDropdown === "tools" && (
-                  <div className="absolute top-full left-0 pt-2 w-72 z-50 animate-fadeIn">
-                    <div className="bg-white rounded-2xl shadow-2xl border border-slate-100 p-4 space-y-1">
+                  <div className="absolute top-full left-0 pt-2 w-56 z-50 animate-fadeIn">
+                    <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-2.5 space-y-1">
                       {TOOLS.map((tool) => (
                         <NavLinkItem
                           key={tool.name}
