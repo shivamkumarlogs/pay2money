@@ -15,11 +15,11 @@ export default function ProductGrid() {
       className="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto"
     >
       {/* Category 1: Loans and Cards Header */}
-      <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
-        <h3 className="text-2xl sm:text-3xl font-extrabold text-brand-primary tracking-tight">
+      <div className="max-w-4xl mx-auto text-center space-y-4 mb-10 sm:mb-14">
+        <h3 className="text-2xl sm:text-4xl font-black text-brand-primary tracking-tight leading-[1.15]">
           Loans and Cards
         </h3>
-        <p className="text-xs sm:text-sm text-slate-500 mt-1.5">
+        <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed font-normal">
           Simple digital applications with minimal paperwork and instant partner sanctions.
         </p>
       </div>
@@ -70,11 +70,11 @@ export default function ProductGrid() {
 
       {/* Category 2: CIBIL Score & Financial Tools */}
       <div id="cibil">
-        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
-          <h3 className="text-2xl sm:text-3xl font-extrabold text-brand-primary tracking-tight">
-            Check CIBIL Score &amp; Credit Tools
+        <div className="max-w-4xl mx-auto text-center space-y-4 mb-10 sm:mb-14">
+          <h3 className="text-2xl sm:text-4xl font-black text-brand-primary tracking-tight leading-[1.15]">
+            CIBIL Score and Credit Tools
           </h3>
-          <p className="text-xs sm:text-sm text-slate-500 mt-1.5">
+          <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed font-normal">
             Free credit assessment tools to monitor and build your financial health.
           </p>
         </div>

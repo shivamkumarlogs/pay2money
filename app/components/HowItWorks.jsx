@@ -5,15 +5,12 @@ import { HOW_IT_WORKS_STEPS as STEPS } from "../data/siteData";
 
 export default function HowItWorks() {
   return (
-    <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-      <div className="text-center max-w-2xl mx-auto mb-14">
-        <span className="text-xs font-extrabold uppercase tracking-widest text-brand-accent">
-          How It Works
-        </span>
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-brand-primary tracking-tight mt-2 mb-3">
-          Simple steps, no paperwork hassle
+    <section className="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div className="max-w-4xl mx-auto text-center space-y-4 mb-10 sm:mb-14">
+        <h2 className="text-2xl sm:text-4xl font-black text-brand-primary tracking-tight leading-[1.15]">
+          Fast approvals in three simple steps.
         </h2>
-        <p className="text-sm sm:text-base text-slate-600">
+        <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed font-normal">
           Get sanctioned loan amounts deposited into your bank account with
           complete transparency.
         </p>

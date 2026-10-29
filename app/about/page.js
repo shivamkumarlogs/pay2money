@@ -39,7 +39,7 @@ export default function AboutPage() {
                 Why We Started
               </span>
 
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-brand-primary tracking-tight leading-snug">
+              <h2 className="text-xl sm:text-2xl font-black text-brand-primary tracking-tight leading-snug">
                 Borrowing money is a major life moment. It shouldn&apos;t feel
                 stressful.
               </h2>
@@ -84,8 +84,8 @@ export default function AboutPage() {
             <span className="inline-block text-xs font-bold uppercase tracking-widest text-brand-accent">
               Our Commitments
             </span>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-brand-primary tracking-tight">
-              Built on trust and <span className="text-brand-accent">real human assistance</span>
+            <h2 className="text-xl sm:text-2xl font-black text-brand-primary tracking-tight">
+              Built on trust and real human assistance
             </h2>
           </div>
 
