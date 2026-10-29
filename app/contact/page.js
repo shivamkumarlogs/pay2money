@@ -66,8 +66,8 @@ export default function ContactPage() {
         {/* 1. Header Section */}
         <section className="pt-14 sm:pt-20 pb-6 sm:pb-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
           <div className="max-w-4xl mx-auto text-center space-y-6">
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-brand-primary tracking-tight leading-[1.15]">
-              We are here to <span className="text-brand-accent">assist you.</span>
+            <h1 className="text-2xl sm:text-4xl font-black text-brand-primary tracking-tight leading-[1.15]">
+              We are here to assist you.
             </h1>
             <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed font-normal">
               Have questions about partner loan facilitation, documentation, or
