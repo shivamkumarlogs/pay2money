@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ChevronDown, AlignRight, X } from "lucide-react";
-import { LOAN_PRODUCTS as LOAN_loans, NAV_TOOLS as TOOLS } from "../data/siteData";
+import { LOAN_PRODUCTS as LOANS, NAV_TOOLS as TOOLS } from "../data/siteData";
 import { useProductLinks } from "../context/LinksContext";
 
 // Reusable Navigation Link Item (Shared across Desktop & Mobile)
@@ -147,7 +147,7 @@ export default function Navbar() {
                   <div className="absolute top-full -left-16 pt-2 w-135 z-50 animate-fadeIn">
                     <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-3.5">
                       <div className="grid grid-cols-2 gap-1.5">
-                        {LOAN_loans.map((prod) => (
+                        {LOANS.map((prod) => (
                           <NavLinkItem
                             key={prod.name}
                             item={prod}
@@ -291,7 +291,7 @@ export default function Navbar() {
                 </button>
                 {activeAccordion === "loans" && (
                   <div className="grid grid-cols-1 gap-1.5 pl-2 pt-1.5">
-                    {LOAN_loans.map((prod) => (
+                    {LOANS.map((prod) => (
                       <NavLinkItem
                         key={prod.name}
                         item={prod}
