@@ -313,3 +313,69 @@ export const ABOUT_PROMISES = [
     icon: <PhoneOff className="w-5 h-5 text-brand-accent" />,
   },
 ];
+
+// ==========================================
+// 8. Frequently Asked Questions (FAQ)
+// ==========================================
+export const FAQ_ITEMS = [
+  {
+    question: "What is Pay2Money?",
+    answer:
+      "Pay2Money is a trusted digital lending facilitation platform that connects borrowers with accredited scheduled commercial banks and RBI-registered NBFCs across India. We offer a transparent, paperless experience for personal loans, business loans, home loans, and credit cards with instant partner sanctions.",
+  },
+  {
+    question: "Is it safe to apply for a loan through Pay2Money?",
+    answer:
+      "Yes, absolutely. Pay2Money utilizes bank-grade 256-bit encryption to ensure your personal and financial data remains secure. Your details are strictly shared only with verified partner lending institutions to process your specific application.",
+  },
+  {
+    question: "How does Pay2Money work?",
+    answer:
+      "Simply choose your desired loan product, submit your basic eligibility details, and our digital system matches your profile with partner banks and NBFCs offering the lowest interest rates. Once approved, the loan amount is disbursed directly into your registered bank account.",
+  },
+  {
+    question: "Who is eligible to apply for a loan on Pay2Money?",
+    answer:
+      "Any Indian citizen aged 21 to 60 with a valid PAN, Aadhaar, and a stable source of income (salaried or self-employed) is eligible to apply. Specific income criteria and credit score requirements depend on the lending partner.",
+  },
+  {
+    question: "Does checking loan options affect my CIBIL score?",
+    answer:
+      "No. Browsing partner offers and preliminary eligibility checks on Pay2Money are soft inquiries and have zero impact on your CIBIL score.",
+  },
+  {
+    question: "Does Pay2Money charge any fee from borrowers?",
+    answer:
+      "None. Our platform is 100% free for borrowers. We never charge consultation, processing, or broker fees from users.",
+  },
+  {
+    question: "How fast is the loan approval and disbursal process?",
+    answer:
+      "Digital pre-approvals take as little as 2 to 10 minutes. Final disbursal to your registered bank account typically completes within 24 to 48 business hours upon document verification.",
+  },
+  {
+    question: "What documents are required to apply?",
+    answer:
+      "Documentation is completely digital: your PAN card, Aadhaar for KYC verification, and your recent 3 to 6 months bank statement.",
+  },
+  {
+    question: "Can I apply if I am self-employed or run a small business?",
+    answer:
+      "Yes. We facilitate loans for both salaried employees and self-employed individuals, including small business owners, traders, and professionals with tailored partner eligibility options.",
+  },
+  {
+    question: "What is the typical repayment tenure available?",
+    answer:
+      "Repayment tenures range from 6 months up to 5 years for personal and instant loans, and up to 20 to 30 years for home loans and loans against property, depending on partner lender policies.",
+  },
+  {
+    question: "Can I prepay or foreclose my loan before tenure completion?",
+    answer:
+      "Yes, you can prepay or foreclose your loan at any time. Under RBI guidelines, floating-rate personal loans provided by our partner institutions to individual borrowers carry zero foreclosure penalties.",
+  },
+  {
+    question: "What interest rates can I expect on partner loans?",
+    answer:
+      "Interest rates depend on your credit score, monthly income, and chosen lender. Indicative rates start as low as 7.10% per annum for home loans and 10.5% per annum for unsecured personal loans.",
+  },
+];
