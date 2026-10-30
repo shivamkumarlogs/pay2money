@@ -5,6 +5,7 @@ import { HOW_IT_WORKS_STEPS as STEPS } from "../data/siteData";
 
 export default function HowItWorks() {
   const sectionRef = useRef(null);
+  const timersRef = useRef([]);
   const [activeStep, setActiveStep] = useState(0); // 0 = none, 1, 2, 3
   const [isLineDrawn, setIsLineDrawn] = useState(false);
   const [hasTriggered, setHasTriggered] = useState(false);
@@ -24,6 +25,8 @@ export default function HowItWorks() {
     // Reset states
     setActiveStep(0);
     setIsLineDrawn(false);
+    timersRef.current.forEach(clearTimeout);
+    timersRef.current = [];
 
     requestAnimationFrame(() => {
       // 1. Draw connecting SVG line with stroke-dashoffset over 2.0s (ease in-out)
@@ -44,11 +47,7 @@ export default function HowItWorks() {
         setActiveStep((prev) => Math.max(prev, 3));
       }, 1900);
 
-      return () => {
-        clearTimeout(t1);
-        clearTimeout(t2);
-        clearTimeout(t3);
-      };
+      timersRef.current = [t1, t2, t3];
     });
   };
 
@@ -69,6 +68,7 @@ export default function HowItWorks() {
 
     return () => {
       if (el) observer.unobserve(el);
+      timersRef.current.forEach(clearTimeout);
     };
   }, [hasTriggered]);
 
