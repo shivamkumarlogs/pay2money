@@ -109,10 +109,10 @@ export const LOAN_PRODUCTS = [
   },
   {
     id: "car-loan",
-    title: "Car Loan (New & Used)",
-    name: "Car Loan (New & Used)",
+    title: "Car Loan",
+    name: "Car Loan",
     desc: "Drive home your dream car with 100% on-road funding",
-    navDesc: "New and used vehicle funding",
+    navDesc: "Vehicle funding at low rates",
     href: "/#loans",
     gridHref: "#calculator",
     img: "/images/icons/car-loan.png",
