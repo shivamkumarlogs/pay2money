@@ -1,17 +1,5 @@
-import { Manrope } from "next/font/google";
 import "./globals.css";
 import { LinksProvider } from "./context/LinksContext";
-
-// ============================================================================
-// GLOBAL FONT CONFIGURATION (Single Source of Truth - Kissht Style: Manrope)
-// Change the primary font family right here in 1 place!
-// ============================================================================
-const primaryFont = Manrope({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  variable: "--font-primary",
-  display: "swap",
-});
 
 export const metadata = {
   title: "Pay2Money - Get Loans Online | Best Rates in India",
@@ -36,13 +24,19 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={primaryFont.variable}>
+    <html lang="en">
       <head>
         <meta name="theme-color" content="#081528" />
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/icon.svg" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet"
+        />
       </head>
-      <body className="antialiased min-h-screen text-brand-text bg-brand-surface">
+      <body className="antialiased min-h-screen text-brand-text bg-brand-surface font-sans">
         <LinksProvider>{children}</LinksProvider>
       </body>
     </html>
