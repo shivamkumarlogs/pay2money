@@ -70,8 +70,8 @@ export default function Footer() {
               &copy; {currentYear} {SITE_CONFIG.name}. All rights reserved.
             </p>
             <div className="flex items-center gap-5">
-              <a href="#footer" className="hover:text-brand-accent transition-colors">Privacy Policy</a>
-              <a href="#footer" className="hover:text-brand-accent transition-colors">Terms of Service</a>
+              <Link href="/privacy-policy" className="hover:text-brand-accent transition-colors">Privacy Policy</Link>
+              <Link href="#footer" className="hover:text-brand-accent transition-colors">Terms of Service</Link>
             </div>
           </div>
         </div>
