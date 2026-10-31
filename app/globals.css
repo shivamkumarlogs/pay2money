@@ -5,8 +5,8 @@
      GLOBAL THEME DESIGN SYSTEM (Single Source of Truth)
      To switch the entire website theme in the future, change values here!
      ========================================================================== */
-  --font-primary: "Manrope", system-ui, -apple-system, sans-serif;
-  --font-sans: "Manrope", system-ui, -apple-system, sans-serif;
+  --font-primary: var(--font-primary, "Manrope", system-ui, -apple-system, sans-serif);
+  --font-sans: var(--font-primary, "Manrope", system-ui, -apple-system, sans-serif);
 
   /* Deep Oxford Midnight & Luxury Champagne Gold */
   --color-brand-primary: #081528;

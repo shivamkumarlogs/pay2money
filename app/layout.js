@@ -1,5 +1,17 @@
+import localFont from "next/font/local";
 import "./globals.css";
 import { LinksProvider } from "./context/LinksContext";
+
+// ============================================================================
+// SELF-HOSTED ENTERPRISE FONT (next/font/local)
+// Zero layout shifts (CLS = 0), zero external network calls, 100% offline-ready
+// ============================================================================
+const manrope = localFont({
+  src: "./fonts/Manrope-Variable.ttf",
+  variable: "--font-primary",
+  display: "swap",
+  weight: "200 800",
+});
 
 export const metadata = {
   title: "Pay2Money - Get Loans Online | Best Rates in India",
@@ -24,17 +36,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={manrope.variable}>
       <head>
         <meta name="theme-color" content="#081528" />
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/icon.svg" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
-          rel="stylesheet"
-        />
       </head>
       <body className="antialiased min-h-screen text-brand-text bg-brand-surface font-sans">
         <LinksProvider>{children}</LinksProvider>
