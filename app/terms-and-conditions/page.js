@@ -2,7 +2,15 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { SITE_CONFIG } from "../data/siteData";
-import { Scale, FileText, CheckCircle2, AlertCircle, Mail, Phone, MapPin, ShieldCheck, HeartHandshake } from "lucide-react";
+import {
+  Scale,
+  FileText,
+  CheckCircle2,
+  AlertCircle,
+  Mail,
+  Phone,
+  MapPin,
+} from "lucide-react";
 
 export const metadata = {
   title: "Terms & Conditions - Pay2Money",

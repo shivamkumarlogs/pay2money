@@ -3,11 +3,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { SITE_CONFIG } from "../data/siteData";
 import {
-  ShieldCheck,
-  Lock,
-  Eye,
   FileText,
-  CheckCircle2,
   Mail,
   Phone,
   MapPin,

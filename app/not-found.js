@@ -18,7 +18,7 @@ export default function NotFound() {
           {/* Open 404 Display (0 in Champagne Gold, No Circular Border) */}
           <div className="relative w-full flex items-center justify-center select-none py-4">
             {/* Soft Ambient Horizontal Glow */}
-            <div className="absolute inset-0 w-3/4 max-w-xs mx-auto h-28 sm:h-36 bg-linear-to-r from-transparent via-brand-accent-light to-transparent blur-2xl pointer-events-none -z-10" />
+            <div className="absolute inset-0 w-3/4 max-w-xs mx-auto h-28 sm:h-36 bg-gradient-to-r from-transparent via-brand-accent-light to-transparent blur-2xl pointer-events-none -z-10" />
 
             <div className="flex items-center justify-center text-7xl sm:text-8xl lg:text-9xl font-black tracking-tight leading-none">
               <span className="text-brand-primary">4</span>
