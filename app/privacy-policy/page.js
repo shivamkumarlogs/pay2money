@@ -388,7 +388,7 @@ export default function PrivacyPage() {
                   Our website contains links that may redirect you to the
                   official websites or application portals of partner banks,
                   NBFCs, or credit bureaus. Once you leave our domain and visit
-                  an external partner website, their terms of service and
+                  an external partner website, their terms and conditions and
                   privacy policy govern your interaction with them. We encourage
                   you to review their policies directly.
                 </p>
