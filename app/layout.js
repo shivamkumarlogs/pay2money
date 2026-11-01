@@ -14,6 +14,7 @@ const manrope = localFont({
 });
 
 export const metadata = {
+  metadataBase: new URL("https://www.pay2money.com"),
   title: "Pay2Money - Get Loans Online | Best Rates in India",
   description:
     "Get personal, home, business, car, gold & education loans through trusted partner banks and NBFCs. Calculate EMI and get fast loan disbursals on Pay2Money.",
