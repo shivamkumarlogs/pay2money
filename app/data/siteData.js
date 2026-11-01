@@ -141,7 +141,7 @@ export const LOAN_PRODUCTS = [
     id: "credit-cards",
     title: "Credit Cards",
     name: "Credit Cards",
-    desc: "Compare lifetime free cards with airport lounge & rewards",
+    desc: "Best lifetime free cards with airport lounge & rewards",
     href: "/#loans",
     gridHref: "#calculator",
     img: "/images/icons/credit-cards.png",

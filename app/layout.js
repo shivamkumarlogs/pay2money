@@ -33,6 +33,12 @@ export const metadata = {
     locale: "en_IN",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Pay2Money - Get Loans Online | Best Rates in India",
+    description:
+      "Get personal, home, business, car, gold & education loans from 40+ banks and NBFCs. Apply online for free on Pay2Money.",
+  },
 };
 
 export default function RootLayout({ children }) {
