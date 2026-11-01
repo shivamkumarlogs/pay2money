@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useMemo } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { HERO_SLIDES as SLIDES } from "../data/siteData";
@@ -9,26 +9,74 @@ import { useProductLinks } from "../context/LinksContext";
 
 export default function HeroSlider() {
   const { getLink } = useProductLinks();
-  const [current, setCurrent] = useState(0);
+  
+  // Clone last slide at beginning, clone first slide at end for infinite continuous loop
+  const slidesWithClones = useMemo(() => {
+    if (SLIDES.length === 0) return [];
+    return [SLIDES[SLIDES.length - 1], ...SLIDES, SLIDES[0]];
+  }, []);
+
+  // Track starts at index 1 (the first real slide)
+  const [trackIndex, setTrackIndex] = useState(1);
+  const [enableTransition, setEnableTransition] = useState(true);
+  const [isAnimating, setIsAnimating] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
+
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
+
+  // Re-enable CSS transition after instantaneous position snap
+  useEffect(() => {
+    if (!enableTransition) {
+      const timer = setTimeout(() => {
+        setEnableTransition(true);
+      }, 50);
+      return () => clearTimeout(timer);
+    }
+  }, [enableTransition]);
+
+  const goToNext = () => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+    setEnableTransition(true);
+    setTrackIndex((prev) => prev + 1);
+  };
+
+  const goToPrev = () => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+    setEnableTransition(true);
+    setTrackIndex((prev) => prev - 1);
+  };
+
+  const goToSlide = (idx) => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+    setEnableTransition(true);
+    setTrackIndex(idx + 1);
+  };
 
   // Auto-scroll every 4.5 seconds (pauses on hover)
   useEffect(() => {
     if (isPaused) return;
     const timer = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % SLIDES.length);
+      goToNext();
     }, 4500);
     return () => clearInterval(timer);
-  }, [isPaused]);
+  }, [isPaused, isAnimating]);
 
-  const goToPrev = () => {
-    setCurrent((prev) => (prev === 0 ? SLIDES.length - 1 : prev - 1));
-  };
-
-  const goToNext = () => {
-    setCurrent((prev) => (prev + 1) % SLIDES.length);
+  const handleTransitionEnd = () => {
+    setIsAnimating(false);
+    // If we transitioned forward into the clone of the first slide at the end
+    if (trackIndex >= SLIDES.length + 1) {
+      setEnableTransition(false);
+      setTrackIndex(1);
+    }
+    // If we transitioned backward into the clone of the last slide at the start
+    else if (trackIndex <= 0) {
+      setEnableTransition(false);
+      setTrackIndex(SLIDES.length);
+    }
   };
 
   const handleTouchStart = (e) => {
@@ -49,6 +97,14 @@ export default function HeroSlider() {
     }
   };
 
+  // Derive the active real slide index for indicators (0 to 4)
+  const activeRealIndex =
+    trackIndex === 0
+      ? SLIDES.length - 1
+      : trackIndex === SLIDES.length + 1
+        ? 0
+        : trackIndex - 1;
+
   return (
     <section className="py-2 sm:py-3 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <div
@@ -59,25 +115,27 @@ export default function HeroSlider() {
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
       >
-        {/* Horizontal Sliding Track */}
+        {/* Infinite Sliding Track */}
         <div
-          className="flex transition-transform duration-700 ease-in-out"
+          className="flex will-change-transform"
           style={{
-            width: `${SLIDES.length * 100}%`,
-            transform: `translateX(-${current * (100 / SLIDES.length)}%)`,
+            transform: `translateX(-${trackIndex * 100}%)`,
+            transition: enableTransition
+              ? "transform 700ms cubic-bezier(0.25, 1, 0.5, 1)"
+              : "none",
           }}
+          onTransitionEnd={handleTransitionEnd}
         >
-          {SLIDES.map((slide, idx) => {
+          {slidesWithClones.map((slide, idx) => {
             const linkInfo = getLink(
-              slide.id || `slide-${idx + 1}` || slide.title,
+              slide.id || `slide-${idx}` || slide.title,
               slide.href
             );
 
             return (
               <div
-                key={idx}
-                style={{ width: `${100 / SLIDES.length}%` }}
-                className={`shrink-0 ${slide.bg} text-white flex items-center min-h-50 sm:min-h-62.5 md:min-h-70 lg:min-h-75 relative overflow-hidden`}
+                key={`${slide.id || idx}-${idx}`}
+                className={`w-full shrink-0 min-w-full ${slide.bg} text-white flex items-center min-h-50 sm:min-h-62.5 md:min-h-70 lg:min-h-75 relative overflow-hidden`}
               >
                 {/* Left Side Content Container */}
                 <div className="w-[62%] sm:w-[58%] md:w-[54%] z-10 flex flex-col justify-center pl-6 sm:pl-10 lg:pl-14 pr-2 py-4 sm:py-8 space-y-1.5 sm:space-y-3">
@@ -113,7 +171,7 @@ export default function HeroSlider() {
                     fill
                     sizes="(max-width: 640px) 45vw, (max-width: 768px) 48vw, 600px"
                     className="object-cover object-center"
-                    priority={idx === 0}
+                    priority={idx === 1}
                   />
                 </div>
               </div>
@@ -145,10 +203,10 @@ export default function HeroSlider() {
           {SLIDES.map((_, idx) => (
             <button
               key={idx}
-              onClick={() => setCurrent(idx)}
+              onClick={() => goToSlide(idx)}
               type="button"
               className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
-                idx === current
+                idx === activeRealIndex
                   ? "w-6 bg-white shadow-sm"
                   : "w-1.5 bg-white/40 hover:bg-white/70"
               }`}
