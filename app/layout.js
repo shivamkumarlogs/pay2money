@@ -41,6 +41,48 @@ export const metadata = {
   },
 };
 
+const financialServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "FinancialService",
+  "@id": "https://www.pay2money.com/#organization",
+  name: "Pay2Money",
+  legalName: "PM Finance Services Pvt Ltd",
+  url: "https://www.pay2money.com",
+  logo: "https://www.pay2money.com/icon.svg",
+  image: "https://www.pay2money.com/opengraph-image.jpg",
+  description:
+    "Online loan facilitation platform connecting borrowers across India with scheduled commercial banks and RBI-registered NBFCs for personal, business, home, and gold loans.",
+  telephone: "+91 7239037839",
+  email: "info@pay2money.com",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress:
+      "Shop No. 3049, First Floor, Block E-II, Faridabad Bypass Road, Molar Band Extension",
+    addressLocality: "New Delhi",
+    postalCode: "110044",
+    addressRegion: "Delhi",
+    addressCountry: "IN",
+  },
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ],
+    opens: "09:30",
+    closes: "18:30",
+  },
+  priceRange: "Free",
+  founder: {
+    "@type": "Person",
+    name: "Deepak Kumar",
+  },
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={manrope.variable}>
@@ -48,6 +90,12 @@ export default function RootLayout({ children }) {
         <meta name="theme-color" content="#081528" />
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/icon.svg" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(financialServiceSchema),
+          }}
+        />
       </head>
       <body className="antialiased min-h-screen text-brand-text bg-brand-surface font-sans">
         <LinksProvider>{children}</LinksProvider>
