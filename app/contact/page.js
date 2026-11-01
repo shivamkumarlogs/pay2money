@@ -18,6 +18,7 @@ export default function ContactPage() {
 
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   // Auto-detect service parameter from URL (fallback when affiliate link expires)
   useEffect(() => {
@@ -47,15 +48,30 @@ export default function ContactPage() {
     }
   }, []);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    setError("");
 
-    // Simulate clean submission
-    setTimeout(() => {
-      setLoading(false);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok || !data.success) {
+        throw new Error(data.error || "Failed to submit inquiry. Please try again.");
+      }
+
       setSubmitted(true);
-    }, 600);
+    } catch (err) {
+      setError(err.message || "Something went wrong. Please try again or call us directly.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -175,6 +191,7 @@ export default function ContactPage() {
                       size="sm"
                       onClick={() => {
                         setSubmitted(false);
+                        setError("");
                         setFormData({
                           name: "",
                           phone: "",
@@ -308,6 +325,12 @@ export default function ContactPage() {
                     </div>
 
                     <div className="space-y-3 pt-2">
+                      {error && (
+                        <div className="p-3 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-xs font-medium text-center">
+                          {error}
+                        </div>
+                      )}
+
                       {/* Submit Button */}
                       <Button
                         type="submit"
