@@ -8,20 +8,37 @@ import Faq from "./components/Faq";
 import CtaBanner from "./components/CtaBanner";
 import Hero from "./components/Hero";
 import Footer from "./components/Footer";
-import { FAQ_ITEMS } from "./data/siteData";
+import { FAQ_ITEMS, LOAN_PRODUCTS } from "./data/siteData";
 
 export default function Home() {
-  const faqSchema = {
+  const pageSchema = {
     "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: FAQ_ITEMS.map((item) => ({
-      "@type": "Question",
-      name: item.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: item.answer,
+    "@graph": [
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.pay2money.com/#faq",
+        mainEntity: FAQ_ITEMS.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: item.answer,
+          },
+        })),
       },
-    })),
+      {
+        "@type": "ItemList",
+        "@id": "https://www.pay2money.com/#services",
+        name: "Financial Services & Loans",
+        itemListElement: LOAN_PRODUCTS.map((prod, idx) => ({
+          "@type": "ListItem",
+          position: idx + 1,
+          name: prod.title,
+          description: prod.desc,
+          url: `https://www.pay2money.com/apply/${prod.id}`,
+        })),
+      },
+    ],
   };
 
   return (
@@ -29,7 +46,7 @@ export default function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(faqSchema),
+          __html: JSON.stringify(pageSchema),
         }}
       />
       <Navbar />

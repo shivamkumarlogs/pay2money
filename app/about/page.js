@@ -7,14 +7,49 @@ import {
 } from "../data/siteData";
 
 export const metadata = {
-  title: "About - Pay2Money",
+  title: "About Us",
   description:
-    "Pay2Money is a loan facilitation platform connecting borrowers directly to accredited banks and NBFCs across India with complete transparency.",
+    "Pay2Money is an independent loan facilitation platform connecting borrowers directly to accredited banks and NBFCs across India with complete transparency.",
+  alternates: {
+    canonical: "/about",
+  },
+  openGraph: {
+    title: "About Us - Pay2Money",
+    description:
+      "Independent loan facilitation platform connecting borrowers directly to accredited banks and NBFCs across India.",
+    url: "https://www.pay2money.com/about",
+    type: "website",
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://www.pay2money.com",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "About Us",
+      item: "https://www.pay2money.com/about",
+    },
+  ],
 };
 
 export default function AboutPage() {
   return (
     <div className="flex flex-col min-h-screen bg-brand-surface">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
       <Navbar />
 
       <main className="flex-1">

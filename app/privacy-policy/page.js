@@ -12,9 +12,38 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-  title: "Privacy Policy - Pay2Money",
+  title: "Privacy Policy",
   description:
     "Learn how Pay2Money (PM Finance Services Pvt Ltd) collects, uses, and protects your inquiry information as an independent loan referral and advisory service.",
+  alternates: {
+    canonical: "/privacy-policy",
+  },
+  openGraph: {
+    title: "Privacy Policy - Pay2Money",
+    description:
+      "Learn how Pay2Money protects your information as an independent loan referral and advisory service.",
+    url: "https://www.pay2money.com/privacy-policy",
+    type: "website",
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://www.pay2money.com",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Privacy Policy",
+      item: "https://www.pay2money.com/privacy-policy",
+    },
+  ],
 };
 
 export default function PrivacyPage() {
@@ -33,6 +62,12 @@ export default function PrivacyPage() {
 
   return (
     <div className="flex flex-col min-h-screen bg-brand-surface">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
       <Navbar />
 
       <main className="flex-1">

@@ -15,11 +15,45 @@ const manrope = localFont({
 
 export const metadata = {
   metadataBase: new URL("https://www.pay2money.com"),
-  title: "Pay2Money - Get Loans Online | Best Rates in India",
+  title: {
+    default: "Pay2Money - Get Loans Online | Best Rates in India",
+    template: "%s | Pay2Money",
+  },
   description:
     "Get personal, home, business, car, gold & education loans through trusted partner banks and NBFCs. Calculate EMI and get fast loan disbursals on Pay2Money.",
-  keywords:
-    "loan, personal loan, home loan, business loan, gold loan, car loan, CIBIL score, loan aggregator India, Pay2Money",
+  keywords: [
+    "loan",
+    "personal loan",
+    "instant loan",
+    "home loan",
+    "business loan",
+    "gold loan",
+    "car loan",
+    "loan against property",
+    "education loan",
+    "credit cards",
+    "CIBIL score",
+    "EMI calculator",
+    "loan aggregator India",
+    "Pay2Money",
+  ],
+  authors: [{ name: "Pay2Money", url: "https://www.pay2money.com" }],
+  creator: "Pay2Money",
+  publisher: "PM Finance Services Pvt Ltd",
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "32x32" },
@@ -35,55 +69,67 @@ export const metadata = {
     siteName: "Pay2Money",
     locale: "en_IN",
     type: "website",
+    images: [
+      {
+        url: "/opengraph-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Pay2Money - Digital Loan Facilitation Platform in India",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Pay2Money - Get Loans Online | Best Rates in India",
     description:
       "Get personal, home, business, car, gold & education loans from 40+ banks and NBFCs. Apply online for free on Pay2Money.",
+    images: ["/opengraph-image.jpg"],
   },
 };
 
-const financialServiceSchema = {
+const structuredData = {
   "@context": "https://schema.org",
-  "@type": "FinancialService",
-  "@id": "https://www.pay2money.com/#organization",
-  name: "Pay2Money",
-  legalName: "PM Finance Services Pvt Ltd",
-  url: "https://www.pay2money.com",
-  logo: "https://www.pay2money.com/icon-512.png",
-  image: "https://www.pay2money.com/opengraph-image.jpg",
-  description:
-    "Online loan facilitation platform connecting borrowers across India with scheduled commercial banks and RBI-registered NBFCs for personal, business, home, and gold loans.",
-  telephone: "+91 7239037839",
-  email: "info@pay2money.com",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress:
-      "Shop No. 3049, First Floor, Block E-II, Faridabad Bypass Road, Molar Band Extension",
-    addressLocality: "New Delhi",
-    postalCode: "110044",
-    addressRegion: "Delhi",
-    addressCountry: "IN",
-  },
-  openingHoursSpecification: {
-    "@type": "OpeningHoursSpecification",
-    dayOfWeek: [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-    ],
-    opens: "09:30",
-    closes: "18:30",
-  },
-  priceRange: "Free",
-  founder: {
-    "@type": "Person",
-    name: "Deepak Kumar",
-  },
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.pay2money.com/#website",
+      url: "https://www.pay2money.com",
+      name: "Pay2Money",
+      description: "Digital Loan Facilitation and Financial Services in India",
+      inLanguage: "en-IN",
+    },
+    {
+      "@type": "FinancialService",
+      "@id": "https://www.pay2money.com/#organization",
+      name: "Pay2Money",
+      legalName: "PM Finance Services Pvt Ltd",
+      url: "https://www.pay2money.com",
+      logo: "https://www.pay2money.com/icon-512.png",
+      image: "https://www.pay2money.com/opengraph-image.jpg",
+      description:
+        "Online loan facilitation platform connecting borrowers across India with scheduled commercial banks and RBI-registered NBFCs for personal, business, home, and gold loans.",
+      telephone: "+91 7239037839",
+      email: "info@pay2money.com",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress:
+          "Shop No. 3049, First Floor, Block E-II, Faridabad Bypass Road, Molar Band Extension",
+        addressLocality: "New Delhi",
+        postalCode: "110044",
+        addressRegion: "Delhi",
+        addressCountry: "IN",
+      },
+      priceRange: "Free",
+      areaServed: {
+        "@type": "Country",
+        name: "India",
+      },
+      founder: {
+        "@type": "Person",
+        name: "Deepak Kumar",
+      },
+    },
+  ],
 };
 
 export default function RootLayout({ children }) {
@@ -91,12 +137,13 @@ export default function RootLayout({ children }) {
     <html lang="en" className={manrope.variable}>
       <head>
         <meta name="theme-color" content="#081528" />
-        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/favicon.ico" sizes="32x32" />
+        <link rel="icon" href="/icon.png" sizes="48x48" type="image/png" />
         <link rel="apple-touch-icon" href="/apple-icon.png" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(financialServiceSchema),
+            __html: JSON.stringify(structuredData),
           }}
         />
       </head>

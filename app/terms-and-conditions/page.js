@@ -13,9 +13,38 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-  title: "Terms & Conditions - Pay2Money",
+  title: "Terms & Conditions",
   description:
     "Review the Terms & Conditions for Pay2Money (PM Finance Services Pvt Ltd). Understand our role as an independent loan referral and advisory bridge.",
+  alternates: {
+    canonical: "/terms-and-conditions",
+  },
+  openGraph: {
+    title: "Terms & Conditions - Pay2Money",
+    description:
+      "Review the Terms & Conditions for Pay2Money (PM Finance Services Pvt Ltd) as an independent loan referral and advisory bridge.",
+    url: "https://www.pay2money.com/terms-and-conditions",
+    type: "website",
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://www.pay2money.com",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Terms & Conditions",
+      item: "https://www.pay2money.com/terms-and-conditions",
+    },
+  ],
 };
 
 export default function TermsAndConditionsPage() {
@@ -34,6 +63,12 @@ export default function TermsAndConditionsPage() {
 
   return (
     <div className="flex flex-col min-h-screen bg-brand-surface">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
       <Navbar />
 
       <main className="flex-1">
