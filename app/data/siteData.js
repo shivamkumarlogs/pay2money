@@ -38,7 +38,6 @@ export const SITE_CONFIG = {
   address:
     "Shop No. 3049, First Floor, Block E-II, Faridabad Bypass Road, Molar Band Extension, Opp. Adani CNG Pump, Near Khatu Shyam Bus Travel, New Delhi - 110044",
   footerAddress: "Molar Band Extension, New Delhi - 110044",
-  workingHours: "Monday to Saturday, 9:30 AM to 6:30 PM",
   disclaimer:
     "Pay2Money (PM Finance Services Pvt Ltd) is an online loan facilitation platform. Pay2Money is NOT a bank or a Non-Banking Financial Company (NBFC) registered under the Reserve Bank of India Act, 1934. We do not directly lend money to consumers. We connect borrowers with partner banks and RBI-registered NBFCs.",
 };

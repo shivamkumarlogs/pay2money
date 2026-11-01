@@ -272,10 +272,6 @@ export default function TermsAndConditionsPage() {
                       <p className="text-slate-500 text-xs">Service Type</p>
                       <p className="font-bold text-brand-primary">Loan Discovery &amp; Advisory</p>
                     </div>
-                    <div>
-                      <p className="text-slate-500 text-xs">Working Hours</p>
-                      <p className="font-bold text-brand-primary">{SITE_CONFIG.workingHours}</p>
-                    </div>
                   </div>
 
                   <div className="pt-2 border-t border-slate-200/80 space-y-2 text-xs text-slate-600">

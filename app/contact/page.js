@@ -113,7 +113,7 @@ export default function ContactPage() {
 
     // 1. Name validation
     if (!formData.name.trim() || formData.name.trim().length < 2) {
-      errors.name = "Please enter your full name (at least 2 characters).";
+      errors.name = "Please enter your full name.";
     }
 
     // 2. Mobile validation: exactly 10 digits, starting with 6, 7, 8, or 9
@@ -134,7 +134,7 @@ export default function ContactPage() {
 
     // 4. Message validation
     if (!formData.message.trim() || formData.message.trim().length < 5) {
-      errors.message = "Please describe your inquiry or loan requirement (at least 5 characters).";
+      errors.message = "Please describe your inquiry.";
     }
 
     setFieldErrors(errors);
@@ -204,8 +204,7 @@ export default function ContactPage() {
                   Phone Support
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                  Speak directly with our loan coordination team during business
-                  hours.
+                  Speak directly with our loan coordination team.
                 </p>
                 <div className="pt-1">
                   <a
@@ -214,9 +213,6 @@ export default function ContactPage() {
                   >
                     {SITE_CONFIG.phone}
                   </a>
-                  <span className="text-xs text-slate-500 font-normal">
-                    {SITE_CONFIG.workingHours}
-                  </span>
                 </div>
               </div>
 
@@ -238,9 +234,6 @@ export default function ContactPage() {
                   >
                     {SITE_CONFIG.email}
                   </a>
-                  <span className="text-xs text-slate-500 font-normal">
-                    We respond within 24 business hours
-                  </span>
                 </div>
               </div>
 
