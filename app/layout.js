@@ -22,8 +22,8 @@ export const metadata = {
     "loan, personal loan, home loan, business loan, gold loan, car loan, CIBIL score, loan aggregator India, Pay2Money",
   icons: {
     icon: [
-      { url: "/icon.png", type: "image/png" },
-      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "32x32" },
+      { url: "/icon.png", type: "image/png", sizes: "48x48" },
     ],
     apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
   },
@@ -51,7 +51,7 @@ const financialServiceSchema = {
   name: "Pay2Money",
   legalName: "PM Finance Services Pvt Ltd",
   url: "https://www.pay2money.com",
-  logo: "https://www.pay2money.com/icon.svg",
+  logo: "https://www.pay2money.com/icon-512.png",
   image: "https://www.pay2money.com/opengraph-image.jpg",
   description:
     "Online loan facilitation platform connecting borrowers across India with scheduled commercial banks and RBI-registered NBFCs for personal, business, home, and gold loans.",
