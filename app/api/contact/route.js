@@ -3,25 +3,54 @@ import { NextResponse } from "next/server";
 export async function POST(request) {
   try {
     const body = await request.json();
-    const { name, phone, email, subject, message } = body;
+    const { name, phone, email, subject, message, hp_field } = body;
 
-    // 1. Basic Validation
-    if (!name || typeof name !== "string" || name.trim().length < 2) {
+    // 1. Anti-Spam Honeypot Verification (Silently drop bot submissions)
+    if (hp_field) {
+      console.warn("[SPAM BOT BLOCKED]: Honeypot field filled.");
+      return NextResponse.json({
+        success: true,
+        message: "Your inquiry has been received.",
+      });
+    }
+
+    // 2. Strict Input Validation
+    const cleanName = String(name || "").trim();
+    if (!cleanName || cleanName.length < 2) {
       return NextResponse.json(
-        { success: false, error: "Please enter your full name." },
+        { success: false, error: "Please enter your full name (minimum 2 characters)." },
         { status: 400 }
       );
     }
 
-    const cleanPhone = String(phone || "").replace(/\D/g, "");
-    if (!cleanPhone || cleanPhone.length < 10) {
+    // Mobile number: exactly 10 digits, starting with 6, 7, 8, or 9
+    const cleanPhone = String(phone || "").replace(/\D/g, "").slice(-10);
+    const indianMobileRegex = /^[6-9]\d{9}$/;
+    if (!cleanPhone || !indianMobileRegex.test(cleanPhone)) {
       return NextResponse.json(
-        { success: false, error: "Please enter a valid 10-digit mobile number." },
+        { success: false, error: "Please enter a valid 10-digit Indian mobile number starting with 6, 7, 8, or 9." },
         { status: 400 }
       );
     }
 
-    // 2. Format Indian Standard Time (IST) Timestamp
+    // Email is OPTIONAL. But if provided, validate format.
+    const cleanEmail = String(email || "").trim();
+    if (cleanEmail && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(cleanEmail)) {
+      return NextResponse.json(
+        { success: false, error: "Please enter a valid email address, or leave it blank." },
+        { status: 400 }
+      );
+    }
+
+    const cleanMessage = String(message || "").trim();
+    if (!cleanMessage || cleanMessage.length < 3) {
+      return NextResponse.json(
+        { success: false, error: "Please describe your loan requirement or inquiry." },
+        { status: 400 }
+      );
+    }
+
+    // 3. Indian Standard Time (IST) Timestamp
     const now = new Date();
     const formattedDate = new Intl.DateTimeFormat("en-IN", {
       timeZone: "Asia/Kolkata",
@@ -31,14 +60,14 @@ export async function POST(request) {
 
     const leadData = {
       timestamp: formattedDate,
-      name: name.trim(),
-      phone: cleanPhone.slice(-10),
-      email: (email || "").trim(),
-      subject: (subject || "General Loan Inquiry").trim(),
-      message: (message || "").trim(),
+      name: cleanName,
+      phone: "+91 " + cleanPhone,
+      email: cleanEmail || "Not provided",
+      subject: String(subject || "General Inquiry").trim(),
+      message: cleanMessage,
     };
 
-    // 3. Google Sheets Webhook Dispatch
+    // 4. Google Sheets Webhook Dispatch
     const sheetWebhookUrl = process.env.GOOGLE_SHEET_LEADS_URL;
 
     if (sheetWebhookUrl) {
@@ -56,7 +85,6 @@ export async function POST(request) {
         console.error("Failed to forward lead to Google Sheets:", err.message);
       }
     } else {
-      // Clean local log when webhook URL is not yet configured in .env.local
       console.log("[PAY2MONEY LEAD CAPTURED - LOCAL DEV MODE]:", leadData);
     }
 
