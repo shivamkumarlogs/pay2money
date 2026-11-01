@@ -48,16 +48,6 @@ export const SITE_CONFIG = {
 // ==========================================
 export const LOAN_PRODUCTS = [
   {
-    id: "personal-loan",
-    title: "Personal Loan",
-    name: "Personal Loan",
-    desc: "Get up to ₹50 Lakhs in minutes",
-    href: "/#loans",
-    gridHref: "#calculator",
-    img: "/images/icons/personal-loan.png",
-    icon: <User />,
-  },
-  {
     id: "instant-loan",
     title: "Instant Loan",
     name: "Instant Loan",
@@ -66,6 +56,16 @@ export const LOAN_PRODUCTS = [
     gridHref: "#calculator",
     img: "/images/icons/instant-loan.png",
     icon: <Zap />,
+  },
+  {
+    id: "personal-loan",
+    title: "Personal Loan",
+    name: "Personal Loan",
+    desc: "Get up to ₹50 Lakhs in minutes",
+    href: "/#loans",
+    gridHref: "#calculator",
+    img: "/images/icons/personal-loan.png",
+    icon: <User />,
   },
   {
     id: "business-loan",
@@ -213,19 +213,21 @@ export const NAV_TOOLS = [
 // ==========================================
 export const HERO_SLIDES = [
   {
-    id: "personal-loan",
-    title: "Quick Personal Loans",
-    subtitle: "Get funds sent directly to your bank account with zero paperwork.",
+    id: "instant-loan",
+    title: "Quick Instant Loan",
+    subtitle:
+      "Get funds sent directly to your bank account with zero paperwork.",
     cta: "Apply Now",
     href: "#calculator",
     bg: "bg-brand-primary",
-    image: "/images/hero/personal-loan.webp",
+    image: "/images/hero/instant-loan.webp",
     imgAlt: "Indian Rupee currency notes and coins",
   },
   {
     id: "free-cibil-check",
     title: "Free CIBIL Score Check",
-    subtitle: "Know your credit score in 30 seconds with zero impact on your score.",
+    subtitle:
+      "Know your credit score in 30 seconds with zero impact on your score.",
     cta: "Check Free",
     href: "#cibil",
     bg: "bg-[#0E223D]",
@@ -234,9 +236,10 @@ export const HERO_SLIDES = [
   },
   {
     id: "home-loan",
-    title: "Affordable Home Loans",
-    subtitle: "Easy home financing with low monthly payments and flexible tenure.",
-    cta: "Explore Home Loans",
+    title: "Affordable Home Loan",
+    subtitle:
+      "Easy home financing with low monthly payments and flexible tenure.",
+    cta: "Get Home Loan",
     href: "#calculator",
     bg: "bg-[#142A4A]",
     image: "/images/hero/home-loan.webp",
@@ -244,8 +247,9 @@ export const HERO_SLIDES = [
   },
   {
     id: "business-loan",
-    title: "Fast Business Loans",
-    subtitle: "Get capital for daily expenses and equipment without giving any collateral.",
+    title: "Fast Business Loan",
+    subtitle:
+      "Get capital for daily expenses and equipment without giving any collateral.",
     cta: "Grow Your Business",
     href: "#calculator",
     bg: "bg-[#0A1A30]",
@@ -254,8 +258,9 @@ export const HERO_SLIDES = [
   },
   {
     id: "gold-loan",
-    title: "Instant Gold Loans",
-    subtitle: "Safe bank vault storage with same-day cash given straight into your account.",
+    title: "Gold Loan",
+    subtitle:
+      "Safe bank vault storage with same-day cash given straight into your account.",
     cta: "Get Gold Loan",
     href: "#calculator",
     bg: "bg-[#183256]",
