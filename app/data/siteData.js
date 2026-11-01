@@ -222,6 +222,7 @@ export const HERO_SLIDES = [
     bg: "bg-brand-primary",
     image: "/images/hero/instant-loan-v2.webp",
     imgAlt: "Indian Rupee currency notes and coins",
+    imgPosition: "object-center",
   },
   {
     id: "free-cibil-check",
@@ -233,6 +234,7 @@ export const HERO_SLIDES = [
     bg: "bg-[#0E223D]",
     image: "/images/hero/cibil-check-v2.webp",
     imgAlt: "Customer checking credit score on mobile phone",
+    imgPosition: "object-[82%_center] sm:object-[75%_center]",
   },
   {
     id: "home-loan",
@@ -244,6 +246,7 @@ export const HERO_SLIDES = [
     bg: "bg-[#142A4A]",
     image: "/images/hero/home-loan-v2.webp",
     imgAlt: "House model with savings coin stacks",
+    imgPosition: "object-center",
   },
   {
     id: "business-loan",
@@ -255,6 +258,7 @@ export const HERO_SLIDES = [
     bg: "bg-[#0A1A30]",
     image: "/images/hero/business-loan-v2.webp",
     imgAlt: "Business team at work",
+    imgPosition: "object-[72%_center] sm:object-center",
   },
   {
     id: "gold-loan",
@@ -266,6 +270,7 @@ export const HERO_SLIDES = [
     bg: "bg-[#183256]",
     image: "/images/hero/gold-loan-v2.webp",
     imgAlt: "Fine gold bullion bars and gold coins",
+    imgPosition: "object-center",
   },
 ];
 

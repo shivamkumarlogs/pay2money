@@ -138,7 +138,7 @@ export default function HeroSlider() {
                 className={`w-full shrink-0 min-w-full ${slide.bg} text-white flex items-center min-h-50 sm:min-h-62.5 md:min-h-70 lg:min-h-75 relative overflow-hidden`}
               >
                 {/* Left Side Content Container */}
-                <div className="w-[62%] sm:w-[58%] md:w-[54%] z-10 flex flex-col justify-center pl-6 sm:pl-10 lg:pl-14 pr-2 py-4 sm:py-8 space-y-1.5 sm:space-y-3">
+                <div className="w-[58%] sm:w-[58%] md:w-[54%] z-10 flex flex-col justify-center pl-5 sm:pl-10 lg:pl-14 pr-2 py-4 sm:py-8 space-y-1.5 sm:space-y-3">
                   <h2 className="text-base sm:text-2xl md:text-3xl lg:text-4xl font-extrabold sm:font-black tracking-tight leading-snug sm:leading-tight text-white drop-shadow-sm">
                     {slide.title}
                   </h2>
@@ -163,16 +163,18 @@ export default function HeroSlider() {
 
                 {/* Right Side: Full-Bleed Photography with Slanted / Diagonal Split */}
                 <div
-                  className="absolute right-0 top-0 bottom-0 w-[42%] sm:w-[46%] md:w-[48%] h-full overflow-hidden [clip-path:polygon(18%_0,100%_0,100%_100%,0_100%)] sm:[clip-path:polygon(14%_0,100%_0,100%_100%,0_100%)]"
+                  className="absolute right-0 top-0 bottom-0 w-[44%] sm:w-[46%] md:w-[48%] h-full overflow-hidden [clip-path:polygon(8%_0,100%_0,100%_100%,0_100%)] sm:[clip-path:polygon(14%_0,100%_0,100%_100%,0_100%)]"
                 >
                   <Image
                     src={slide.image}
                     alt={slide.imgAlt}
                     fill
-                    sizes="(max-width: 640px) 45vw, (max-width: 768px) 48vw, 600px"
-                    className="object-cover object-center"
+                    sizes="(max-width: 640px) 50vw, (max-width: 768px) 48vw, 600px"
+                    className={`object-cover ${slide.imgPosition || "object-center"}`}
                     priority={idx === 1}
                   />
+                  {/* Subtle soft edge shadow to eliminate harsh knife-cut look on mobile */}
+                  <div className="absolute inset-y-0 left-0 w-6 bg-linear-to-r from-black/20 to-transparent pointer-events-none sm:hidden" />
                 </div>
               </div>
             );
