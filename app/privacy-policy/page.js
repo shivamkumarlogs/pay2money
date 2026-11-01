@@ -316,7 +316,7 @@ export default function PrivacyPage() {
                   <li>
                     <strong>SSL / HTTPS Encryption:</strong> All data
                     transmitted between your browser and our website is
-                    protected using 256-bit SSL encryption.
+                    protected using industry-standard SSL encryption.
                   </li>
                   <li>
                     <strong>Domestic Server Storage:</strong> Your information

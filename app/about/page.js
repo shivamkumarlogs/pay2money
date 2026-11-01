@@ -1,7 +1,10 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { ABOUT_PROMISES as PROMISES } from "../data/siteData";
+import {
+  ABOUT_PAGE_DATA,
+  ABOUT_PROMISES as PROMISES,
+} from "../data/siteData";
 
 export const metadata = {
   title: "About - Pay2Money",
@@ -19,53 +22,40 @@ export default function AboutPage() {
         <section className="pt-14 sm:pt-20 pb-6 sm:pb-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <h1 className="text-2xl sm:text-4xl font-black text-brand-primary tracking-tight leading-[1.15]">
-              Loans made straightforward and honest.
+              {ABOUT_PAGE_DATA.hero.title}
             </h1>
 
             <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed font-normal">
-              No endless paperwork. No aggressive telemarketers. No surprise
-              broker fees. Just a clean, digital bridge to trusted lenders
-              across India.
+              {ABOUT_PAGE_DATA.hero.subtitle}
             </p>
           </div>
         </section>
 
         {/* 2. Authentic Story & Purpose */}
         <section className="pt-4 sm:pt-6 pb-6 sm:pb-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-          <div className="space-y-5">
+          <div className="space-y-3">
             <span className="inline-block text-xs font-bold uppercase tracking-widest text-brand-accent">
-              Why We Started
+              {ABOUT_PAGE_DATA.story.tag}
             </span>
 
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-black text-brand-primary tracking-tight leading-snug">
-              Borrowing money is a major life moment. It shouldn&apos;t feel
-              stressful.
+            <h2 className="text-xl sm:text-2xl font-black text-brand-primary tracking-tight leading-snug">
+              {ABOUT_PAGE_DATA.story.title}
             </h2>
 
-            <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
-              Whether you are buying your first home, covering unexpected
-              medical bills, or funding your small business, the lending
-              process in India has traditionally felt opaque and frustrating.
-            </p>
-
-            <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
-              We founded Pay2Money to bring complete transparency to the
-              table. We partner with scheduled commercial banks and
-              RBI-registered NBFCs to provide a simple, digital pathway to
-              formal credit.
-            </p>
-
-            <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
-              We handle the coordination and guide you through documentation
-              so you can access partner financing without confusion or
-              middleman markups.
-            </p>
+            {ABOUT_PAGE_DATA.story.paragraphs.map((para, idx) => (
+              <p
+                key={idx}
+                className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal"
+              >
+                {para}
+              </p>
+            ))}
           </div>
         </section>
 
         {/* 3. Our Core Commitments */}
         <section className="pt-6 sm:pt-8 pb-16 sm:pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-10 sm:space-y-12">
-          <div className="text-center space-y-3 max-w-2xl mx-auto">
+          <div className="space-y-3 mx-auto">
             <span className="inline-block text-xs font-bold uppercase tracking-widest text-brand-accent">
               Our Commitments
             </span>

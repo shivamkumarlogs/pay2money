@@ -299,7 +299,26 @@ export const HOW_IT_WORKS_STEPS = [
 ];
 
 // ==========================================
-// 7. About Page Core Commitments
+// 7. About Page Content & Core Commitments
+// ==========================================
+export const ABOUT_PAGE_DATA = {
+  hero: {
+    title: "Loans made straightforward and honest.",
+    subtitle:
+      "No endless paperwork. No aggressive telemarketers. No surprise broker fees. Just a clean, digital bridge to trusted lenders across India.",
+  },
+  story: {
+    tag: "Why We Started",
+    title: "Borrowing money is a major life moment. It shouldn't feel stressful.",
+    paragraphs: [
+      "Whether you are buying your first home, expanding your workshop, covering unexpected medical bills, or funding your children's higher education, borrowing money marks a turning point in life. Yet for millions of Indians, the lending process has traditionally felt intimidating, opaque, and full of friction.",
+      "Before Pay2Money, getting a loan often meant endless visits to bank branches, filling out stacks of duplicate paperwork, and dealing with local middlemen who charged steep commissions while keeping interest terms unclear. Borrowers had no easy way to know if they were getting the best rate or what hidden fees awaited them.",
+      "We founded Pay2Money to bring complete transparency and dignity back to borrowing. We set out to build a clean, modern digital bridge that connects borrowers directly with India's leading scheduled commercial banks and RBI-registered NBFCs.",
+      "Today, our platform handles the coordination, simplifies documentation, and matches your profile with authorized lenders offering the most competitive terms. You never pay us a fee, you never deal with aggressive telemarketers, and approved funds are disbursed directly into your bank account.",
+      "Our mission is simple: to make formal, responsible credit accessible to every ambitious Indian with speed, clarity, and genuine human support.",
+    ],
+  },
+};
 // ==========================================
 export const ABOUT_PROMISES = [
   {
@@ -313,9 +332,9 @@ export const ABOUT_PROMISES = [
     icon: <Landmark className="w-5 h-5 text-brand-accent" />,
   },
   {
-    title: "Bank-level data security",
-    desc: "Your personal and financial records are protected with 256-bit encryption and shared only with partner lenders.",
-    icon: <ShieldCheck className="w-5 h-5 text-brand-accent" />,
+    title: "Dedicated loan assistance",
+    desc: "Our loan coordination team guides you through eligibility and document verification for a seamless approval.",
+    icon: <ClipboardCheck className="w-5 h-5 text-brand-accent" />,
   },
   {
     title: "No aggressive sales calls",
@@ -336,7 +355,7 @@ export const FAQ_ITEMS = [
   {
     question: "Is it safe to apply for a loan through Pay2Money?",
     answer:
-      "Yes, absolutely. Pay2Money utilizes bank-grade 256-bit encryption to ensure your personal and financial data remains secure. Your details are strictly shared only with verified partner lending institutions to process your specific application.",
+      "Yes, absolutely. Pay2Money handles your inquiry with strict privacy standards and SSL encryption. Your details are strictly shared only with verified partner lending institutions to process your specific application.",
   },
   {
     question: "How does Pay2Money work?",
