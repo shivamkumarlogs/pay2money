@@ -220,7 +220,7 @@ export const HERO_SLIDES = [
     href: "#calculator",
     bg: "bg-brand-primary",
     image: "/images/hero/personal-loan.webp",
-    imgAlt: "Customer with smartphone",
+    imgAlt: "Indian Rupee currency notes and coins",
   },
   {
     id: "free-cibil-check",
@@ -230,7 +230,7 @@ export const HERO_SLIDES = [
     href: "#cibil",
     bg: "bg-[#0E223D]",
     image: "/images/hero/cibil-check.webp",
-    imgAlt: "Credit score check with card and laptop",
+    imgAlt: "Customer checking credit score on mobile phone",
   },
   {
     id: "home-loan",
@@ -260,7 +260,7 @@ export const HERO_SLIDES = [
     href: "#calculator",
     bg: "bg-[#183256]",
     image: "/images/hero/gold-loan.webp",
-    imgAlt: "Safe gold loan vault",
+    imgAlt: "Fine gold bullion bars and gold coins",
   },
 ];
 
