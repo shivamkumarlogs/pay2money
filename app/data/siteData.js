@@ -240,7 +240,7 @@ export const HERO_SLIDES = [
     href: "#calculator",
     bg: "bg-[#142A4A]",
     image: "/images/hero/home-loan.webp",
-    imgAlt: "Keys to new home",
+    imgAlt: "House model with savings coin stacks",
   },
   {
     id: "business-loan",
