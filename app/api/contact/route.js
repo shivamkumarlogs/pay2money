@@ -68,7 +68,7 @@ export async function POST(request) {
     };
 
     // 4. Google Sheets Webhook Dispatch
-    const sheetWebhookUrl = process.env.GOOGLE_SHEET_LEADS_URL;
+    const sheetWebhookUrl = process.env.GOOGLE_SHEET_LEADS_URL ? process.env.GOOGLE_SHEET_LEADS_URL.trim() : null;
 
     if (sheetWebhookUrl) {
       try {
