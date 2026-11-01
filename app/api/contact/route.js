@@ -61,7 +61,8 @@ export async function POST(request) {
     const leadData = {
       timestamp: formattedDate,
       name: cleanName,
-      phone: "+91 " + cleanPhone,
+      // Leading apostrophe forces Google Sheets to treat +91 as plain text, preventing formula parse errors
+      phone: "'+91 " + cleanPhone,
       email: cleanEmail || "Not provided",
       subject: String(subject || "General Inquiry").trim(),
       message: cleanMessage,
