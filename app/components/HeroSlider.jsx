@@ -113,7 +113,7 @@ export default function HeroSlider() {
                     fill
                     sizes="(max-width: 640px) 45vw, (max-width: 768px) 48vw, 600px"
                     className="object-cover object-center"
-                    {...(idx === 0 ? { priority: true } : { loading: "eager" })}
+                    priority={idx === 0}
                   />
                 </div>
               </div>

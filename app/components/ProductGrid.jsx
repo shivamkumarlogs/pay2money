@@ -44,6 +44,8 @@ export default function ProductGrid() {
                     alt={card.title}
                     width={72}
                     height={72}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-contain transform group-hover:scale-108 transition-transform duration-300 drop-shadow-sm select-none"
                   />
                 </div>
@@ -97,6 +99,8 @@ export default function ProductGrid() {
                       alt={card.title}
                       width={64}
                       height={64}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-contain transform group-hover:scale-108 transition-transform duration-300 drop-shadow-sm select-none"
                     />
                   </div>
