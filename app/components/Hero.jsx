@@ -18,7 +18,7 @@ export default function Hero() {
 
         {/* Concise Value Proposition */}
         <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed font-normal">
-          Get personal, home, and business loans through India’s top lending
+          Get personal, home, and business loans through India's top lending
           partners. Completely digital, zero hidden fees, and fast sanction.
         </p>
 

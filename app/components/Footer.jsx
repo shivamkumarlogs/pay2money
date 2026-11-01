@@ -54,9 +54,9 @@ export default function Footer() {
         {/* Regulatory Disclaimer & Copyright */}
         <div className="pt-4 text-xs text-slate-400 space-y-3">
           <div className="p-4 rounded-xl bg-[#060E1C] border border-white/5 space-y-2">
-            <h5 className="font-bold text-slate-300 uppercase tracking-wider text-[11px]">
+            <p className="font-bold text-slate-300 uppercase tracking-wider text-[11px]">
               Regulatory &amp; Lending Disclaimer
-            </h5>
+            </p>
             <p className="leading-relaxed text-[11px] text-slate-400">
               {SITE_CONFIG.disclaimer}
             </p>

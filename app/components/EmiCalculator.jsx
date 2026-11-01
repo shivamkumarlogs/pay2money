@@ -90,7 +90,7 @@ export default function EmiCalculator() {
           {/* Amount Input & Slider */}
           <div>
             <div className="flex items-center justify-between gap-3 mb-3">
-              <label className="text-sm sm:text-base font-bold text-brand-primary">
+              <label htmlFor="loan-amount-input" className="text-sm sm:text-base font-bold text-brand-primary">
                 Loan Amount
               </label>
               <div className="w-36 sm:w-40 h-10 sm:h-11 px-3 bg-white rounded-xl border border-slate-300 shadow-sm flex items-center justify-end gap-1.5 focus-within:border-brand-accent focus-within:ring-2 focus-within:ring-brand-accent/20 transition shrink-0">
@@ -98,6 +98,8 @@ export default function EmiCalculator() {
                   ₹
                 </span>
                 <input
+                  id="loan-amount-input"
+                  aria-label="Loan Amount Value"
                   type="text"
                   inputMode="numeric"
                   value={amount === 0 ? "" : amount.toLocaleString("en-IN")}
@@ -116,6 +118,8 @@ export default function EmiCalculator() {
             </div>
 
             <input
+              id="loan-amount-slider"
+              aria-label="Loan Amount Slider"
               type="range"
               min={50000}
               max={10000000}
@@ -138,11 +142,13 @@ export default function EmiCalculator() {
           {/* Interest Rate Input & Slider */}
           <div>
             <div className="flex items-center justify-between gap-3 mb-3">
-              <label className="text-sm sm:text-base font-bold text-brand-primary">
+              <label htmlFor="interest-rate-input" className="text-sm sm:text-base font-bold text-brand-primary">
                 Interest Rate (p.a.)
               </label>
               <div className="w-36 sm:w-40 h-10 sm:h-11 px-3 bg-white rounded-xl border border-slate-300 shadow-sm flex items-center justify-end gap-1.5 focus-within:border-brand-accent focus-within:ring-2 focus-within:ring-brand-accent/20 transition shrink-0">
                 <input
+                  id="interest-rate-input"
+                  aria-label="Interest Rate Value"
                   type="number"
                   min={1}
                   max={30}
@@ -167,6 +173,8 @@ export default function EmiCalculator() {
             </div>
 
             <input
+              id="interest-rate-slider"
+              aria-label="Interest Rate Slider"
               type="range"
               min={6.5}
               max={24}
@@ -189,11 +197,13 @@ export default function EmiCalculator() {
           {/* Tenure Input & Slider */}
           <div>
             <div className="flex items-center justify-between gap-3 mb-3">
-              <label className="text-sm sm:text-base font-bold text-brand-primary">
+              <label htmlFor="loan-tenure-input" className="text-sm sm:text-base font-bold text-brand-primary">
                 Loan Tenure
               </label>
               <div className="w-36 sm:w-40 h-10 sm:h-11 px-3 bg-white rounded-xl border border-slate-300 shadow-sm flex items-center justify-end gap-1.5 focus-within:border-brand-accent focus-within:ring-2 focus-within:ring-brand-accent/20 transition shrink-0">
                 <input
+                  id="loan-tenure-input"
+                  aria-label="Loan Tenure Value"
                   type="number"
                   min={1}
                   max={30}
@@ -218,6 +228,8 @@ export default function EmiCalculator() {
             </div>
 
             <input
+              id="loan-tenure-slider"
+              aria-label="Loan Tenure Slider"
               type="range"
               min={1}
               max={30}

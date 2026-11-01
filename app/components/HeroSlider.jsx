@@ -139,9 +139,9 @@ export default function HeroSlider() {
               >
                 {/* Left Side Content Container */}
                 <div className="w-[58%] sm:w-[58%] md:w-[54%] z-10 flex flex-col justify-center pl-5 sm:pl-10 lg:pl-14 pr-2 py-4 sm:py-8 space-y-1.5 sm:space-y-3">
-                  <h2 className="text-base sm:text-2xl md:text-3xl lg:text-4xl font-extrabold sm:font-black tracking-tight leading-snug sm:leading-tight text-white drop-shadow-sm">
+                  <p className="text-base sm:text-2xl md:text-3xl lg:text-4xl font-extrabold sm:font-black tracking-tight leading-snug sm:leading-tight text-white drop-shadow-sm">
                     {slide.title}
-                  </h2>
+                  </p>
 
                   <p className="text-[11px] sm:text-sm md:text-base text-white/90 font-normal leading-normal sm:leading-relaxed max-w-md lg:max-w-lg">
                     {slide.subtitle}

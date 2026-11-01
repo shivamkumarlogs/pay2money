@@ -16,9 +16,9 @@ export default function ProductGrid() {
     >
       {/* Category 1: Loans and Cards Header */}
       <div className="max-w-4xl mx-auto text-center space-y-4 mb-10 sm:mb-14">
-        <h3 className="text-2xl sm:text-4xl font-black text-brand-primary tracking-tight leading-[1.15]">
+        <h2 className="text-2xl sm:text-4xl font-black text-brand-primary tracking-tight leading-[1.15]">
           Loans and Cards
-        </h3>
+        </h2>
         <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed font-normal">
           Simple digital applications with minimal paperwork and instant partner sanctions.
         </p>
@@ -58,9 +58,9 @@ export default function ProductGrid() {
 
               {/* Bottom Row: Title and Simple Subtitle */}
               <div className="mt-6">
-                <h4 className="text-base sm:text-lg font-bold text-brand-primary leading-snug">
+                <h3 className="text-base sm:text-lg font-bold text-brand-primary leading-snug">
                   {card.title}
-                </h4>
+                </h3>
                 <p className="text-xs sm:text-sm text-slate-500 mt-1 leading-normal">
                   {card.desc}
                 </p>
@@ -73,9 +73,9 @@ export default function ProductGrid() {
       {/* Category 2: CIBIL Score & Financial Tools */}
       <div id="cibil">
         <div className="max-w-4xl mx-auto text-center space-y-4 mb-10 sm:mb-14">
-          <h3 className="text-2xl sm:text-4xl font-black text-brand-primary tracking-tight leading-[1.15]">
-            CIBIL Score and Credit Tools
-          </h3>
+          <h2 className="text-2xl sm:text-4xl font-black text-brand-primary tracking-tight leading-[1.15]">
+            Cibil Score and Credit Tools
+          </h2>
           <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed font-normal">
             Free credit assessment tools to monitor and build your financial health.
           </p>
@@ -111,9 +111,9 @@ export default function ProductGrid() {
                 </div>
 
                 <div className="mt-5">
-                  <h4 className="text-sm sm:text-base font-bold text-brand-primary leading-snug">
+                  <h3 className="text-sm sm:text-base font-bold text-brand-primary leading-snug">
                     {card.title}
-                  </h4>
+                  </h3>
                   <p className="text-xs text-slate-500 mt-1 leading-normal">
                     {card.desc}
                   </p>
