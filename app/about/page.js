@@ -67,9 +67,10 @@ export default function AboutPage() {
             <div className="lg:col-span-6">
               <div className="relative rounded-3xl overflow-hidden shadow-xl border border-slate-200 aspect-4/3 bg-slate-100">
                 <Image
-                  src="/images/about/team.jpg"
+                  src="/images/about/team.webp"
                   alt="Pay2Money team meeting"
                   fill
+                  loading="lazy"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover object-center"
                 />

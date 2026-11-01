@@ -219,7 +219,7 @@ export const HERO_SLIDES = [
     cta: "Apply Now",
     href: "#calculator",
     bg: "bg-brand-primary",
-    image: "/images/hero/personal-loan.jpg",
+    image: "/images/hero/personal-loan.webp",
     imgAlt: "Customer with smartphone",
   },
   {
@@ -229,7 +229,7 @@ export const HERO_SLIDES = [
     cta: "Check Free",
     href: "#cibil",
     bg: "bg-[#0E223D]",
-    image: "/images/hero/cibil-check.jpg",
+    image: "/images/hero/cibil-check.webp",
     imgAlt: "Credit score check with card and laptop",
   },
   {
@@ -239,7 +239,7 @@ export const HERO_SLIDES = [
     cta: "Explore Home Loans",
     href: "#calculator",
     bg: "bg-[#142A4A]",
-    image: "/images/hero/home-loan.jpg",
+    image: "/images/hero/home-loan.webp",
     imgAlt: "Keys to new home",
   },
   {
@@ -249,7 +249,7 @@ export const HERO_SLIDES = [
     cta: "Grow Your Business",
     href: "#calculator",
     bg: "bg-[#0A1A30]",
-    image: "/images/hero/business-loan.jpg",
+    image: "/images/hero/business-loan.webp",
     imgAlt: "Business team at work",
   },
   {
@@ -259,7 +259,7 @@ export const HERO_SLIDES = [
     cta: "Get Gold Loan",
     href: "#calculator",
     bg: "bg-[#183256]",
-    image: "/images/hero/gold-loan.jpg",
+    image: "/images/hero/gold-loan.webp",
     imgAlt: "Safe gold loan vault",
   },
 ];
