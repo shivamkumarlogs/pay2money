@@ -8,7 +8,7 @@ import { Loader2 } from "lucide-react";
  * Universal Button Component for Pay2Money Design System
  * 
  * Supports:
- * - Polymorphic rendering: <button>, <Link> (for internal routes), or <a> (for anchor / external links)
+ * - Polymorphic rendering: <button>, <Link> (for internal routes), or <a> (for anchor / external links / route handlers)
  * - Variants: 'primary', 'accent', 'outline', 'white', 'ghost'
  * - Sizes: 'sm', 'md', 'lg'
  * - Full width option, loading state, icon support
@@ -74,17 +74,15 @@ export default function Button({
     </>
   );
 
-  // 1. Next.js Internal Link
-  if (href && href.startsWith("/") && !href.startsWith("/#")) {
-    return (
-      <Link href={href} className={combinedClasses} onClick={onClick} {...props}>
-        {content}
-      </Link>
-    );
-  }
+  // 1. Native Anchor: External URLs, Target _blank, Hash anchors, or Redirect Route Handlers (/apply/)
+  const isDirectAnchor =
+    href &&
+    (!href.startsWith("/") ||
+      href.startsWith("/#") ||
+      href.startsWith("/apply/") ||
+      target === "_blank");
 
-  // 2. Hash anchor or External URL
-  if (href) {
+  if (isDirectAnchor) {
     return (
       <a
         href={href}
@@ -96,6 +94,15 @@ export default function Button({
       >
         {content}
       </a>
+    );
+  }
+
+  // 2. Next.js Internal Page Link (e.g. /about, /contact, /emi-calculator)
+  if (href) {
+    return (
+      <Link href={href} className={combinedClasses} onClick={onClick} {...props}>
+        {content}
+      </Link>
     );
   }
 
@@ -112,4 +119,3 @@ export default function Button({
     </button>
   );
 }
-

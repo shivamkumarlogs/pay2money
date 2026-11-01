@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useContext, useState, useEffect } from "react";
+import React, { createContext, useContext, useState, useEffect, useCallback } from "react";
 import { DEFAULT_PRODUCT_LINKS, KEY_ALIASES, normalizeKey } from "../data/productLinks";
 
 const LinksContext = createContext({
@@ -14,72 +14,88 @@ export function LinksProvider({ children }) {
   const [links, setLinks] = useState(DEFAULT_PRODUCT_LINKS);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    let isMounted = true;
-
-    async function fetchLinks() {
-      try {
-        const res = await fetch("/api/links");
-        if (!res.ok) throw new Error("Failed to load links");
-        const data = await res.json();
-        if (data && data.links && isMounted) {
-          setLinks(data.links);
-        }
-      } catch (err) {
-        console.warn("Using fallback product links:", err.message);
-      } finally {
-        if (isMounted) setLoading(false);
+  const fetchLinks = useCallback(async () => {
+    try {
+      const res = await fetch("/api/links");
+      if (!res.ok) throw new Error("Failed to load links");
+      const data = await res.json();
+      if (data && data.links) {
+        setLinks(data.links);
       }
+    } catch (err) {
+      console.warn("Using fallback product links:", err.message);
+    } finally {
+      setLoading(false);
     }
-
-    fetchLinks();
-    return () => {
-      isMounted = false;
-    };
   }, []);
+
+  useEffect(() => {
+    fetchLinks();
+
+    // Auto-revalidate silently when user focuses or returns to the browser tab
+    const handleFocus = () => {
+      if (document.visibilityState === "visible") {
+        fetchLinks();
+      }
+    };
+
+    window.addEventListener("focus", handleFocus);
+    document.addEventListener("visibilitychange", handleFocus);
+
+    return () => {
+      window.removeEventListener("focus", handleFocus);
+      document.removeEventListener("visibilitychange", handleFocus);
+    };
+  }, [fetchLinks]);
 
   /**
    * Universal Link Resolver
-   * Accepts any ID, Title, or name (e.g. "Personal Loan" or "personal-loan")
-   * Returns: { href, isExternal, target, rel }
+   * Routes loans and actionable products through the server-side /apply/[productId] engine.
+   * This guarantees real-time routing without requiring manual page reloads.
    */
   const getLink = (identifier, fallbackHref = "/contact") => {
     if (!identifier) {
       return { href: fallbackHref, isExternal: false };
     }
 
-    let key = normalizeKey(identifier);
-    if (KEY_ALIASES[key]) {
-      key = KEY_ALIASES[key];
+    const rawKey = normalizeKey(identifier);
+    const key = KEY_ALIASES[rawKey] || rawKey;
+
+    // Direct local anchor links (only when the identifier itself is a navigation anchor)
+    if (rawKey.startsWith("#") || rawKey === "explore-all-loans") {
+      const targetAnchor = fallbackHref && fallbackHref.startsWith("#") ? fallbackHref : "#loans";
+      return { href: targetAnchor, isExternal: false };
     }
-    const rawUrl = links[key];
 
-    // If an active URL is defined in the Google Sheet / defaults
-    if (rawUrl && typeof rawUrl === "string" && rawUrl.trim() !== "" && rawUrl.trim() !== "#") {
-      const trimmed = rawUrl.trim();
-      const isExternal = trimmed.startsWith("http://") || trimmed.startsWith("https://") || trimmed.startsWith("tel:") || trimmed.startsWith("mailto:");
+    // Dedicated internal tools
+    if (key === "emi-calculator") {
+      return { href: "/emi-calculator", isExternal: false };
+    }
 
+    if (key === "cibil-consultation") {
+      const customUrl = links[rawKey] || links[key] || DEFAULT_PRODUCT_LINKS[key];
+      if (customUrl && customUrl.startsWith("tel:")) {
+        return { href: customUrl, isExternal: true };
+      }
       return {
-        href: trimmed,
-        isExternal,
-        target: isExternal && trimmed.startsWith("http") ? "_blank" : undefined,
-        rel: isExternal && trimmed.startsWith("http") ? "noopener noreferrer" : undefined,
+        href: `/apply/${encodeURIComponent(rawKey)}`,
+        isExternal: true,
+        target: "_blank",
+        rel: "noopener noreferrer",
       };
     }
 
-    // Smart Fallback: Smoothly redirect to Contact page with service inquiry parameter
-    const safeFallback = fallbackHref.includes("?") 
-      ? fallbackHref 
-      : `/contact?service=${encodeURIComponent(key)}`;
-
+    // Server-Side Redirect Engine: All applications route through /apply/[productId]
     return {
-      href: safeFallback,
-      isExternal: false,
+      href: `/apply/${encodeURIComponent(rawKey)}`,
+      isExternal: true,
+      target: "_blank",
+      rel: "noopener noreferrer",
     };
   };
 
   return (
-    <LinksContext.Provider value={{ links, loading, getLink }}>
+    <LinksContext.Provider value={{ links, loading, getLink, refreshLinks: fetchLinks }}>
       {children}
     </LinksContext.Provider>
   );
@@ -91,7 +107,16 @@ export function LinksProvider({ children }) {
 export function useProductLinks() {
   const context = useContext(LinksContext);
   if (!context) {
-    throw new Error("useProductLinks must be used within a LinksProvider");
+    return {
+      links: DEFAULT_PRODUCT_LINKS,
+      loading: false,
+      getLink: (identifier, fallbackHref = "/contact") => ({
+        href: `/apply/${encodeURIComponent(normalizeKey(identifier))}`,
+        isExternal: true,
+        target: "_blank",
+        rel: "noopener noreferrer",
+      }),
+    };
   }
   return context;
 }
