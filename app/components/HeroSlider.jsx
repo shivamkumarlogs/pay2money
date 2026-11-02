@@ -163,7 +163,6 @@ export default function HeroSlider() {
 
                 {/* Right Side: Full-Bleed Photography with Slanted / Diagonal Split */}
                 <div
-                  style={{ position: "absolute" }}
                   className="absolute right-0 top-0 bottom-0 w-[44%] sm:w-[46%] md:w-[48%] h-full overflow-hidden [clip-path:polygon(8%_0,100%_0,100%_100%,0_100%)] sm:[clip-path:polygon(14%_0,100%_0,100%_100%,0_100%)]"
                 >
                   <Image
